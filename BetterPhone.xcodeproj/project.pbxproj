@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* BetterPhoneAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* BetterPhoneAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		F81F0B9812756AF9008BF155 /* DialPad.png in Resources */ = {isa = PBXBuildFile; fileRef = F81F0B9512756AF9008BF155 /* DialPad.png */; };
+		F81F0B9912756AF9008BF155 /* Favourites.png in Resources */ = {isa = PBXBuildFile; fileRef = F81F0B9612756AF9008BF155 /* Favourites.png */; };
+		F81F0B9A12756AF9008BF155 /* StatusFeed.png in Resources */ = {isa = PBXBuildFile; fileRef = F81F0B9712756AF9008BF155 /* StatusFeed.png */; };
+		F888255F12757FE50084B2D0 /* xxx.png in Resources */ = {isa = PBXBuildFile; fileRef = F888255E12757FE50084B2D0 /* xxx.png */; };
+		F8882574127582780084B2D0 /* image10.png in Resources */ = {isa = PBXBuildFile; fileRef = F8882573127582780084B2D0 /* image10.png */; };
+		F8A539651275A3B6005E8023 /* cell.png in Resources */ = {isa = PBXBuildFile; fileRef = F8A539641275A3B6005E8023 /* cell.png */; };
+		F8A539691275AD46005E8023 /* calling image.png in Resources */ = {isa = PBXBuildFile; fileRef = F8A539681275AD46005E8023 /* calling image.png */; };
+		F8D819A912715AED001BDA83 /* FavouritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D819A712715AED001BDA83 /* FavouritesViewController.m */; };
+		F8D819AA12715AED001BDA83 /* FavouritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D819A812715AED001BDA83 /* FavouritesViewController.xib */; };
+		F8D819AE12715B13001BDA83 /* SocialFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D819AC12715B13001BDA83 /* SocialFeedViewController.m */; };
+		F8D819AF12715B13001BDA83 /* SocialFeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D819AD12715B13001BDA83 /* SocialFeedViewController.xib */; };
+		F8D819B312715B35001BDA83 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D819B112715B35001BDA83 /* ContactsViewController.m */; };
+		F8D819B412715B35001BDA83 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D819B212715B35001BDA83 /* ContactsViewController.xib */; };
+		F8D819B812715B5B001BDA83 /* DialPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D819B612715B5B001BDA83 /* DialPadViewController.m */; };
+		F8D819B912715B5B001BDA83 /* DialPadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D819B712715B5B001BDA83 /* DialPadViewController.xib */; };
+		F8D819BD12715B70001BDA83 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D819BB12715B70001BDA83 /* SettingsViewController.m */; };
+		F8D819BE12715B70001BDA83 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D819BC12715B70001BDA83 /* SettingsViewController.xib */; };
+		F8D819C212715BA9001BDA83 /* ContactviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D819C012715BA9001BDA83 /* ContactviewViewController.m */; };
+		F8D819C312715BA9001BDA83 /* ContactviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D819C112715BA9001BDA83 /* ContactviewViewController.xib */; };
+		F8D819C712715BD4001BDA83 /* ContactEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D819C512715BD4001BDA83 /* ContactEditingViewController.m */; };
+		F8D819C812715BD4001BDA83 /* ContactEditingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D819C612715BD4001BDA83 /* ContactEditingViewController.xib */; };
+		F8D81A0E12716314001BDA83 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D81A0D12716314001BDA83 /* AddressBook.framework */; };
+		F8D81A3512716F8D001BDA83 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D81A3412716F8D001BDA83 /* AddressBookUI.framework */; };
+		F8D81AFF12719E86001BDA83 /* ContactInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D81AFE12719E86001BDA83 /* ContactInfo.m */; };
+		F8D81B411271AB16001BDA83 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D81B401271AB16001BDA83 /* MobileCoreServices.framework */; };
+		F8D81B491271AD15001BDA83 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D81B481271AD15001BDA83 /* CoreTelephony.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* BetterPhoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetterPhoneAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* BetterPhoneAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetterPhoneAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* BetterPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* BetterPhone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetterPhone_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* BetterPhone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BetterPhone-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		F81F0B9512756AF9008BF155 /* DialPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DialPad.png; path = Classes/DialPad.png; sourceTree = "<group>"; };
+		F81F0B9612756AF9008BF155 /* Favourites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Favourites.png; path = Classes/Favourites.png; sourceTree = "<group>"; };
+		F81F0B9712756AF9008BF155 /* StatusFeed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StatusFeed.png; path = Classes/StatusFeed.png; sourceTree = "<group>"; };
+		F888255E12757FE50084B2D0 /* xxx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xxx.png; sourceTree = "<group>"; };
+		F8882573127582780084B2D0 /* image10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image10.png; sourceTree = "<group>"; };
+		F8A539641275A3B6005E8023 /* cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell.png; sourceTree = "<group>"; };
+		F8A539681275AD46005E8023 /* calling image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calling image.png"; sourceTree = "<group>"; };
+		F8D819A612715AED001BDA83 /* FavouritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouritesViewController.h; sourceTree = "<group>"; };
+		F8D819A712715AED001BDA83 /* FavouritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouritesViewController.m; sourceTree = "<group>"; };
+		F8D819A812715AED001BDA83 /* FavouritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FavouritesViewController.xib; path = Classes/FavouritesViewController.xib; sourceTree = "<group>"; };
+		F8D819AB12715B13001BDA83 /* SocialFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialFeedViewController.h; sourceTree = "<group>"; };
+		F8D819AC12715B13001BDA83 /* SocialFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialFeedViewController.m; sourceTree = "<group>"; };
+		F8D819AD12715B13001BDA83 /* SocialFeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SocialFeedViewController.xib; path = Classes/SocialFeedViewController.xib; sourceTree = "<group>"; };
+		F8D819B012715B35001BDA83 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		F8D819B112715B35001BDA83 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
+		F8D819B212715B35001BDA83 /* ContactsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ContactsViewController.xib; path = Classes/ContactsViewController.xib; sourceTree = "<group>"; };
+		F8D819B512715B5B001BDA83 /* DialPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialPadViewController.h; sourceTree = "<group>"; };
+		F8D819B612715B5B001BDA83 /* DialPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialPadViewController.m; sourceTree = "<group>"; };
+		F8D819B712715B5B001BDA83 /* DialPadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DialPadViewController.xib; path = Classes/DialPadViewController.xib; sourceTree = "<group>"; };
+		F8D819BA12715B70001BDA83 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		F8D819BB12715B70001BDA83 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		F8D819BC12715B70001BDA83 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = Classes/SettingsViewController.xib; sourceTree = "<group>"; };
+		F8D819BF12715BA9001BDA83 /* ContactviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactviewViewController.h; sourceTree = "<group>"; };
+		F8D819C012715BA9001BDA83 /* ContactviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactviewViewController.m; sourceTree = "<group>"; };
+		F8D819C112715BA9001BDA83 /* ContactviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ContactviewViewController.xib; path = Classes/ContactviewViewController.xib; sourceTree = "<group>"; };
+		F8D819C412715BD4001BDA83 /* ContactEditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactEditingViewController.h; sourceTree = "<group>"; };
+		F8D819C512715BD4001BDA83 /* ContactEditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactEditingViewController.m; sourceTree = "<group>"; };
+		F8D819C612715BD4001BDA83 /* ContactEditingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ContactEditingViewController.xib; path = Classes/ContactEditingViewController.xib; sourceTree = "<group>"; };
+		F8D81A0D12716314001BDA83 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		F8D81A3412716F8D001BDA83 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		F8D81AFD12719E86001BDA83 /* ContactInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactInfo.h; sourceTree = "<group>"; };
+		F8D81AFE12719E86001BDA83 /* ContactInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactInfo.m; sourceTree = "<group>"; };
+		F8D81B401271AB16001BDA83 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F8D81B481271AD15001BDA83 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				F8D81A0E12716314001BDA83 /* AddressBook.framework in Frameworks */,
+				F8D81A3512716F8D001BDA83 /* AddressBookUI.framework in Frameworks */,
+				F8D81B411271AB16001BDA83 /* MobileCoreServices.framework in Frameworks */,
+				F8D81B491271AD15001BDA83 /* CoreTelephony.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F8A539681275AD46005E8023 /* calling image.png */,
+				F8A539641275A3B6005E8023 /* cell.png */,
+				F8882573127582780084B2D0 /* image10.png */,
+				F888255E12757FE50084B2D0 /* xxx.png */,
+				1D3623240D0F684500981E51 /* BetterPhoneAppDelegate.h */,
+				1D3623250D0F684500981E51 /* BetterPhoneAppDelegate.m */,
+				F842B03112707EF900B450B7 /* ViewControllers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* BetterPhone.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				F8D81B401271AB16001BDA83 /* MobileCoreServices.framework */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* BetterPhone_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F842B02D12707EE600B450B7 /* Images */,
+				F842B03012707EF000B450B7 /* Xib */,
+				8D1107310486CEB800E47090 /* BetterPhone-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				F8D81A0D12716314001BDA83 /* AddressBook.framework */,
+				F8D81A3412716F8D001BDA83 /* AddressBookUI.framework */,
+				F8D81B481271AD15001BDA83 /* CoreTelephony.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F842B02D12707EE600B450B7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F81F0B9612756AF9008BF155 /* Favourites.png */,
+				F81F0B9512756AF9008BF155 /* DialPad.png */,
+				F81F0B9712756AF9008BF155 /* StatusFeed.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		F842B03012707EF000B450B7 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				F8D819A812715AED001BDA83 /* FavouritesViewController.xib */,
+				F8D819B212715B35001BDA83 /* ContactsViewController.xib */,
+				F8D819AD12715B13001BDA83 /* SocialFeedViewController.xib */,
+				F8D819C612715BD4001BDA83 /* ContactEditingViewController.xib */,
+				F8D819B712715B5B001BDA83 /* DialPadViewController.xib */,
+				F8D819BC12715B70001BDA83 /* SettingsViewController.xib */,
+				F8D819C112715BA9001BDA83 /* ContactviewViewController.xib */,
+			);
+			name = Xib;
+			sourceTree = "<group>";
+		};
+		F842B03112707EF900B450B7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F8D81AFD12719E86001BDA83 /* ContactInfo.h */,
+				F8D81AFE12719E86001BDA83 /* ContactInfo.m */,
+				F8D819A612715AED001BDA83 /* FavouritesViewController.h */,
+				F8D819A712715AED001BDA83 /* FavouritesViewController.m */,
+				F8D819AB12715B13001BDA83 /* SocialFeedViewController.h */,
+				F8D819AC12715B13001BDA83 /* SocialFeedViewController.m */,
+				F8D819B012715B35001BDA83 /* ContactsViewController.h */,
+				F8D819B112715B35001BDA83 /* ContactsViewController.m */,
+				F8D819B512715B5B001BDA83 /* DialPadViewController.h */,
+				F8D819B612715B5B001BDA83 /* DialPadViewController.m */,
+				F8D819BA12715B70001BDA83 /* SettingsViewController.h */,
+				F8D819BB12715B70001BDA83 /* SettingsViewController.m */,
+				F8D819BF12715BA9001BDA83 /* ContactviewViewController.h */,
+				F8D819C012715BA9001BDA83 /* ContactviewViewController.m */,
+				F8D819C412715BD4001BDA83 /* ContactEditingViewController.h */,
+				F8D819C512715BD4001BDA83 /* ContactEditingViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* BetterPhone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BetterPhone" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BetterPhone;
+			productName = BetterPhone;
+			productReference = 1D6058910D05DD3D006BFB54 /* BetterPhone.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BetterPhone" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* BetterPhone */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				F8D819AA12715AED001BDA83 /* FavouritesViewController.xib in Resources */,
+				F8D819AF12715B13001BDA83 /* SocialFeedViewController.xib in Resources */,
+				F8D819B412715B35001BDA83 /* ContactsViewController.xib in Resources */,
+				F8D819B912715B5B001BDA83 /* DialPadViewController.xib in Resources */,
+				F8D819BE12715B70001BDA83 /* SettingsViewController.xib in Resources */,
+				F8D819C312715BA9001BDA83 /* ContactviewViewController.xib in Resources */,
+				F8D819C812715BD4001BDA83 /* ContactEditingViewController.xib in Resources */,
+				F81F0B9812756AF9008BF155 /* DialPad.png in Resources */,
+				F81F0B9912756AF9008BF155 /* Favourites.png in Resources */,
+				F81F0B9A12756AF9008BF155 /* StatusFeed.png in Resources */,
+				F888255F12757FE50084B2D0 /* xxx.png in Resources */,
+				F8882574127582780084B2D0 /* image10.png in Resources */,
+				F8A539651275A3B6005E8023 /* cell.png in Resources */,
+				F8A539691275AD46005E8023 /* calling image.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* BetterPhoneAppDelegate.m in Sources */,
+				F8D819A912715AED001BDA83 /* FavouritesViewController.m in Sources */,
+				F8D819AE12715B13001BDA83 /* SocialFeedViewController.m in Sources */,
+				F8D819B312715B35001BDA83 /* ContactsViewController.m in Sources */,
+				F8D819B812715B5B001BDA83 /* DialPadViewController.m in Sources */,
+				F8D819BD12715B70001BDA83 /* SettingsViewController.m in Sources */,
+				F8D819C212715BA9001BDA83 /* ContactviewViewController.m in Sources */,
+				F8D819C712715BD4001BDA83 /* ContactEditingViewController.m in Sources */,
+				F8D81AFF12719E86001BDA83 /* ContactInfo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BetterPhone_Prefix.pch;
+				INFOPLIST_FILE = "BetterPhone-Info.plist";
+				PRODUCT_NAME = BetterPhone;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BetterPhone_Prefix.pch;
+				INFOPLIST_FILE = "BetterPhone-Info.plist";
+				PRODUCT_NAME = BetterPhone;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.1;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BetterPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BetterPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

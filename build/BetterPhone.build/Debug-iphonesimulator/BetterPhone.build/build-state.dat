@@ -1,0 +1,815 @@
+TBetterPhone
+v7
+r0
+t309696420.448450
+cCheck dependencies
+cProcessInfoPlistFile "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/Info.plist" BetterPhone-Info.plist
+cCompileXIB "/Users/manishjain/iPhone:iPad Projects/BetterPhone/MainWindow.xib"
+cCompileXIB "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/FavouritesViewController.xib"
+cCompileXIB "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SocialFeedViewController.xib"
+cCompileXIB "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.xib"
+cCompileXIB "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/DialPadViewController.xib"
+cCompileXIB "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SettingsViewController.xib"
+cCompileXIB "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactviewViewController.xib"
+cCompileXIB "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactEditingViewController.xib"
+cCpResource build/Debug-iphonesimulator/BetterPhone.app/DialPad.png Classes/DialPad.png
+cCpResource build/Debug-iphonesimulator/BetterPhone.app/Favourites.png Classes/Favourites.png
+cCpResource build/Debug-iphonesimulator/BetterPhone.app/StatusFeed.png Classes/StatusFeed.png
+cCpResource build/Debug-iphonesimulator/BetterPhone.app/xxx.png Classes/xxx.png
+cCpResource build/Debug-iphonesimulator/BetterPhone.app/image10.png Classes/image10.png
+cCpResource build/Debug-iphonesimulator/BetterPhone.app/cell.png Classes/cell.png
+cProcessPCH /var/folders/jQ/jQCP6RC8GJqyvcP9qW+q6k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BetterPhone_Prefix-expvgthkghqepzaujqgzyhsoovtp/BetterPhone_Prefix.pch.gch BetterPhone_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/main.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/main.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/BetterPhoneAppDelegate.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/BetterPhoneAppDelegate.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/FavouritesViewController.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/FavouritesViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/SocialFeedViewController.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SocialFeedViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactsViewController.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/DialPadViewController.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/DialPadViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/SettingsViewController.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SettingsViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactviewViewController.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactviewViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactEditingViewController.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactEditingViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactInfo.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactInfo.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/BetterPhone" normal i386
+cGenerateDSYMFile "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app.dSYM" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/BetterPhone"
+cTouch "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app"
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk
+c000000004C6C30170000000000000110
+t1282158615
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/AddressBook.framework/AddressBook
+c000000004C5A50360000000000075DC0
+t1280987190
+s482752
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/AddressBook.framework/Headers/AddressBook.h
+c000000004C5A50310000000000000424
+t1280987185
+s1060
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
+c000000004C5E1EA5000000000014B400
+t1281236645
+s1356800
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/AddressBookUI.framework/Headers/AddressBookUI.h
+c000000004C5E1E8A0000000000000202
+t1281236618
+s514
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004C5A4DB60000000000295900
+t1280986550
+s2709760
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/CoreTelephony.framework/CoreTelephony
+c000000004C623DE600000000000CCD10
+t1281506790
+s838928
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004C5A4DB0000000000029D580
+t1280986544
+s2741632
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004C5A4DA10000000000001466
+t1280986529
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+c000000004C5A5030000000000005AA60
+t1280987184
+s371296
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C6241ED00000000000009CD
+t1281507821
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C6242840000000001E228C0
+t1281507972
+s31598784
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/BetterPhone_Prefix.pch
+c000000004CC0474B00000000000000BF
+t1287669579
+s191
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/../Classes/DialPad.png
+c000000004C5AC08D00000000000009EA
+t1281015949
+s2538
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/../Classes/Favourites.png
+c000000004C5AC08D0000000000000906
+t1281015949
+s2310
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/../Classes/StatusFeed.png
+c000000004C5AC08D0000000000000C00
+t1281015949
+s3072
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/BetterPhoneAppDelegate.h
+c000000004CC11EB60000000000000188
+t1287724726
+s392
+i<UIKit/UIKit.h>
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/BetterPhoneAppDelegate.m
+c000000004CC545210000000000000A03
+t1287996705
+s2563
+i"BetterPhoneAppDelegate.h"
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactEditingViewController.h
+c000000004CC124540000000000000101
+t1287726164
+s257
+i<UIKit/UIKit.h>
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactEditingViewController.m
+c000000004CC1245400000000000005C5
+t1287726164
+s1477
+i"ContactEditingViewController.h"
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactEditingViewController.xib
+c000000004CC12454000000000000188F
+t1287726164
+s6287
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactInfo.h
+c000000004CC1678A0000000000000124
+t1287743370
+s292
+i<AddressBook/AddressBook.h>
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactInfo.m
+c000000004CC1679A0000000000000509
+t1287743386
+s1289
+i"ContactInfo.h"
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.h
+c000000004CC545EB0000000000000174
+t1287996907
+s372
+i<UIKit/UIKit.h>
+i<AddressBook/AddressBook.h>
+i<AddressBookUI/AddressBookUI.h>
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m
+c000000004CC547010000000000000823
+t1287997185
+s2083
+i"ContactsViewController.h"
+i"ContactInfo.h"
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.xib
+c000000004CC123B5000000000000187D
+t1287726005
+s6269
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactviewViewController.h
+c000000004CC1242900000000000000FB
+t1287726121
+s251
+i<UIKit/UIKit.h>
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactviewViewController.m
+c000000004CC1242900000000000005BC
+t1287726121
+s1468
+i"ContactviewViewController.h"
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactviewViewController.xib
+c000000004CC124290000000000001886
+t1287726121
+s6278
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/DialPad.png
+c000000004C5AC08D00000000000009EA
+t1281015949
+s2538
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/DialPadViewController.h
+c000000004CC55EDD00000000000002E9
+t1288003293
+s745
+i<UIKit/UIKit.h>
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/DialPadViewController.m
+c000000004CC55F5300000000000005F1
+t1288003411
+s1521
+i"DialPadViewController.h"
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/DialPadViewController.xib
+c000000004CC55FB6000000000000D71E
+t1288003510
+s55070
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/Favourites.png
+c000000004C5AC08D0000000000000906
+t1281015949
+s2310
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/FavouritesViewController.h
+c000000004CC1262E00000000000000FA
+t1287726638
+s250
+i<UIKit/UIKit.h>
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/FavouritesViewController.m
+c000000004CC1236D00000000000005B9
+t1287725933
+s1465
+i"FavouritesViewController.h"
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/FavouritesViewController.xib
+c000000004CC1236D0000000000001883
+t1287725933
+s6275
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SettingsViewController.h
+c000000004CC123F000000000000000F5
+t1287726064
+s245
+i<UIKit/UIKit.h>
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SettingsViewController.m
+c000000004CC123F000000000000005B3
+t1287726064
+s1459
+i"SettingsViewController.h"
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SettingsViewController.xib
+c000000004CC123F0000000000000187D
+t1287726064
+s6269
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SocialFeedViewController.h
+c000000004CC52D1600000000000000FF
+t1287990550
+s255
+i<UIKit/UIKit.h>
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SocialFeedViewController.m
+c000000004CC1239300000000000005B9
+t1287725971
+s1465
+i"SocialFeedViewController.h"
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SocialFeedViewController.xib
+c000000004CC123930000000000001883
+t1287725971
+s6275
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/StatusFeed.png
+c000000004C5AC08D0000000000000C00
+t1281015949
+s3072
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/cell.png
+c000000004CC55A1500000000000011E6
+t1288002069
+s4582
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/example.png
+c000000004CC535C000000000000004A5
+t1287992768
+s1189
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/image10.png
+c000000004CC54AD0000000000000078B
+t1287998160
+s1931
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/image10.tiff
+c000000004C5AC08D0000000000000A08
+t1281015949
+s2568
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/sample.png
+c000000004CC53836000000000000033C
+t1287993398
+s828
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/xxx.png
+c000000004CC5483A00000000000001FD
+t1287997498
+s509
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/MainWindow.xib
+c000000004CC550310000000000008C01
+t1287999537
+s35841
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/BetterPhone.LinkFileList
+c000000004CC5466E000000000000062F
+t1287997038
+s1583
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/BetterPhoneAppDelegate.o
+t1287997044
+s49484
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactEditingViewController.o
+t1287997045
+s34824
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactInfo.o
+t1287997045
+s12520
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactsViewController.o
+t1287997185
+s40300
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactviewViewController.o
+t1287997044
+s34760
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/DialPadViewController.o
+t1288003413
+s40056
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/FavouritesViewController.o
+t1287997044
+s34740
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/SettingsViewController.o
+t1287997044
+s34696
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/SocialFeedViewController.o
+t1287997044
+s34740
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/main.o
+t1287997044
+s6328
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app
+t1288003517
+s646
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app.dSYM
+t1288003413
+s102
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/BetterPhone
+t1288003413
+s30336
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/ContactEditingViewController.nib
+t1287997041
+s1231
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/ContactsViewController.nib
+t1287997040
+s1231
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/ContactviewViewController.nib
+t1287997041
+s1231
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/DialPad.png
+t1287997041
+s2538
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/DialPadViewController.nib
+t1288003517
+s7985
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/Favourites.png
+t1287997041
+s2310
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/FavouritesViewController.nib
+t1287997040
+s1231
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/Info.plist
+t1287997038
+s607
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/MainWindow.nib
+t1288000614
+s4257
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/PkgInfo
+t1287997038
+s8
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/SettingsViewController.nib
+t1287997041
+s1231
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/SocialFeedViewController.nib
+t1287997040
+s1231
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/StatusFeed.png
+t1287997041
+s3072
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/cell.png
+t1288002195
+s4582
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/example.png
+t1287994181
+s1189
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/image10.png
+t1287998491
+s1931
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/image10.tiff
+t1287994181
+s2568
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/sample.png
+t1287994181
+s828
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/xxx.png
+t1287997564
+s509
+
+N/Users/manishjain/iPhone:iPad Projects/BetterPhone/main.m
+c000000004CC0474B000000000000016E
+t1287669579
+s366
+i<UIKit/UIKit.h>
+
+N/var/folders/jQ/jQCP6RC8GJqyvcP9qW+q6k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BetterPhone_Prefix-expvgthkghqepzaujqgzyhsoovtp/BetterPhone_Prefix.pch.gch
+t1287997044
+s15211536
+
+NBetterPhone-Info.plist
+c000000004CC0474B000000000000038D
+t1287669579
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies309696420#309696420#0(0"0(0#1#0"8615784032#0"0#
+
+CCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/BetterPhoneAppDelegate.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/BetterPhoneAppDelegate.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s309689844.479632
+e309689844.560094
+r1
+xCompileC
+xbuild/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/BetterPhoneAppDelegate.o
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/BetterPhoneAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@91"Compile /Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/BetterPhoneAppDelegate.m309689844#309689844#0(0"0(0#0#83"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/BetterPhoneAppDelegate.m8607037600#2192"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-generated-files.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-own-target-headers.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-all-target-headers.hmap" -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-project-headers.hmap" "-F/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/include" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources/i386" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources" -include /var/folders/jQ/jQCP6RC8GJqyvcP9qW+q6k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BetterPhone_Prefix-expvgthkghqepzaujqgzyhsoovtp/BetterPhone_Prefix.pch -c "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/BetterPhoneAppDelegate.m" -o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/BetterPhoneAppDelegate.o"0#
+
+CCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactEditingViewController.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactEditingViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s309689844.992037
+e309689845.061775
+r1
+xCompileC
+xbuild/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactEditingViewController.o
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactEditingViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@97"Compile /Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactEditingViewController.m309689844#309689845#0(0"0(0#0#89"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactEditingViewController.m8607503392#2204"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-generated-files.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-own-target-headers.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-all-target-headers.hmap" -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-project-headers.hmap" "-F/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/include" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources/i386" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources" -include /var/folders/jQ/jQCP6RC8GJqyvcP9qW+q6k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BetterPhone_Prefix-expvgthkghqepzaujqgzyhsoovtp/BetterPhone_Prefix.pch -c "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactEditingViewController.m" -o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactEditingViewController.o"0#
+
+CCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactInfo.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactInfo.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s309689845.061899
+e309689845.133830
+r1
+xCompileC
+xbuild/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactInfo.o
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactInfo.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@80"Compile /Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactInfo.m309689845#309689845#0(0"0(0#0#72"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactInfo.m8608268608#2170"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-generated-files.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-own-target-headers.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-all-target-headers.hmap" -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-project-headers.hmap" "-F/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/include" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources/i386" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources" -include /var/folders/jQ/jQCP6RC8GJqyvcP9qW+q6k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BetterPhone_Prefix-expvgthkghqepzaujqgzyhsoovtp/BetterPhone_Prefix.pch -c "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactInfo.m" -o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactInfo.o"0#
+
+CCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactsViewController.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s309689985.235348
+e309689985.352715
+r1
+xCompileC
+xbuild/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactsViewController.o
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m:76: warning: incomplete implementation of class 'ContactsViewController'
+o/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m:76: warning: method definition for '-peoplePickerNavigationController:shouldContinueAfterSelectingPerson:property:identifier:' not found
+o/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m:76: warning: method definition for '-peoplePickerNavigationController:shouldContinueAfterSelectingPerson:' not found
+o/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m:76: warning: method definition for '-peoplePickerNavigationControllerDidCancel:' not found
+o/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m:76: warning: class 'ContactsViewController' does not fully implement the 'ABPeoplePickerNavigationControllerDelegate' protocol
+lSLF07#2@91"Compile /Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m309689985#309689985#0(965"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m:76: warning: incomplete implementation of class 'ContactsViewController'/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m:76: warning: method definition for '-peoplePickerNavigationController:shouldContinueAfterSelectingPerson:property:identifier:' not found/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m:76: warning: method definition for '-peoplePickerNavigationController:shouldContinueAfterSelectingPerson:' not found/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m:76: warning: method definition for '-peoplePickerNavigationControllerDidCancel:' not found/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m:76: warning: class 'ContactsViewController' does not fully implement the 'ABPeoplePickerNavigationControllerDelegate' protocol5(22@59"Incomplete implementation of class 'ContactsViewController'309689985#0#157#0(6@83"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m309689985#76#0#76#0#38"incomplete implementation of class '*'0(22@123"Method definition for '-peoplePickerNavigationController:shouldContinueAfterSelectingPerson:property:identifier:' not found309689985#157#221#0(6@83"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m309689985#76#0#76#0#35"method definition for '*' not found0(22@103"Method definition for '-peoplePickerNavigationController:shouldContinueAfterSelectingPerson:' not found309689985#378#201#0(6@83"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m309689985#76#0#76#0#35"method definition for '*' not found0(22@77"Method definition for '-peoplePickerNavigationControllerDidCancel:' not found309689985#579#175#0(6@83"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m309689985#76#0#76#0#35"method definition for '*' not found0(22@113"Class 'ContactsViewController' does not fully implement the 'ABPeoplePickerNavigationControllerDelegate' protocol309689985#754#211#0(6@83"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m309689985#76#0#76#0#51"class '*' does not fully implement the '*' protocol0(0#0#83"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m8612633376#2192"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-generated-files.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-own-target-headers.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-all-target-headers.hmap" -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-project-headers.hmap" "-F/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/include" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources/i386" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources" -include /var/folders/jQ/jQCP6RC8GJqyvcP9qW+q6k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BetterPhone_Prefix-expvgthkghqepzaujqgzyhsoovtp/BetterPhone_Prefix.pch -c "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.m" -o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactsViewController.o"0#
+
+CCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactviewViewController.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactviewViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s309689844.923135
+e309689844.991929
+r1
+xCompileC
+xbuild/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactviewViewController.o
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactviewViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@94"Compile /Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactviewViewController.m309689844#309689845#0(0"0(0#0#86"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactviewViewController.m8608787808#2198"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-generated-files.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-own-target-headers.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-all-target-headers.hmap" -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-project-headers.hmap" "-F/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/include" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources/i386" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources" -include /var/folders/jQ/jQCP6RC8GJqyvcP9qW+q6k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BetterPhone_Prefix-expvgthkghqepzaujqgzyhsoovtp/BetterPhone_Prefix.pch -c "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactviewViewController.m" -o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/ContactviewViewController.o"0#
+
+CCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/DialPadViewController.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/DialPadViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s309696213.317602
+e309696213.587612
+r1
+xCompileC
+xbuild/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/DialPadViewController.o
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/DialPadViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@90"Compile /Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/DialPadViewController.m309696213#309696213#0(0"0(0#0#82"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/DialPadViewController.m8608215776#2190"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-generated-files.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-own-target-headers.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-all-target-headers.hmap" -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-project-headers.hmap" "-F/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/include" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources/i386" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources" -include /var/folders/jQ/jQCP6RC8GJqyvcP9qW+q6k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BetterPhone_Prefix-expvgthkghqepzaujqgzyhsoovtp/BetterPhone_Prefix.pch -c "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/DialPadViewController.m" -o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/DialPadViewController.o"0#
+
+CCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/FavouritesViewController.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/FavouritesViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s309689844.560213
+e309689844.628466
+r1
+xCompileC
+xbuild/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/FavouritesViewController.o
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/FavouritesViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@93"Compile /Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/FavouritesViewController.m309689844#309689844#0(0"0(0#0#85"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/FavouritesViewController.m8607839616#2196"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-generated-files.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-own-target-headers.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-all-target-headers.hmap" -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-project-headers.hmap" "-F/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/include" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources/i386" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources" -include /var/folders/jQ/jQCP6RC8GJqyvcP9qW+q6k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BetterPhone_Prefix-expvgthkghqepzaujqgzyhsoovtp/BetterPhone_Prefix.pch -c "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/FavouritesViewController.m" -o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/FavouritesViewController.o"0#
+
+CCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/SettingsViewController.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SettingsViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s309689844.850228
+e309689844.923006
+r1
+xCompileC
+xbuild/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/SettingsViewController.o
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SettingsViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@91"Compile /Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SettingsViewController.m309689844#309689844#0(0"0(0#0#83"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SettingsViewController.m8610455840#2192"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-generated-files.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-own-target-headers.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-all-target-headers.hmap" -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-project-headers.hmap" "-F/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/include" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources/i386" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources" -include /var/folders/jQ/jQCP6RC8GJqyvcP9qW+q6k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BetterPhone_Prefix-expvgthkghqepzaujqgzyhsoovtp/BetterPhone_Prefix.pch -c "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SettingsViewController.m" -o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/SettingsViewController.o"0#
+
+CCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/SocialFeedViewController.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SocialFeedViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s309689844.628591
+e309689844.701026
+r1
+xCompileC
+xbuild/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/SocialFeedViewController.o
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SocialFeedViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@93"Compile /Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SocialFeedViewController.m309689844#309689844#0(0"0(0#0#85"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SocialFeedViewController.m8612419616#2196"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-generated-files.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-own-target-headers.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-all-target-headers.hmap" -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-project-headers.hmap" "-F/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/include" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources/i386" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources" -include /var/folders/jQ/jQCP6RC8GJqyvcP9qW+q6k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BetterPhone_Prefix-expvgthkghqepzaujqgzyhsoovtp/BetterPhone_Prefix.pch -c "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SocialFeedViewController.m" -o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/SocialFeedViewController.o"0#
+
+CCompileC build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/main.o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/main.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s309689844.393211
+e309689844.479505
+r1
+xCompileC
+xbuild/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/main.o
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@65"Compile /Users/manishjain/iPhone:iPad Projects/BetterPhone/main.m309689844#309689844#0(0"0(0#0#57"/Users/manishjain/iPhone:iPad Projects/BetterPhone/main.m8612705440#2148"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-generated-files.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-own-target-headers.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-all-target-headers.hmap" -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-project-headers.hmap" "-F/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/include" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources/i386" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources" -include /var/folders/jQ/jQCP6RC8GJqyvcP9qW+q6k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BetterPhone_Prefix-expvgthkghqepzaujqgzyhsoovtp/BetterPhone_Prefix.pch -c "/Users/manishjain/iPhone:iPad Projects/BetterPhone/main.m" -o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/main.o"0#
+
+CCompileXIB "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactEditingViewController.xib"
+s309689841.582069
+e309689841.986428
+r1
+xCompileXIB
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactEditingViewController.xib
+lSLF07#2@51"CompileXIB Classes/ContactEditingViewController.xib309689841#309689841#0(0"0(0#0#91"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactEditingViewController.xib8612368288#660"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/ContactEditingViewController.nib" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactEditingViewController.xib" --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCompileXIB "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.xib"
+s309689840.477008
+e309689841.000551
+r1
+xCompileXIB
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.xib
+lSLF07#2@45"CompileXIB Classes/ContactsViewController.xib309689840#309689841#0(0"0(0#0#85"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.xib8612624864#648"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/ContactsViewController.nib" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactsViewController.xib" --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCompileXIB "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactviewViewController.xib"
+s309689841.420818
+e309689841.908384
+r1
+xCompileXIB
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactviewViewController.xib
+lSLF07#2@48"CompileXIB Classes/ContactviewViewController.xib309689841#309689841#0(0"0(0#0#88"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactviewViewController.xib8606899136#654"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/ContactviewViewController.nib" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/ContactviewViewController.xib" --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCompileXIB "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/DialPadViewController.xib"
+s309696314.147603
+e309696317.301702
+r1
+xCompileXIB
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/DialPadViewController.xib
+lSLF07#2@44"CompileXIB Classes/DialPadViewController.xib309696314#309696317#0(0"0(0#0#84"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/DialPadViewController.xib8615648576#646"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/DialPadViewController.nib" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/DialPadViewController.xib" --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCompileXIB "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/FavouritesViewController.xib"
+s309689838.723282
+e309689840.339676
+r1
+xCompileXIB
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/FavouritesViewController.xib
+lSLF07#2@47"CompileXIB Classes/FavouritesViewController.xib309689838#309689840#0(0"0(0#0#87"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/FavouritesViewController.xib8606775328#652"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/FavouritesViewController.nib" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/FavouritesViewController.xib" --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCompileXIB "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SettingsViewController.xib"
+s309689841.013195
+e309689841.420713
+r1
+xCompileXIB
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SettingsViewController.xib
+lSLF07#2@45"CompileXIB Classes/SettingsViewController.xib309689841#309689841#0(0"0(0#0#85"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SettingsViewController.xib8610665824#648"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/SettingsViewController.nib" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SettingsViewController.xib" --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCompileXIB "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SocialFeedViewController.xib"
+s309689840.339879
+e309689841.013087
+r1
+xCompileXIB
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SocialFeedViewController.xib
+lSLF07#2@47"CompileXIB Classes/SocialFeedViewController.xib309689840#309689841#0(0"0(0#0#87"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SocialFeedViewController.xib8608293248#652"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/SocialFeedViewController.nib" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/SocialFeedViewController.xib" --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCompileXIB "/Users/manishjain/iPhone:iPad Projects/BetterPhone/MainWindow.xib"
+s309693412.338293
+e309693414.795717
+r1
+xCompileXIB
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib309693412#309693414#0(0"0(0#0#65"/Users/manishjain/iPhone:iPad Projects/BetterPhone/MainWindow.xib22518449111498864#616"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/MainWindow.nib" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/MainWindow.xib" --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCopyTiffFile "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/image10.tiff" Classes/image10.tiff
+s309686981.394311
+e309686981.585426
+r1
+xCopyTiffFile
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/image10.tiff
+xClasses/image10.tiff
+lSLF07#2@25"Copy Classes/image10.tiff309686981#309686981#0(0"0(0#0#71"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/image10.tiff8604705088#408"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copytiff Classes/image10.tiff --outdir "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app"0#
+
+CCpResource build/Debug-iphonesimulator/BetterPhone.app/DialPad.png Classes/../Classes/DialPad.png
+r0
+
+CCpResource build/Debug-iphonesimulator/BetterPhone.app/DialPad.png Classes/DialPad.png
+s309689841.908576
+e309689841.975938
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BetterPhone.app/DialPad.png
+xClasses/DialPad.png
+lSLF07#2@24"Copy Classes/DialPad.png309689841#309689841#0(0"0(0#0#70"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/DialPad.png8612074176#509"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/DialPad.png" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app"0#
+
+CCpResource build/Debug-iphonesimulator/BetterPhone.app/Favourites.png Classes/../Classes/Favourites.png
+s309685152.130804
+e309685152.181827
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BetterPhone.app/Favourites.png
+xClasses/../Classes/Favourites.png
+lSLF07#2@38"Copy Classes/../Classes/Favourites.png309685152#309685152#0(0"0(0#0#84"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/../Classes/Favourites.png8604934144#523"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/../Classes/Favourites.png" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app"0#
+
+CCpResource build/Debug-iphonesimulator/BetterPhone.app/Favourites.png Classes/Favourites.png
+s309689841.910411
+e309689841.976087
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BetterPhone.app/Favourites.png
+xClasses/Favourites.png
+lSLF07#2@27"Copy Classes/Favourites.png309689841#309689841#0(0"0(0#0#73"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/Favourites.png8610862080#512"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/Favourites.png" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app"0#
+
+CCpResource build/Debug-iphonesimulator/BetterPhone.app/StatusFeed.png Classes/../Classes/StatusFeed.png
+s309685152.146105
+e309685152.187842
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BetterPhone.app/StatusFeed.png
+xClasses/../Classes/StatusFeed.png
+lSLF07#2@38"Copy Classes/../Classes/StatusFeed.png309685152#309685152#0(0"0(0#0#84"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/../Classes/StatusFeed.png8610105376#523"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/../Classes/StatusFeed.png" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app"0#
+
+CCpResource build/Debug-iphonesimulator/BetterPhone.app/StatusFeed.png Classes/StatusFeed.png
+s309689841.911404
+e309689841.977170
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BetterPhone.app/StatusFeed.png
+xClasses/StatusFeed.png
+lSLF07#2@27"Copy Classes/StatusFeed.png309689841#309689841#0(0"0(0#0#73"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/StatusFeed.png8610761888#512"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/StatusFeed.png" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app"0#
+
+CCpResource build/Debug-iphonesimulator/BetterPhone.app/cell.png Classes/cell.png
+s309694995.001735
+e309694995.053801
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BetterPhone.app/cell.png
+xClasses/cell.png
+lSLF07#2@21"Copy Classes/cell.png309694995#309694995#0(0"0(0#0#67"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/cell.png8614665024#506"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/cell.png" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app"0#
+
+CCpResource build/Debug-iphonesimulator/BetterPhone.app/example.png Classes/example.png
+s309686981.506103
+e309686981.521358
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BetterPhone.app/example.png
+xClasses/example.png
+lSLF07#2@24"Copy Classes/example.png309686981#309686981#0(0"0(0#0#70"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/example.png8604108832#509"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/example.png" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app"0#
+
+CCpResource build/Debug-iphonesimulator/BetterPhone.app/image10.png Classes/image10.png
+s309691291.590989
+e309691291.637849
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BetterPhone.app/image10.png
+xClasses/image10.png
+lSLF07#2@24"Copy Classes/image10.png309691291#309691291#0(0"0(0#0#70"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/image10.png8608118272#509"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/image10.png" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app"0#
+
+CCpResource build/Debug-iphonesimulator/BetterPhone.app/sample.png Classes/sample.png
+s309686981.506947
+e309686981.521517
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BetterPhone.app/sample.png
+xClasses/sample.png
+lSLF07#2@23"Copy Classes/sample.png309686981#309686981#0(0"0(0#0#69"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/sample.png8603855040#508"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/sample.png" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app"0#
+
+CCpResource build/Debug-iphonesimulator/BetterPhone.app/xxx.png Classes/xxx.png
+s309690364.193379
+e309690364.230529
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/BetterPhone.app/xxx.png
+xClasses/xxx.png
+lSLF07#2@20"Copy Classes/xxx.png309690364#309690364#0(0"0(0#0#66"/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/xxx.png8612626048#505"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/manishjain/iPhone:iPad Projects/BetterPhone/Classes/xxx.png" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app"0#
+
+CGenerateDSYMFile "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app.dSYM" "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/BetterPhone"
+s309696213.716675
+e309696213.781681
+r1
+xGenerateDSYMFile
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app.dSYM
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/BetterPhone
+lSLF07#2@121"GenerateDSYMFile build/Debug-iphonesimulator/BetterPhone.app.dSYM build/Debug-iphonesimulator/BetterPhone.app/BetterPhone309696213#309696213#0(0"0(0#0#106"/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/BetterPhone8613898784#437"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/BetterPhone" -o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app.dSYM"0#
+
+CLd "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/BetterPhone" normal i386
+s309696213.587728
+e309696213.716520
+r1
+xLd
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/BetterPhone
+xnormal
+xi386
+lSLF07#2@111"Link /Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/BetterPhone309696213#309696213#0(0"0(0#0#0"8614920576#1093"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk "-L/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator" "-F/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator" -filelist "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/Objects-normal/i386/BetterPhone.LinkFileList" -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -framework AddressBook -framework AddressBookUI -framework MobileCoreServices -framework CoreTelephony -o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/BetterPhone"0#
+
+CProcessInfoPlistFile "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/Info.plist" BetterPhone-Info.plist
+s309689838.712190
+e309689838.722114
+r1
+xProcessInfoPlistFile
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/Info.plist
+xBetterPhone-Info.plist
+lSLF07#2@30"Process BetterPhone-Info.plist309689838#309689838#0(0"0(0#0#73"/Users/manishjain/iPhone:iPad Projects/BetterPhone/BetterPhone-Info.plist8607289120#533"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility BetterPhone-Info.plist -genpkginfo "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/PkgInfo" -expandbuildsettings -format binary -platform iphonesimulator -o "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app/Info.plist"0#
+
+CProcessPCH /var/folders/jQ/jQCP6RC8GJqyvcP9qW+q6k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BetterPhone_Prefix-expvgthkghqepzaujqgzyhsoovtp/BetterPhone_Prefix.pch.gch BetterPhone_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s309689841.986563
+e309689844.392979
+r1
+xProcessPCH
+x/var/folders/jQ/jQCP6RC8GJqyvcP9qW+q6k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BetterPhone_Prefix-expvgthkghqepzaujqgzyhsoovtp/BetterPhone_Prefix.pch.gch
+xBetterPhone_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@33"Precompile BetterPhone_Prefix.pch309689841#309689844#0(0"0(0#0#73"/Users/manishjain/iPhone:iPad Projects/BetterPhone/BetterPhone_Prefix.pch8610483712#2022"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-generated-files.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-own-target-headers.hmap" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-all-target-headers.hmap" -iquote "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/BetterPhone-project-headers.hmap" "-F/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/include" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources/i386" "-I/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/BetterPhone.build/Debug-iphonesimulator/BetterPhone.build/DerivedSources" -c "/Users/manishjain/iPhone:iPad Projects/BetterPhone/BetterPhone_Prefix.pch" -o /var/folders/jQ/jQCP6RC8GJqyvcP9qW+q6k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BetterPhone_Prefix-expvgthkghqepzaujqgzyhsoovtp/BetterPhone_Prefix.pch.gch0#
+
+CTouch "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app"
+s309696317.303472
+e309696317.332901
+r1
+xTouch
+x/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app
+lSLF07#2@100"Touch /Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app309696317#309696317#0(0"0(0#0#0"8603280032#310"    cd "/Users/manishjain/iPhone:iPad Projects/BetterPhone"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c "/Users/manishjain/iPhone:iPad Projects/BetterPhone/build/Debug-iphonesimulator/BetterPhone.app"0#
+

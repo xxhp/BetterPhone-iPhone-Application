@@ -29,9 +29,28 @@
 	IBOutlet UIButton* _btn14;
 	IBOutlet UIButton* _btn15;
 	IBOutlet UIButton* _btn16;
+	
+	
+	IBOutlet UITextView* _text;
+	NSMutableArray* str;
+			
 }
 
--(IBAction)bttonTapped:(id)Sender;
+-(IBAction)firstBttonTapped:(id)Sender;
+-(IBAction)secondBttonTapped:(id)Sender;
+-(IBAction)thirdBttonTapped:(id)Sender;
+-(IBAction)fourthBttonTapped:(id)Sender;
+-(IBAction)fifthBttonTapped:(id)Sender;
+-(IBAction)sixthBttonTapped:(id)Sender;
+-(IBAction)sevenBttonTapped:(id)Sender;
+-(IBAction)eitghtBttonTapped:(id)Sender;
+-(IBAction)ninthBttonTapped:(id)Sender;
+-(IBAction)tenthBttonTapped:(id)Sender;
+-(IBAction)elevenBttonTapped:(id)Sender;
+-(IBAction)tweleveBttonTapped:(id)Sender;
+-(IBAction)therteenBttonTapped:(id)Sender;
+-(IBAction)fourteenBttonTapped:(id)Sender;
+-(IBAction)fifteenBttonTapped:(id)Sender;
 
 
 @end

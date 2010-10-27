@@ -18,8 +18,8 @@
 		F81F0B9A12756AF9008BF155 /* StatusFeed.png in Resources */ = {isa = PBXBuildFile; fileRef = F81F0B9712756AF9008BF155 /* StatusFeed.png */; };
 		F888255F12757FE50084B2D0 /* xxx.png in Resources */ = {isa = PBXBuildFile; fileRef = F888255E12757FE50084B2D0 /* xxx.png */; };
 		F8882574127582780084B2D0 /* image10.png in Resources */ = {isa = PBXBuildFile; fileRef = F8882573127582780084B2D0 /* image10.png */; };
-		F8A539651275A3B6005E8023 /* cell.png in Resources */ = {isa = PBXBuildFile; fileRef = F8A539641275A3B6005E8023 /* cell.png */; };
 		F8A539691275AD46005E8023 /* calling image.png in Resources */ = {isa = PBXBuildFile; fileRef = F8A539681275AD46005E8023 /* calling image.png */; };
+		F8BE8242127837D00072DB32 /* cell.png in Resources */ = {isa = PBXBuildFile; fileRef = F8BE8241127837D00072DB32 /* cell.png */; };
 		F8D819A912715AED001BDA83 /* FavouritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D819A712715AED001BDA83 /* FavouritesViewController.m */; };
 		F8D819AA12715AED001BDA83 /* FavouritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D819A812715AED001BDA83 /* FavouritesViewController.xib */; };
 		F8D819AE12715B13001BDA83 /* SocialFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D819AC12715B13001BDA83 /* SocialFeedViewController.m */; };
@@ -57,8 +57,8 @@
 		F81F0B9712756AF9008BF155 /* StatusFeed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StatusFeed.png; path = Classes/StatusFeed.png; sourceTree = "<group>"; };
 		F888255E12757FE50084B2D0 /* xxx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xxx.png; sourceTree = "<group>"; };
 		F8882573127582780084B2D0 /* image10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image10.png; sourceTree = "<group>"; };
-		F8A539641275A3B6005E8023 /* cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell.png; sourceTree = "<group>"; };
 		F8A539681275AD46005E8023 /* calling image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calling image.png"; sourceTree = "<group>"; };
+		F8BE8241127837D00072DB32 /* cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell.png; sourceTree = "<group>"; };
 		F8D819A612715AED001BDA83 /* FavouritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouritesViewController.h; sourceTree = "<group>"; };
 		F8D819A712715AED001BDA83 /* FavouritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouritesViewController.m; sourceTree = "<group>"; };
 		F8D819A812715AED001BDA83 /* FavouritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FavouritesViewController.xib; path = Classes/FavouritesViewController.xib; sourceTree = "<group>"; };
@@ -109,8 +109,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F8BE8241127837D00072DB32 /* cell.png */,
 				F8A539681275AD46005E8023 /* calling image.png */,
-				F8A539641275A3B6005E8023 /* cell.png */,
 				F8882573127582780084B2D0 /* image10.png */,
 				F888255E12757FE50084B2D0 /* xxx.png */,
 				1D3623240D0F684500981E51 /* BetterPhoneAppDelegate.h */,
@@ -283,8 +283,8 @@
 				F81F0B9A12756AF9008BF155 /* StatusFeed.png in Resources */,
 				F888255F12757FE50084B2D0 /* xxx.png in Resources */,
 				F8882574127582780084B2D0 /* image10.png in Resources */,
-				F8A539651275A3B6005E8023 /* cell.png in Resources */,
 				F8A539691275AD46005E8023 /* calling image.png in Resources */,
+				F8BE8242127837D00072DB32 /* cell.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +346,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/CoreTelephony.framework/Headers/**";
 				PREBINDING = NO;
 				SDKROOT = iphoneos4.1;
 			};

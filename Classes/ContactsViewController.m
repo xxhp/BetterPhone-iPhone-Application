@@ -8,6 +8,7 @@
 
 #import "ContactsViewController.h"
 #import "ContactInfo.h"
+#import "InfoViewController.h"
 
 @implementation ContactsViewController
 
@@ -17,51 +18,172 @@
 {
     [super viewDidLoad];
 	
-	//ABUnknownPersonViewController* picker = [[ABUnknownPersonViewController alloc] init];
+	//hiding subViews
+	_view1.hidden = YES;
 	
-	ABPeoplePickerNavigationController* picker = [[ABPeoplePickerNavigationController alloc] init]; 
-//		
-	picker.navigationItem.leftBarButtonItem.enabled = NO;
-//	
-	picker.peoplePickerDelegate = self;
+	//adding button on navigation bar
+	UIBarButtonItem*	rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
+																				 target:self 
+																				 action:@selector(addNewContacts:)];
+	self.navigationItem.rightBarButtonItem = rightButton;
 	
-	[self.view addSubview:picker.view];
+	//creating address book
+	ABAddressBookRef addressBook = ABAddressBookCreate();
+			
+	CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeople(addressBook);
+	CFIndex      nPeople = ABAddressBookGetPersonCount(addressBook);
+	
+	NSString *contactFirstLast = [[NSString alloc]init];
+	
+	masterList = [[NSMutableArray alloc] init];
+	for (int i = 0; i < nPeople; i++)
+	{
+		ABRecordRef ref = CFArrayGetValueAtIndex(allPeople, i);
 		
+		CFStringRef firstName = ABRecordCopyValue(ref, kABPersonFirstNameProperty);
+		CFStringRef lastName  = ABRecordCopyValue(ref, kABPersonLastNameProperty);
+		
+		
+		
+		if (firstName == nil)
+		{
+			 contactFirstLast = [NSString stringWithFormat: @"%@", lastName];
+		}
+		else if (lastName == nil)
+		{
+			contactFirstLast = [NSString stringWithFormat: @"%@", firstName];
+		}
+	    else  
+		{
+			contactFirstLast = [NSString stringWithFormat: @"%@  %@", firstName,lastName];
+		}
+		
+		
+	  //  NSString *contactFirstLast = [NSString stringWithFormat: @"%@  %@", lastName, firstName];
+//		CFRelease(firstName);
+//		CFRelease(lastName);
+		
+		[masterList addObject:contactFirstLast];
+		//[contactFirstLast release];
+	}
+	
+	//self.list = masterList;
+	//[masterList release];
 }
 
-//- (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker 
-//{
-//    // assigning control back to the main controller
-//	[self dismissModalViewControllerAnimated:YES];
-//}
-//
-//- (BOOL)peoplePickerNavigationController: (ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person {
-//	
-//	// setting the first name
-//    firstName.text = (NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
-//	
-//	// setting the last name
-//    lastName.text = (NSString *)ABRecordCopyValue(person, kABPersonLastNameProperty);	
-//	
-//	// setting the number
-//	/*
-//	 this function will set the first number it finds
-//	 
-//	 if you do not set a number for a contact it will probably
-//	 crash
-//	 */
-//	ABMultiValueRef multi = ABRecordCopyValue(person, kABPersonPhoneProperty);
-//	number.text = (NSString*)ABMultiValueCopyValueAtIndex(multi, 0);
-//	
-//	// remove the controller
-//    [self dismissModalViewControllerAnimated:YES];
-//	
-//    return NO;
-//}
-//
-//- (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier{
-//    return NO;
-//}
+-(void)viewWillAppear:(BOOL)animated
+{
+	[_table reloadData]; 
+}
+
+-(IBAction)addNewContacts:(id)Sender
+{
+	ABNewPersonViewController *newPerson = [[ABNewPersonViewController alloc] init];
+	
+	newPerson.newPersonViewDelegate = self;
+	
+	UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:newPerson];
+	
+		
+	[self presentModalViewController:navigation animated:YES];
+	
+	[newPerson release];
+	[navigation release];	
+}
+
+-(IBAction)dismiss:(id)Sender
+{
+	
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return masterList.count;
+}
+
+
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+	cell.selectionStyle = UITableViewCellSelectionStyleNone;
+	cell.highlighted = NO; 
+	
+    // Configure the cell...
+	
+	cell.textLabel.text = [masterList objectAtIndex:indexPath.row];
+    
+    return cell;
+}
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+	[_searchBrar setShowsCancelButton:YES animated:YES];
+	[self.navigationController setNavigationBarHidden:YES animated:YES];
+	
+	_view1.hidden = NO;
+    _searchBrar.translucent = YES;
+	return YES;
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+	
+	
+         	
+}
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+	_view1.hidden = YES;
+	
+}
+
+- (void)newPersonViewController:(ABNewPersonViewController *)newPersonViewController didCompleteWithNewPerson:(ABRecordRef)person
+{
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
+{
+	[_searchBrar setShowsCancelButton:NO animated:YES];
+	[self.navigationController setNavigationBarHidden:NO animated:YES];
+	_view1.hidden = YES;
+	[_searchBrar resignFirstResponder];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+    // Navigation logic may go here. Create and push another view controller.
+	
+	 InfoViewController *infoViewController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
+    
+	 // Pass the selected object to the new view controller.
+	 [self.navigationController pushViewController:infoViewController animated:YES];
+	 [infoViewController release];
+	 
+}
+
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+	[_searchBrar resignFirstResponder];
+}
+
 
 
 

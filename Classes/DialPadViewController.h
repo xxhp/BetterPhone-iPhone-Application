@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface DialPadViewController : UIViewController
+@interface DialPadViewController : UIViewController 
 {
 
 	IBOutlet UIButton* _btn;
@@ -27,13 +27,10 @@
 	IBOutlet UIButton* _btn12;
 	IBOutlet UIButton* _btn13;
 	IBOutlet UIButton* _btn14;
-	IBOutlet UIButton* _btn15;
 	IBOutlet UIButton* _btn16;
 	
-	
-	IBOutlet UITextView* _text;
+	IBOutlet UITextField* _text;
 	NSMutableArray* str;
-			
 }
 
 -(IBAction)firstBttonTapped:(id)Sender;
@@ -50,7 +47,25 @@
 -(IBAction)tweleveBttonTapped:(id)Sender;
 -(IBAction)therteenBttonTapped:(id)Sender;
 -(IBAction)fourteenBttonTapped:(id)Sender;
--(IBAction)fifteenBttonTapped:(id)Sender;
 
+extern NSString * const notifying;
 
 @end
+
+
+
+
+@interface myButton : UIButton
+{
+	IBOutlet UIButton* _btn15;
+	NSTimer* _holdTimer;
+	NSTimer* _holdAnother;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void) touchesMoved:(NSSet*) touches withEvent:(UIEvent*)event;
+- (void) touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event;
+
+@end
+
+

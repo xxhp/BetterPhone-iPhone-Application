@@ -12,8 +12,15 @@
  
 
 
-@interface ContactsViewController : UIViewController  < ABPeoplePickerNavigationControllerDelegate >
+@interface ContactsViewController : UIViewController  < ABPeoplePickerNavigationControllerDelegate ,ABNewPersonViewControllerDelegate ,UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UITextFieldDelegate>
 {
+	NSMutableArray* masterList;
+	
+	IBOutlet UITableView* _table;
+	IBOutlet UISearchBar* _searchBrar;
+	IBOutlet UINavigationBar* _navBar;
+	
+	IBOutlet UIView* _view1;
 	
 }
 

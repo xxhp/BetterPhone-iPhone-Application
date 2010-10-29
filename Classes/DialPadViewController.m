@@ -9,33 +9,37 @@
 #import "DialPadViewController.h"
 #import "CTCall.h"
 #import "CTCallCenter.h"
+#import "SharedObject.h"
 
+NSString * const notifying = @"DataComplete";
+
+@interface DialPadViewController (private)
+
+-(void)fifteenBttonTapped:(NSNotification *)notif;
+
+@end
 
 @implementation DialPadViewController
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
 	str = [[NSMutableArray alloc] init];
-	_text.textAlignment = UITextAlignmentCenter;
-	_text.textColor = [UIColor whiteColor];
-		
+	_text.textColor     = [UIColor whiteColor];
+	_text.font          = [UIFont systemFontOfSize:44];
+
+	[[SharedObject sharedObj] setRepetion:YES];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fifteenBttonTapped:) name:@"notifying" object:nil]; 
 }
 
-- (void)addstring:(NSString*)string
-{
-  // [str stringByAppendingString:string];
 
-	NSLog(@"%@",str);
-}
-	 
 -(IBAction)firstBttonTapped:(id)Sender
 {
 	NSString* first = @"1";
 	[str addObject:first];
 	
-	NSMutableArray* display = [[NSMutableString alloc] init];	
+	NSMutableString* display = [[NSMutableString alloc] init];	
 		
 	for (int i = 0; i < str.count ; i++)
 	{
@@ -64,6 +68,7 @@
 	_text.text = display1;
 	[display1 release];
 }
+
 -(IBAction)thirdBttonTapped:(id)Sender
 {
 	NSString* first = @"3";
@@ -80,6 +85,7 @@
 	_text.text = display3;
 	[display3 release];
 }
+
 -(IBAction)fourthBttonTapped:(id)Sender
 {
 	NSString* first = @"4";
@@ -183,6 +189,19 @@
 }
 -(IBAction)tenthBttonTapped:(id)Sender
 {
+	NSString* first = @"*";
+	[str addObject:first];
+	
+	NSMutableString* display10 = [[NSMutableString alloc] init];	
+	
+	for (int i = 0; i < str.count ; i++)
+	{
+		[display10 appendString:[str objectAtIndex:i]]; 
+	}
+	
+	_text.text = @"";
+	_text.text = display10;
+	[display10 release];
 
 }
 -(IBAction)elevenBttonTapped:(id)Sender
@@ -203,39 +222,55 @@
 }
 -(IBAction)tweleveBttonTapped:(id)Sender
 {
-	//NSString* second = @"2";
+	NSString* first = @"#";
+	[str addObject:first];
+	
+	NSMutableString* display12 = [[NSMutableString alloc] init];	
+	
+	for (int i = 0; i < str.count ; i++)
+	{
+		[display12 appendString:[str objectAtIndex:i]]; 
+	}
+	
+	_text.text = @"";
+	_text.text = display12;
+	[display12 release];
 }
+
 -(IBAction)therteenBttonTapped:(id)Sender
 {
-	//NSString* second = @"2";
+	NSLog(@"hello");
 }
+
 -(IBAction)fourteenBttonTapped:(id)Sender
 {
-   // NSString *phoneNumber=@"9540359506"; 
-	
-	NSMutableString* call = [[NSMutableString alloc] init];
+    NSMutableString* call = [[NSMutableString alloc] init];
 	
 	for (int i = 0; i < str.count ; i++)
 	{
 		[call appendString:[str objectAtIndex:i]]; 
 	}
 	
+	NSLog(@"hello");
+	
 	NSString *phoneNumberScheme = [NSString stringWithFormat:@"tel:%@",call];
-    //NSlog(phoneNumberScheme);                      
-	phoneNumberScheme = [phoneNumberScheme stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+   	phoneNumberScheme = [phoneNumberScheme stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 		
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumberScheme]];
 	[call release];
 }
--(IBAction)fifteenBttonTapped:(id)Sender
+
+-(void)fifteenBttonTapped:(NSNotification *)notif
 {
 	if (str.count == 0)
 	{
 		NSLog(@"Hello");
+		BOOL repeat = NO;
+		
+		[[SharedObject sharedObj] setRepetion:repeat];
 	}
 	else 
 	{
-		
 		[str removeLastObject];
 		
 		NSMutableString* display15 = [[NSMutableString alloc] init];	
@@ -244,77 +279,76 @@
 		{
 			[display15 appendString:[str objectAtIndex:i]]; 
 		}
-		
+
 		_text.text = @"";
 		_text.text = display15;
 		[display15 release];
-	
-	}
+		
+		BOOL repeat = YES;
+		
+		[[SharedObject sharedObj] setRepetion:repeat];
 }
 
-
-
-
+}
 
 - (void)dealloc
 {
     [super dealloc];
 }
 
--(IBAction)bttonTapped:(id)Sender
-{
-	
-//    NSString *phoneNumber=@"9540359506";                                       
-//	NSString *phoneNumberScheme = [NSString stringWithFormat:@"tel:%@",phoneNumber];
-//	//NSlog(phoneNumberScheme);                      
-//	phoneNumberScheme = [phoneNumberScheme stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//	
-//	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumberScheme]];
-//	
-//	
-//	str = @"1";
-//	
-//	_text.textColor = [UIColor whiteColor];
-//	_text.textAlignment = UITextAlignmentCenter;
-//	
-//	NSMutableArray* sample = [[NSMutableArray alloc] init];
-//    
-//	[sample addObject:str];	
-//	
-//	
-//	
-//	_text.text = 
-	
-	
-	//	CTCall* call = [[CTCall alloc] init];
-	//
-	//	
-	//	CTCallCenter* c = [[CTCallCenter alloc] init];
-	//	
-	//	//c.callEventHandler = ^(CTCall* call)
-	//	//{
-	//		
-	//	NSSet* a = c.currentCalls;
-	//	
-	//	NSArray* aa = [[NSArray alloc] initWithArray:[a allObjects]]; 
-	//	
-	//	call = [aa objectAtIndex:0];
-	//	
-	//	if (call.callState == CTCallStateDisconnected)
-	//	{
-	//		NSLog(@"%@",call.callState);
-	//	}
-	
-	//	c.callEventHandler = ^(CTCall* call)
-	//	{//		
-	//		if (call.callState == CTCallStateDialing) 
-	//		{
-	//		CTCallDisconnect(call); //this do not end call
-	//		}
-	//	};
-	//CFStringRef* ref = call.callState;
-}
-
-
 
 @end
+
+@implementation myButton
+
+
+- (void) touchesBegan:(NSSet*) touches withEvent:(UIEvent*)event
+{	
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"notifying" object:nil];
+	_holdTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(doSomething:) userInfo:nil repeats:NO];
+	[_holdTimer retain];
+}
+
+- (void) touchesMoved:(NSSet*) touches withEvent:(UIEvent*)event
+{	
+	if ([_holdTimer isValid]) {
+		[_holdTimer invalidate];
+	}
+}
+
+- (void) touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
+{	
+	if ([_holdTimer isValid]) 
+	{
+		[_holdTimer invalidate];
+	}
+	
+	if ([_holdAnother isValid]) 
+	{
+		[_holdAnother invalidate];
+	}
+}
+
+- (void)doSomething:(NSTimer *)theTimer
+{
+	_holdAnother = [NSTimer scheduledTimerWithTimeInterval:.05 target:self selector:@selector(dontice:) userInfo:nil repeats:YES];
+	[_holdAnother retain];
+}
+
+- (void)dontice:(NSTimer *)theTimer
+{
+	BOOL testing = [[SharedObject sharedObj] repetion];	
+	if (testing == NO)
+	{
+		
+	}
+	else
+	{
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"notifying" object:nil];
+	}
+
+	
+}
+
+@end
+

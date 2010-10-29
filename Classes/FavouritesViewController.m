@@ -7,50 +7,79 @@
 //
 
 #import "FavouritesViewController.h"
+#import "ContactsViewController.h"
 
 
 @implementation FavouritesViewController
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(void)viewDidLoad
+{
+	UIBarButtonItem*	rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
+																				 target:self 
+																				 action:@selector(addNewContacts:)];
+	self.navigationItem.rightBarButtonItem = rightButton;
+	
+	self.navigationItem.leftBarButtonItem = ((UIViewController*)self).editButtonItem;
+	
 }
-*/
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated 
+{	
+	[super setEditing:editing animated:animated];	
+	[_table setEditing:editing animated:YES];
 }
-*/
 
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	if (editingStyle == UITableViewCellEditingStyleDelete) 
+		[_table reloadData];
+	
+//	
+//	[_table removeObjectAtIndex:indexPath.row];
+//	[_table reloadData];
+	
+}
+
+-(IBAction)addNewContacts:(id)Sender
+{
+      ContactsViewController* contacts = [[ContactsViewController alloc] init];	
+	
+	  	UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:contacts];
+      
+	  [self.navigationController presentModalViewController:navigation animated:YES];
+	
+}
+
+
+#pragma mark -
+#pragma mark tableView DataSource
+
+- (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
+{
+	return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	
+    static NSString *CellIdentifier = @"Cell";
     
-    // Release any cached data, images, etc that aren't in use.
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+    // Configure the cell...
+	
+	    
+    return cell;
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
 
 
-- (void)dealloc {
+- (void)dealloc 
+{
     [super dealloc];
 }
 

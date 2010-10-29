@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
 
-@interface FavouritesViewController : UIViewController 
+@interface FavouritesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate >
 {
-
+	IBOutlet UITableView* _table;
 }
 
 @end

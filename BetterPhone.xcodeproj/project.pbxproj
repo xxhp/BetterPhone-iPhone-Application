@@ -16,8 +16,13 @@
 		F81F0B9812756AF9008BF155 /* DialPad.png in Resources */ = {isa = PBXBuildFile; fileRef = F81F0B9512756AF9008BF155 /* DialPad.png */; };
 		F81F0B9912756AF9008BF155 /* Favourites.png in Resources */ = {isa = PBXBuildFile; fileRef = F81F0B9612756AF9008BF155 /* Favourites.png */; };
 		F81F0B9A12756AF9008BF155 /* StatusFeed.png in Resources */ = {isa = PBXBuildFile; fileRef = F81F0B9712756AF9008BF155 /* StatusFeed.png */; };
+		F81FC95F1279A9BC001F1F46 /* image20.ico in Resources */ = {isa = PBXBuildFile; fileRef = F81FC95D1279A9BC001F1F46 /* image20.ico */; };
+		F81FC9601279A9BC001F1F46 /* image21.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F81FC95E1279A9BC001F1F46 /* image21.tiff */; };
 		F888255F12757FE50084B2D0 /* xxx.png in Resources */ = {isa = PBXBuildFile; fileRef = F888255E12757FE50084B2D0 /* xxx.png */; };
 		F8882574127582780084B2D0 /* image10.png in Resources */ = {isa = PBXBuildFile; fileRef = F8882573127582780084B2D0 /* image10.png */; };
+		F888F6B4127984CD003C0F91 /* SharedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F888F6B3127984CD003C0F91 /* SharedObject.m */; };
+		F89C996F127B245000E3EAD1 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F89C996D127B245000E3EAD1 /* InfoViewController.m */; };
+		F89C9970127B245000E3EAD1 /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F89C996E127B245000E3EAD1 /* InfoViewController.xib */; };
 		F8A539691275AD46005E8023 /* calling image.png in Resources */ = {isa = PBXBuildFile; fileRef = F8A539681275AD46005E8023 /* calling image.png */; };
 		F8BE8242127837D00072DB32 /* cell.png in Resources */ = {isa = PBXBuildFile; fileRef = F8BE8241127837D00072DB32 /* cell.png */; };
 		F8D819A912715AED001BDA83 /* FavouritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D819A712715AED001BDA83 /* FavouritesViewController.m */; };
@@ -55,8 +60,15 @@
 		F81F0B9512756AF9008BF155 /* DialPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DialPad.png; path = Classes/DialPad.png; sourceTree = "<group>"; };
 		F81F0B9612756AF9008BF155 /* Favourites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Favourites.png; path = Classes/Favourites.png; sourceTree = "<group>"; };
 		F81F0B9712756AF9008BF155 /* StatusFeed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StatusFeed.png; path = Classes/StatusFeed.png; sourceTree = "<group>"; };
+		F81FC95D1279A9BC001F1F46 /* image20.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = image20.ico; sourceTree = "<group>"; };
+		F81FC95E1279A9BC001F1F46 /* image21.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = image21.tiff; sourceTree = "<group>"; };
 		F888255E12757FE50084B2D0 /* xxx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xxx.png; sourceTree = "<group>"; };
 		F8882573127582780084B2D0 /* image10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image10.png; sourceTree = "<group>"; };
+		F888F6B2127984CD003C0F91 /* SharedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedObject.h; sourceTree = "<group>"; };
+		F888F6B3127984CD003C0F91 /* SharedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedObject.m; sourceTree = "<group>"; };
+		F89C996C127B245000E3EAD1 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		F89C996D127B245000E3EAD1 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		F89C996E127B245000E3EAD1 /* InfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InfoViewController.xib; path = Classes/InfoViewController.xib; sourceTree = "<group>"; };
 		F8A539681275AD46005E8023 /* calling image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calling image.png"; sourceTree = "<group>"; };
 		F8BE8241127837D00072DB32 /* cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell.png; sourceTree = "<group>"; };
 		F8D819A612715AED001BDA83 /* FavouritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouritesViewController.h; sourceTree = "<group>"; };
@@ -109,6 +121,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F81FC95D1279A9BC001F1F46 /* image20.ico */,
+				F81FC95E1279A9BC001F1F46 /* image21.tiff */,
 				F8BE8241127837D00072DB32 /* cell.png */,
 				F8A539681275AD46005E8023 /* calling image.png */,
 				F8882573127582780084B2D0 /* image10.png */,
@@ -194,6 +208,7 @@
 				F8D819B712715B5B001BDA83 /* DialPadViewController.xib */,
 				F8D819BC12715B70001BDA83 /* SettingsViewController.xib */,
 				F8D819C112715BA9001BDA83 /* ContactviewViewController.xib */,
+				F89C996E127B245000E3EAD1 /* InfoViewController.xib */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -217,6 +232,10 @@
 				F8D819C012715BA9001BDA83 /* ContactviewViewController.m */,
 				F8D819C412715BD4001BDA83 /* ContactEditingViewController.h */,
 				F8D819C512715BD4001BDA83 /* ContactEditingViewController.m */,
+				F888F6B2127984CD003C0F91 /* SharedObject.h */,
+				F888F6B3127984CD003C0F91 /* SharedObject.m */,
+				F89C996C127B245000E3EAD1 /* InfoViewController.h */,
+				F89C996D127B245000E3EAD1 /* InfoViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -285,6 +304,9 @@
 				F8882574127582780084B2D0 /* image10.png in Resources */,
 				F8A539691275AD46005E8023 /* calling image.png in Resources */,
 				F8BE8242127837D00072DB32 /* cell.png in Resources */,
+				F81FC95F1279A9BC001F1F46 /* image20.ico in Resources */,
+				F81FC9601279A9BC001F1F46 /* image21.tiff in Resources */,
+				F89C9970127B245000E3EAD1 /* InfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +327,8 @@
 				F8D819C212715BA9001BDA83 /* ContactviewViewController.m in Sources */,
 				F8D819C712715BD4001BDA83 /* ContactEditingViewController.m in Sources */,
 				F8D81AFF12719E86001BDA83 /* ContactInfo.m in Sources */,
+				F888F6B4127984CD003C0F91 /* SharedObject.m in Sources */,
+				F89C996F127B245000E3EAD1 /* InfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FaceBookContacts.h"
 
 
-@interface SettingsViewController : UIViewController {
+@interface SettingsViewController : UIViewController
+{
+	FaceBookContacts*		_faceBookContacts;
 
 }
+
+-(IBAction)faceBookButtonTapped:(id)Sender;
 
 @end

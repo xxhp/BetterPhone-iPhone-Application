@@ -14,6 +14,9 @@
 @interface FavouritesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate >
 {
 	IBOutlet UITableView* _table;
+	
+	NSArray* favContacts ;
+	
 }
 
 @end

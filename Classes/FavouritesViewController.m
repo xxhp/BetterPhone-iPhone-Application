@@ -8,6 +8,7 @@
 
 #import "FavouritesViewController.h"
 #import "ContactsViewController.h"
+#import "SharedObject.h"
 
 
 @implementation FavouritesViewController
@@ -24,6 +25,15 @@
 	
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+	favContacts  = [[NSArray alloc] initWithArray:[[SharedObject sharedObj] sharedList]];
+	[_table reloadData];
+}
+
+#pragma mark -
+#pragma mark edit button delegate
+
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated 
 {	
 	[super setEditing:editing animated:animated];	
@@ -34,29 +44,30 @@
 {
 	if (editingStyle == UITableViewCellEditingStyleDelete) 
 		[_table reloadData];
-	
-//	
-//	[_table removeObjectAtIndex:indexPath.row];
-//	[_table reloadData];
-	
 }
+
+#pragma mark -
 
 -(IBAction)addNewContacts:(id)Sender
 {
-      ContactsViewController* contacts = [[ContactsViewController alloc] init];	
+    ContactsViewController* contacts = [[ContactsViewController alloc] init];	
 	
-	  	UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:contacts];
-      
-	  [self.navigationController presentModalViewController:navigation animated:YES];
+	UINavigationController *navigation1 = [[UINavigationController alloc] initWithRootViewController:contacts];
 	
+   [self.navigationController presentModalViewController:navigation1 animated:YES];
 }
 
+-(IBAction)dismissModalViews:(id)Sender
+{
+	[self dismissModalViewControllerAnimated:YES];
+}
 
 #pragma mark -
 #pragma mark tableView DataSource
 
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
 {
+	//return favContacts.count;
 	return 1;
 }
 
@@ -72,11 +83,18 @@
     
     // Configure the cell...
 	
-	    
+	//cell.textLabel.text = [favContacts objectAtIndex:indexPath.row];    
+	
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+	
+}
 
+#pragma mark -
+#pragma mark memory managment
 
 - (void)dealloc 
 {

@@ -9,6 +9,7 @@
 #import "ContactsViewController.h"
 #import "ContactInfo.h"
 #import "InfoViewController.h"
+#import "SharedObject.h"
 
 @implementation ContactsViewController
 
@@ -22,32 +23,35 @@
 	_view1.hidden = YES;
 	
 	//adding button on navigation bar
-	UIBarButtonItem*	rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
-																				 target:self 
-																				 action:@selector(addNewContacts:)];
-	self.navigationItem.rightBarButtonItem = rightButton;
-	
+		
 	//creating address book
+		
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+	
 	ABAddressBookRef addressBook = ABAddressBookCreate();
-			
+	
 	CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeople(addressBook);
 	CFIndex      nPeople = ABAddressBookGetPersonCount(addressBook);
 	
 	NSString *contactFirstLast = [[NSString alloc]init];
 	
 	masterList = [[NSMutableArray alloc] init];
+	
 	for (int i = 0; i < nPeople; i++)
 	{
 		ABRecordRef ref = CFArrayGetValueAtIndex(allPeople, i);
 		
+		
+		
 		CFStringRef firstName = ABRecordCopyValue(ref, kABPersonFirstNameProperty);
 		CFStringRef lastName  = ABRecordCopyValue(ref, kABPersonLastNameProperty);
 		
-		
-		
 		if (firstName == nil)
 		{
-			 contactFirstLast = [NSString stringWithFormat: @"%@", lastName];
+			contactFirstLast = [NSString stringWithFormat: @"%@", lastName];
 		}
 		else if (lastName == nil)
 		{
@@ -55,31 +59,49 @@
 		}
 	    else  
 		{
-			contactFirstLast = [NSString stringWithFormat: @"%@  %@", firstName,lastName];
+			contactFirstLast = [NSString stringWithFormat: @"%@ %@", firstName,lastName];
 		}
 		
-		
-	  //  NSString *contactFirstLast = [NSString stringWithFormat: @"%@  %@", lastName, firstName];
-//		CFRelease(firstName);
-//		CFRelease(lastName);
-		
 		[masterList addObject:contactFirstLast];
-		//[contactFirstLast release];
 	}
 	
-	//self.list = masterList;
-	//[masterList release];
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
+	
+	if (self.tabBarController.selectedIndex == 2)
+	{
+		UIBarButtonItem*	rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
+																					 target:self 
+																					 action:@selector(addNewContacts:)];
+		self.navigationItem.rightBarButtonItem = rightButton;
+	}
+		
+	if (self.tabBarController.selectedIndex == 0)
+	{
+		NSLog(@"hello tab");
+		
+		UIBarButtonItem*	leftButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel 
+																					 target:self 
+																					 action:@selector(dismissModalViews:)];
+		self.navigationItem.leftBarButtonItem = leftButton;
+	}
+	
+	_faceBookCont  = [[NSArray alloc] initWithArray:[[SharedObject sharedObj] sharedContacts]];
+	
 	[_table reloadData]; 
 }
+
+-(IBAction)dismissModalViews:(id)Sender
+{
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+
+
+#pragma mark -
+#pragma mark action method
 
 -(IBAction)addNewContacts:(id)Sender
 {
 	ABNewPersonViewController *newPerson = [[ABNewPersonViewController alloc] init];
-	
 	newPerson.newPersonViewDelegate = self;
 	
 	UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:newPerson];
@@ -91,10 +113,8 @@
 	[navigation release];	
 }
 
--(IBAction)dismiss:(id)Sender
-{
-	
-}
+#pragma mark -
+#pragma mark tableView datasource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -121,15 +141,63 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
+	cell.accessoryView = nil;
+	
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	cell.highlighted = NO; 
 	
     // Configure the cell...
 	
+	NSString* str  = [masterList objectAtIndex:indexPath.row];
+	 
+	//CGRect rect = CGRectMake(10, 10, 20, 20);
+	UIImage* img = [UIImage imageNamed:@"image20.ico"];
+	UIImageView* imageView = [[UIImageView alloc] initWithImage:img];
+	
+	[imageView setImage:img];
+	
+	//int i = indexPath.row;
+	
+	for (int i = 0; i < _faceBookCont.count; i++)
+	{
+		NSString* str1 = [_faceBookCont objectAtIndex:i]; 
+			
+		if ([str isEqualToString:str1]) 
+		{
+			if (indexPath.row == 2)
+			{
+				NSLog(@"%d",indexPath.row);
+			}
+			cell.accessoryView = imageView;  
+		}
+	}
+		
 	cell.textLabel.text = [masterList objectAtIndex:indexPath.row];
-    
     return cell;
 }
+
+#pragma mark -
+#pragma mark tableView delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+    // Navigation logic may go here. Create and push another view controller.
+	InfoViewController *infoViewController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
+    
+	[[SharedObject  sharedObj] setPersonNo:indexPath.row];
+	
+	// Pass the selected object to the new view controller.
+	[self.navigationController pushViewController:infoViewController animated:YES];
+	[infoViewController release];
+	
+	
+	
+	[[SharedObject sharedObj] addMutableArrayElements:[masterList objectAtIndex:indexPath.row]];
+}
+
+
+#pragma mark -
+#pragma mark searchBar delegate
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
@@ -141,16 +209,9 @@
 	return YES;
 }
 
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
-{
-	
-	
-         	
-}
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
 	_view1.hidden = YES;
-	
 }
 
 - (void)newPersonViewController:(ABNewPersonViewController *)newPersonViewController didCompleteWithNewPerson:(ABRecordRef)person
@@ -166,19 +227,6 @@
 	[_searchBrar resignFirstResponder];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
-{
-    // Navigation logic may go here. Create and push another view controller.
-	
-	 InfoViewController *infoViewController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
-    
-	 // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:infoViewController animated:YES];
-	 [infoViewController release];
-	 
-}
-
-
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
 	[_searchBrar resignFirstResponder];
@@ -186,8 +234,12 @@
 
 
 
+#pragma mark -
+#pragma mark UISearchDisplayController Delegate Methods
 
 
+#pragma mark -
+#pragma mark memory managment
 
 - (void)dealloc
 {

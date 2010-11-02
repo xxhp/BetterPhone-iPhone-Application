@@ -239,7 +239,25 @@ NSString * const notifying = @"DataComplete";
 
 -(IBAction)therteenBttonTapped:(id)Sender
 {
-	NSLog(@"hello");
+	UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Create New Contact", @"Add to Existing contact" ,nil ];
+	//[actionSheet addButtonWithTitle:@"Add to existing contact"];
+	//[actionSheet cancelButtonIndex:2];
+	
+	[actionSheet showInView:self.view.superview];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+//	switch (buttonIndex)
+//	{
+//		case 0:
+//			
+//			break;
+//		default:
+//			break;
+//	}
+//	int i = buttonIndex;
+	
 }
 
 -(IBAction)fourteenBttonTapped:(id)Sender

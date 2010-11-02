@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface DialPadViewController : UIViewController 
+@interface DialPadViewController : UIViewController <UIActionSheetDelegate>
 {
 
 	IBOutlet UIButton* _btn;

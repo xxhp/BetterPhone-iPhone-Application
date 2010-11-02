@@ -12,15 +12,24 @@
  
 
 
-@interface ContactsViewController : UIViewController  < ABPeoplePickerNavigationControllerDelegate ,ABNewPersonViewControllerDelegate ,UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UITextFieldDelegate>
+@interface ContactsViewController : UIViewController  < ABNewPersonViewControllerDelegate ,UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate >
 {
 	NSMutableArray* masterList;
 	
-	IBOutlet UITableView* _table;
-	IBOutlet UISearchBar* _searchBrar;
-	IBOutlet UINavigationBar* _navBar;
+	IBOutlet UITableView*      _table;
+	IBOutlet UISearchBar*      _searchBrar;
+	IBOutlet UINavigationBar*  _navBar;
 	
 	IBOutlet UIView* _view1;
+	NSMutableArray	*filteredListContent;
+	
+	// The saved state of the search UI if a memory warning removed the view.
+    NSString		*savedSearchTerm;
+    NSInteger		savedScopeButtonIndex;
+    BOOL			searchWasActive;
+	
+	NSArray*       _faceBookCont;
+	
 	
 }
 

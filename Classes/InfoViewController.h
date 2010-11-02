@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
 
-@interface InfoViewController : UITableViewController {
+@interface InfoViewController : UITableViewController 
+{
 
 }
 

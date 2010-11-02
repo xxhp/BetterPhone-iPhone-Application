@@ -13,10 +13,21 @@
 {
 
 	BOOL _repetion;
+	
+	int  _personNo; 
+	
+	NSMutableArray* _sharedList;
+	
+	NSMutableArray* _sharedContacts;
 }
 
 @property (nonatomic, readwrite) BOOL  repetion; 
+@property (nonatomic, retain) NSMutableArray* sharedList; 
+@property (nonatomic, retain) NSMutableArray* sharedContacts;
+@property (nonatomic) int personNo; 
 
 + (SharedObject*) sharedObj;
+-(void)addMutableArrayElements:(NSString*)str; 
+-(void)addMutableArrayElements1:(NSString*)str;
 
 @end

@@ -11,46 +11,24 @@
 
 @implementation InfoViewController
 
-
-#pragma mark -
-#pragma mark View lifecycle
-
-/*
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+-(void)viewDidLoad
+{
+//	ABAddressBookRef addressBook = ABAddressBookCreate();
+//	
+//	CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeople(addressBook);
+//	CFIndex      nPeople = ABAddressBookGetPersonCount(addressBook);
+//	
+//		
+//		
+//	for (int i = 0; i < nPeople; i++)
+//	{
+//		ABRecordRef ref = CFArrayGetValueAtIndex(allPeople, i);
+//				
+//		CFStringRef firstName = ABRecordCopyValue(ref, kABPersonPhoneMainLabel);
+//		NSLog(@"hello");
+//		//CFStringRef lastName  = ABRecordCopyValue(ref, kABPersonLastNameProperty);
+//	}		
 }
-*/
-
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 
 #pragma mark -
@@ -80,10 +58,25 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    // Configure the cell...
+	cell.textLabel.textColor = [[UIColor alloc]initWithRed:0.3 green:0.5 blue:0.7 alpha:1];
 	
-	cell.textLabel.text = @"hello";
-    
+    // Configure the cell...
+	switch (indexPath.row)
+	{
+		case 0:
+			   cell.textLabel.text = @"home";
+			   break;
+	    case 1:
+			  	cell.textLabel.text = @"mobile";
+				break;
+        case  2:
+				cell.textLabel.text = @"work";
+			    break;
+ 		default:
+			    NSLog(@"hello");
+			    break;
+	}
+	  
     return cell;
 }
 

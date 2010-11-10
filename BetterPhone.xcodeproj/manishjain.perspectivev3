@@ -234,6 +234,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -320,8 +322,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -339,7 +339,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>F8AF0F95128A6C4D007BE937</string>
+										<string>F8AF0FA7128A7147007BE937</string>
 										<key>history</key>
 										<array>
 											<string>F8D81AC2127199A3001BDA83</string>
@@ -422,7 +422,6 @@
 											<string>F888E4C812895A9000F06C34</string>
 											<string>F888E4C912895A9000F06C34</string>
 											<string>F888E52B128961E200F06C34</string>
-											<string>F888E52E128961E200F06C34</string>
 											<string>F888E530128961E200F06C34</string>
 											<string>F888E532128961E200F06C34</string>
 											<string>F888E5F81289719300F06C34</string>
@@ -440,7 +439,8 @@
 											<string>F8AF0F7A128A6C04007BE937</string>
 											<string>F8AF0F8E128A6C32007BE937</string>
 											<string>F8AF0F93128A6C4D007BE937</string>
-											<string>F8AF0F94128A6C4D007BE937</string>
+											<string>F8AF0FA5128A7147007BE937</string>
+											<string>F8AF0FA6128A7147007BE937</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -454,18 +454,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1084, 566}}</string>
+								<string>{{0, 0}, {1084, 551}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 117 1440 761 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>566pt</string>
+							<string>551pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>149pt</string>
+							<string>164pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -554,7 +554,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1084, 122}}</string>
+										<string>{{10, 27}, {1084, 137}}</string>
 										<key>RubberWindowFrame</key>
 										<string>0 117 1440 761 0 0 1440 878 </string>
 									</dict>
@@ -779,7 +779,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>F8AF0F91128A6C32007BE937</string>
 		<string>F8AF0F92128A6C32007BE937</string>
 		<string>F8AF0F87128A6C04007BE937</string>
 		<string>/Users/manishjain/BetterPhone-iPhone-Application/BetterPhone.xcodeproj</string>

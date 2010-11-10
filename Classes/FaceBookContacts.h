@@ -11,6 +11,7 @@
 {
 	FBSession*		_session;
 	FBLoginDialog*	_loginDialog;
+	FBRequest*       _req; 
 	
 	BOOL _posting;
 	BOOL _testing;  
@@ -21,5 +22,6 @@
 
 - (void) showLoginDialog;
 - (void) logout;
+- (void) requestForMessages;
 
 @end

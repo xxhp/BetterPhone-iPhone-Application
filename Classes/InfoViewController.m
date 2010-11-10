@@ -11,25 +11,51 @@
 
 @implementation InfoViewController
 
+@synthesize rowNO = _rowNO;
+
 -(void)viewDidLoad
 {
-//	ABAddressBookRef addressBook = ABAddressBookCreate();
-//	
-//	CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeople(addressBook);
-//	CFIndex      nPeople = ABAddressBookGetPersonCount(addressBook);
-//	
-//		
-//		
-//	for (int i = 0; i < nPeople; i++)
-//	{
-//		ABRecordRef ref = CFArrayGetValueAtIndex(allPeople, i);
-//				
-//		CFStringRef firstName = ABRecordCopyValue(ref, kABPersonPhoneMainLabel);
-//		NSLog(@"hello");
-//		//CFStringRef lastName  = ABRecordCopyValue(ref, kABPersonLastNameProperty);
-//	}		
+
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+	ABAddressBookRef addressBookRef = ABAddressBookCreate(); 
+	
+	CFArrayRef allPeopleRef = ABAddressBookCopyArrayOfAllPeople(addressBookRef);  
+		
+	ABRecordRef recordRef   = CFArrayGetValueAtIndex(allPeopleRef, _rowNO);
+		
+	CFStringRef allRecordPhonesRef = ABRecordCopyValue(recordRef, kABPersonPhoneProperty);
+		
+	CFIndex nPhones = ABMultiValueGetCount(allRecordPhonesRef);
+	
+	//CFArrayRef array =   ABMultiValueCopyArrayOfAllValues(allRecordPhonesRef);
+	
+	switch (nPhones)
+	{
+		case 1:
+			   currentPhoneNumberRef = ABMultiValueCopyValueAtIndex(allRecordPhonesRef, 0);
+			   break;
+		case 2:
+			   currentPhoneNumberRef = ABMultiValueCopyValueAtIndex(allRecordPhonesRef, 0);
+			   currentWorkNumberRef  = ABMultiValueCopyValueAtIndex(allRecordPhonesRef, 1);
+			   break;
+		case 3:
+			   currentPhoneNumberRef = ABMultiValueCopyValueAtIndex(allRecordPhonesRef, 0);
+			   currentWorkNumberRef  = ABMultiValueCopyValueAtIndex(allRecordPhonesRef, 1);
+			   currentHomeNumberRef  = ABMultiValueCopyValueAtIndex(allRecordPhonesRef, 2);
+	           break;
+		case 0:
+			   currentPhoneNumberRef = NULL;
+			   currentWorkNumberRef  = NULL;
+			   currentHomeNumberRef  = NULL;		
+			   break;
+	}
+	
+	
+	[_table reloadData];
+}
 
 #pragma mark -
 #pragma mark Table view data source
@@ -49,7 +75,8 @@
 
 
 // Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
+{
     
     static NSString *CellIdentifier = @"Cell";
     
@@ -60,17 +87,21 @@
     
 	cell.textLabel.textColor = [[UIColor alloc]initWithRed:0.3 green:0.5 blue:0.7 alpha:1];
 	
+	NSString* str = [NSString stringWithFormat: @"mobile      %@",currentPhoneNumberRef]; 
+	NSString* str1 = [NSString stringWithFormat:@"home        %@",currentHomeNumberRef];
+	NSString* str2 = [NSString stringWithFormat:@"work         %@",currentWorkNumberRef];
+	
     // Configure the cell...
 	switch (indexPath.row)
 	{
 		case 0:
-			   cell.textLabel.text = @"home";
+			   cell.textLabel.text = str1;
 			   break;
 	    case 1:
-			  	cell.textLabel.text = @"mobile";
+			  	cell.textLabel.text = str;
 				break;
         case  2:
-				cell.textLabel.text = @"work";
+				cell.textLabel.text = str2;
 			    break;
  		default:
 			    NSLog(@"hello");
@@ -81,78 +112,11 @@
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
 #pragma mark -
-#pragma mark Table view delegate
+#pragma mark memory managment
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
-}
-
-
-#pragma mark -
-#pragma mark Memory management
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Relinquish ownership any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
-}
-
-
-- (void)dealloc {
+- (void)dealloc 
+{
     [super dealloc];
 }
 

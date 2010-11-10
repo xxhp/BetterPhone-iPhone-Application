@@ -248,16 +248,33 @@ NSString * const notifying = @"DataComplete";
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-//	switch (buttonIndex)
-//	{
-//		case 0:
-//			
-//			break;
-//		default:
-//			break;
-//	}
+	switch (buttonIndex)
+	{
+		case 0:
+		{
+				ABNewPersonViewController *newPerson = [[ABNewPersonViewController alloc] init];
+				newPerson.newPersonViewDelegate = self;
+			
+			    
+				UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:newPerson];
+						
+				[self presentModalViewController:navigation animated:YES];
+			
+			    [newPerson release];
+			    [navigation release];
+		}
+			      break;
+		default:
+			     
+			      break;
+	}
 //	int i = buttonIndex;
 	
+}
+
+- (void)newPersonViewController:(ABNewPersonViewController *)newPersonViewController didCompleteWithNewPerson:(ABRecordRef)person
+{
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 -(IBAction)fourteenBttonTapped:(id)Sender

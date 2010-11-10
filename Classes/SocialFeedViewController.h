@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FaceBookContacts.h"
+#import "FBRequest.h"
+#import "FBSession.h"
 
-
-@interface SocialFeedViewController : UIViewController 
+@interface SocialFeedViewController : UIViewController  <UITableViewDataSource, UITableViewDelegate, FBSessionDelegate, FBRequestDelegate> 
 {
+	IBOutlet UITableView* _table;
+	
+	FaceBookContacts* faceBooks1;
+
      
 }
 

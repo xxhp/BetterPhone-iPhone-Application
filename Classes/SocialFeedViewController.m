@@ -9,48 +9,112 @@
 #import "SocialFeedViewController.h"
 
 
+
+
 @implementation SocialFeedViewController
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
+-(void)viewDidLoad
+{
+	faceBooks1 = [[FaceBookContacts alloc] init];
 }
-*/
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(void)viewWillAppear:(BOOL)animated
+{
+	
+    [faceBooks1 requestForMessages];
 }
-*/
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+
+
+
+- (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
+{
+	//return favContacts.count;
+	return 1;
 }
-*/
 
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	
+    static NSString *CellIdentifier = @"Cell";
     
-    // Release any cached data, images, etc that aren't in use.
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+    // Configure the cell...
+	
+	//cell.textLabel.text = [favContacts objectAtIndex:indexPath.row];    
+	
+    return cell;
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+	
+}
+
+#pragma mark -
+
+- (void) session:(FBSession*)session didLogin:(FBUID)uid
+{
+	//NSString* msg = @"You have sucecessfully logged in";
+	//UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message: msg
+	//  delegate:self cancelButtonTitle: @"OK" otherButtonTitles: nil];
+	//	[alert show];
+	
+
+
+
 }
 
 
-- (void)dealloc {
+- (void) request:(FBRequest*)request didLoad:(id)result
+{
+//	NSArray* friends = result;
+//    
+//	NSDictionary* friend = nil;
+//	for (friend in friends)
+//	{
+//		NSString* name = [[friend objectForKey:@"name"] retain];
+//		
+//		NSArray* data = [[NSArray alloc] initWithArray:[[SharedObject sharedObj] sharedContacts]];
+//		
+//		if(data.count == 0)
+//		{
+//			[[SharedObject sharedObj] addMutableArrayElements1:name];
+//		}
+//		else
+//		{
+//			for (int i = 0; i < data.count ; i++)
+//		    {
+//			    NSString* str = [data objectAtIndex:i];
+//				
+//				if (![str isEqualToString:name])
+//			    {
+//					NSLog(@"%d",i);
+//					_testing = YES;
+//				}
+//				else
+//				{
+//					_testing = NO;
+//					break;
+//				}
+//			}
+//		}
+//		
+//		if (_testing == YES)
+//		{
+//			[[SharedObject sharedObj] addMutableArrayElements1:name];
+//		}
+//	}	
+}
+
+
+
+- (void)dealloc
+{
     [super dealloc];
 }
 

@@ -10,6 +10,7 @@
 #import "ContactInfo.h"
 #import "InfoViewController.h"
 #import "SharedObject.h"
+#import "InfoViewController.h"
 
 @implementation ContactsViewController
 
@@ -181,9 +182,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
+	
+	
     // Navigation logic may go here. Create and push another view controller.
 	InfoViewController *infoViewController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
     
+	[infoViewController setRowNO:indexPath.row];
+	
 	[[SharedObject  sharedObj] setPersonNo:indexPath.row];
 	
 	// Pass the selected object to the new view controller.

@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
 
-@interface DialPadViewController : UIViewController <UIActionSheetDelegate>
+@interface DialPadViewController : UIViewController <UIActionSheetDelegate, ABNewPersonViewControllerDelegate>
 {
 
 	IBOutlet UIButton* _btn;

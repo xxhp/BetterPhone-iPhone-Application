@@ -14,6 +14,14 @@
 @interface InfoViewController : UITableViewController 
 {
 
-}
+	CFStringRef currentPhoneNumberRef;
+	CFStringRef currentHomeNumberRef;
+	CFStringRef currentWorkNumberRef;
+
+	NSInteger  _rowNO;
+	IBOutlet  UITableView* _table; 
+ }
+
+@property (nonatomic, readwrite) NSInteger rowNO;
 
 @end

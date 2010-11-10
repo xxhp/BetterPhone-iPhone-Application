@@ -66,7 +66,6 @@ static NSString*	kGetSessionProxy = kFacebookSessionProxy; // @"<YOUR SESSION CA
 	//UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message: msg
 	   								 //  delegate:self cancelButtonTitle: @"OK" otherButtonTitles: nil];
 	//	[alert show];
-	
 	NSString* fql = [NSString stringWithFormat:
 					 @"select name from user where uid in (select uid2 from friend where uid1 = %lld)", _session.uid];
 	
@@ -84,12 +83,16 @@ static NSString*	kGetSessionProxy = kFacebookSessionProxy; // @"<YOUR SESSION CA
 
 - (void) request:(FBRequest*)request didLoad:(id)result
 {
-	NSArray* friends = result;
-    
+	if(request.method == @"facebook.status.get")
+	
+	{
+	
+		NSArray* friends = result;
+    NSLog(@"hello");
 	NSDictionary* friend = nil;
 	for (friend in friends)
 	{
-		NSString* name = [[friend objectForKey:@"name"] retain];
+		NSString* name = [[friend objectForKey:@"message"] retain];
 		
 		NSArray* data = [[NSArray alloc] initWithArray:[[SharedObject sharedObj] sharedContacts]];
 		
@@ -121,11 +124,29 @@ static NSString*	kGetSessionProxy = kFacebookSessionProxy; // @"<YOUR SESSION CA
 			[[SharedObject sharedObj] addMutableArrayElements1:name];
 		}
 	}	
+	//[request release];
+	}
+	else
+	{
+		NSLog(@"Not eneter");
+	}
+
 }
 
 - (void) request:(FBRequest*)request didFailWithError:(NSError*)error
 {
 	NSLog(@"Error(%d) %@", error.code, error.localizedDescription);
+}
+
+- (void) requestForMessages
+{
+//	NSString* fql1 = [NSString stringWithFormat:
+//					  @"select message from status where uid = me() "];
+//	
+//	NSDictionary* params1 = [NSDictionary dictionaryWithObject:fql1 forKey:@"query"];
+//	
+//	[[FBRequest requestWithDelegate:self] call:@"facebook.status.get" params:params1];
+
 }
 
 #pragma mark -
@@ -134,6 +155,7 @@ static NSString*	kGetSessionProxy = kFacebookSessionProxy; // @"<YOUR SESSION CA
 - (void) dealloc
 {
 	[_session	release];
+	//[request release];
     [super		dealloc];
 }
 

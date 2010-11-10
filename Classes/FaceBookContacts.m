@@ -83,54 +83,52 @@ static NSString*	kGetSessionProxy = kFacebookSessionProxy; // @"<YOUR SESSION CA
 
 - (void) request:(FBRequest*)request didLoad:(id)result
 {
-	if(request.method == @"facebook.status.get")
-	
+	if(request.method == @"facebook.fql.query")
 	{
-	
 		NSArray* friends = result;
-    NSLog(@"hello");
-	NSDictionary* friend = nil;
-	for (friend in friends)
-	{
-		NSString* name = [[friend objectForKey:@"message"] retain];
 		
-		NSArray* data = [[NSArray alloc] initWithArray:[[SharedObject sharedObj] sharedContacts]];
+		NSDictionary* friend = nil;
 		
-		if(data.count == 0)
+		for (friend in friends)
 		{
-			[[SharedObject sharedObj] addMutableArrayElements1:name];
-		}
-		else
-		{
-			for (int i = 0; i < data.count ; i++)
-		    {
-			    NSString* str = [data objectAtIndex:i];
+			NSString* name = [[friend objectForKey:@"name"] retain];
 			
-				if (![str isEqualToString:name])
-			    {
-					 NSLog(@"%d",i);
-				     _testing = YES;
-				}
-				else
+			NSArray* data = [[NSArray alloc] initWithArray:[[SharedObject sharedObj] sharedContacts]];
+			
+			if(data.count == 0)
+			{
+				[[SharedObject sharedObj] addMutableArrayElements1:name];
+			}
+			else
+			{
+				for (int i = 0; i < data.count ; i++)
 				{
-					_testing = NO;
-					break;
+					NSString* str = [data objectAtIndex:i];
+					
+					if (![str isEqualToString:name])
+					{
+						NSLog(@"%d",i);
+						_testing = YES;
+					}
+					else
+					{
+						_testing = NO;
+						break;
+					}
 				}
 			}
+			
+			if (_testing == YES)
+			{
+				[[SharedObject sharedObj] addMutableArrayElements1:name];
+			}
 		}
-		
-		if (_testing == YES)
-		{
-			[[SharedObject sharedObj] addMutableArrayElements1:name];
-		}
-	}	
-	//[request release];
 	}
 	else
 	{
-		NSLog(@"Not eneter");
+		
 	}
-
+	
 }
 
 - (void) request:(FBRequest*)request didFailWithError:(NSError*)error

@@ -7,115 +7,191 @@
 //
 
 #import "SocialFeedViewController.h"
+#import "FaceBookContacts.h"
+#import "DataManager.h"
+#import "FBRequest.h"
 
 
+@interface SocialFeedViewController (privateMethod) 
+
+- (NSString*) getRecentUpdateFriendWithName:(NSString*)string;
+- (void) checkingContacts;
+
+@end
 
 
 @implementation SocialFeedViewController
 
 -(void)viewDidLoad
 {
-	faceBooks1 = [[FaceBookContacts alloc] init];
+	_contacts         = [[NSArray alloc] init];
+	_faceBookContacts = [[NSArray alloc] init];
+	_local            = [[NSArray alloc] init];
+	
+	[_activity startAnimating];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadDataofTable:)    name:@"notify" object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changingViewData:)     name:@"connectionResponse" object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(chagingContentValue:)  name:@"connectionResponsepositive" object:nil];
+	
+	_table.hidden = NO;
+	[self.view addSubview:_table]; 
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
+	[self performSelector:@selector(removeSpinner)   withObject:_activity   afterDelay:3.0];
 	
-    [faceBooks1 requestForMessages];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"connectionNotice" object:nil];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"noticeFromSocialFeed" object:nil];
+	
+	_contacts          = [[DataManager sharedObj] masterContactList];
+	_faceBookContacts  = [[NSArray alloc] initWithArray:[[DataManager sharedObj] sharedContacts]];
+	_local             = [[DataManager sharedObj] messageData];
+	
+	
+	if (_tableContent == NO)
+	{
+		[self checkingContacts];
+	}
+	[_table reloadData]; 
 }
 
+-(void) changingViewData:(NSNotification*)notification
+{
+	[self.view  addSubview:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"feed_not_connected.png"]]]; 
+	_tableContent = YES;
+	_table.hidden = YES;
+}
 
+-(void) chagingContentValue:(NSNotification*)notification
+{
+	_tableContent = NO;
+}
 
+- (void)removeSpinner
+{
+    [_activity stopAnimating];
+    [_activity removeFromSuperview];
+}
+
+-(IBAction)reloadDataofTable:(id)Sender
+{
+	[self viewWillAppear:YES];
+}
+
+#pragma mark -
+#pragma mark table datasource
 
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
 {
-	//return favContacts.count;
-	return 1;
+	 return _contacts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	static NSString *CellIdentifier = @"Cell";
 	
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
-    
-    // Configure the cell...
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	if (cell == nil) {
+	cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+	}
 	
-	//cell.textLabel.text = [favContacts objectAtIndex:indexPath.row];    
+	cell.accessoryView = nil;
+	cell.detailTextLabel.text = nil;
+	cell.selectionStyle = UITableViewCellSelectionStyleNone;
+	cell.highlighted = NO; 
 	
-    return cell;
+	// Configure the cell...
+	
+	_local = [[DataManager sharedObj] messageData];
+	
+	NSString* str = [_contacts objectAtIndex:indexPath.row];
+	
+	UIImage* img = [UIImage imageNamed:@"image20.ico"];
+	UIImageView* imageView = [[UIImageView alloc] initWithImage:img];
+	
+	[imageView setImage:img];
+	
+	for (int i = 0; i < _faceBookContacts.count; i++)
+	{
+		NSString* str1 = [_faceBookContacts objectAtIndex:i]; 
+	
+			if ([str isEqualToString:str1]) 
+			{
+				_counts = _counts + 1;
+				
+				if (_local.count > 0)
+				{
+					cell.detailTextLabel.text = [self getRecentUpdateFriendWithName:str];
+				}
+
+				cell.accessoryView = imageView; 
+			}
+	}
+	
+	cell.textLabel.text = [_contacts objectAtIndex:indexPath.row];
+	return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+- (NSString*) getRecentUpdateFriendWithName:(NSString*)string
 {
-	
+	for (id friend in _local)
+	{
+		NSString* name = [friend valueForKey:@"name"];
+		if ([name isKindOfClass:[NSNull class]])
+			 return @"";
+			 
+		if (name && [name isEqualToString:string])
+		{
+			NSDictionary* status = [friend objectForKey:@"status"];
+			NSString* statusMessage = [status valueForKey:@"message"];
+
+			return ([statusMessage isKindOfClass:[NSNull class]]) ? @"" : statusMessage;
+		}
+	}
+	return @"";
 }
+
+
+-(void) checkingContacts
+{
+	_counts = 0;
+	for (int i = 0; i < _contacts.count; i++)
+	{
+		NSString* string = [_contacts objectAtIndex:i];
+		
+		for (int j = 0; j < _faceBookContacts.count; j++)
+		{
+			NSString* string1 = [_faceBookContacts objectAtIndex:j]; 
+			
+			if ([string isEqualToString:string1]) 
+			{
+				_counts = _counts + 1;
+			}
+		}
+	}
+	if (_counts == 0)
+	{
+		_table.hidden = YES;
+		[self.view  addSubview:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"feed_no_match.png"]]]; 
+	}
+	else
+	{
+		_table.hidden = NO;
+		[self.view addSubview:_table];
+	}
+}
+
 
 #pragma mark -
-
-- (void) session:(FBSession*)session didLogin:(FBUID)uid
-{
-	//NSString* msg = @"You have sucecessfully logged in";
-	//UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message: msg
-	//  delegate:self cancelButtonTitle: @"OK" otherButtonTitles: nil];
-	//	[alert show];
-	
-
-
-
-}
-
-
-- (void) request:(FBRequest*)request didLoad:(id)result
-{
-//	NSArray* friends = result;
-//    
-//	NSDictionary* friend = nil;
-//	for (friend in friends)
-//	{
-//		NSString* name = [[friend objectForKey:@"name"] retain];
-//		
-//		NSArray* data = [[NSArray alloc] initWithArray:[[SharedObject sharedObj] sharedContacts]];
-//		
-//		if(data.count == 0)
-//		{
-//			[[SharedObject sharedObj] addMutableArrayElements1:name];
-//		}
-//		else
-//		{
-//			for (int i = 0; i < data.count ; i++)
-//		    {
-//			    NSString* str = [data objectAtIndex:i];
-//				
-//				if (![str isEqualToString:name])
-//			    {
-//					NSLog(@"%d",i);
-//					_testing = YES;
-//				}
-//				else
-//				{
-//					_testing = NO;
-//					break;
-//				}
-//			}
-//		}
-//		
-//		if (_testing == YES)
-//		{
-//			[[SharedObject sharedObj] addMutableArrayElements1:name];
-//		}
-//	}	
-}
-
-
+#pragma mark memory managment
 
 - (void)dealloc
 {
     [super dealloc];
+	_ReleaseObject(_faceBookContacts);
+	_ReleaseObject(_contacts);
 }
 
 

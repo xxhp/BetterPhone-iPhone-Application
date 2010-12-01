@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
 @interface BetterPhoneAppDelegate : NSObject <UIApplicationDelegate> 
 {
@@ -16,6 +18,8 @@
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+
+- (void) getContactsList;
 
 @end
 

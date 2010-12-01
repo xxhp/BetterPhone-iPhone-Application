@@ -32,7 +32,7 @@
 	IBOutlet UIButton* _btn16;
 	
 	IBOutlet UITextField* _text;
-	NSMutableArray* str;
+	NSMutableArray* _phoneNOString;
 }
 
 -(IBAction)firstBttonTapped:(id)Sender;
@@ -53,9 +53,6 @@
 extern NSString * const notifying;
 
 @end
-
-
-
 
 @interface myButton : UIButton
 {

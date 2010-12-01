@@ -12,25 +12,35 @@
  
 
 
-@interface ContactsViewController : UIViewController  < ABNewPersonViewControllerDelegate ,UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate >
+@interface ContactsViewController : UIViewController  < ABNewPersonViewControllerDelegate ,UITableViewDataSource, UITableViewDelegate, 
+														UISearchDisplayDelegate, UISearchBarDelegate ,ABPersonViewControllerDelegate>
 {
-	NSMutableArray* masterList;
+	NSArray*                   _masterLists;
+	UITableView*			   _afterSearching;
 	
 	IBOutlet UITableView*      _table;
-	IBOutlet UISearchBar*      _searchBrar;
 	IBOutlet UINavigationBar*  _navBar;
 	
-	IBOutlet UIView* _view1;
 	NSMutableArray	*filteredListContent;
 	
 	// The saved state of the search UI if a memory warning removed the view.
-    NSString		*savedSearchTerm;
-    NSInteger		savedScopeButtonIndex;
-    BOOL			searchWasActive;
+    NSString*					_savedSearchTerm;
+    NSInteger					_savedScopeButtonIndex;
+    
 	
-	NSArray*       _faceBookCont;
+	NSArray*					_faceBookCont;
+	NSMutableArray*                    _recordIds;
+	NSMutableArray*                    _filteredRecordIds;
+	   
+	BOOL						_canAddToFavourites;
+	BOOL						_searchWasActive;
 	
+	BOOL                         _viewPushed;
 	
+	NSArray*					_listContent;			// The master content.
+	NSMutableArray*				_filteredListContent;
 }
+
+@property (nonatomic) BOOL canAddToFavourites;
 
 @end

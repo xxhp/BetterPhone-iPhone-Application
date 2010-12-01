@@ -7,95 +7,114 @@
 //
 
 #import "ContactsViewController.h"
-#import "ContactInfo.h"
 #import "InfoViewController.h"
-#import "SharedObject.h"
-#import "InfoViewController.h"
+#import "DataManager.h"
+#import "BetterPhoneAppDelegate.h"
+
+@interface ContactsViewController (privateMethod)
+
+-(CFIndex) getIndividualPhoneRecord:(int)recordNumber;
+-(void) showPersonViewController:(ABRecordRef)str;
+-(void) adjustView;
+
+@end
+
 
 @implementation ContactsViewController
 
+@synthesize canAddToFavourites = _canAddToFavourites;
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	
-	//hiding subViews
-	_view1.hidden = YES;
+	_masterLists         = [[NSArray alloc] init];
+	_listContent         = [[NSArray alloc] init];
+	_filteredListContent = [[NSMutableArray alloc] init];
+	_filteredRecordIds = [[NSMutableArray alloc] init];
+
+	_afterSearching      = _table;
 	
-	//adding button on navigation bar
-		
-	//creating address book
-		
+	//UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Backttfyy" style:UIBarButtonItemStylePlain
+//																  target:self action:@selector(changingValue:)];
+//	
+//	self.navigationItem.backBarButtonItem = backButton;
+	
+}
+
+-(IBAction)changingValue:(id)sender
+{
+	NSLog(@"hello");
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
+	[_recordIds removeAllObjects];
 	
-	ABAddressBookRef addressBook = ABAddressBookCreate();
 	
-	CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeople(addressBook);
-	CFIndex      nPeople = ABAddressBookGetPersonCount(addressBook);
+	[[DataManager sharedObj].masterContactList removeAllObjects];
+	[[DataManager sharedObj].recordPersonId    removeAllObjects];
 	
-	NSString *contactFirstLast = [[NSString alloc]init];
+	BetterPhoneAppDelegate* app = [[UIApplication sharedApplication] delegate];
+	[app getContactsList];
 	
-	masterList = [[NSMutableArray alloc] init];
+    _masterLists = [[DataManager sharedObj] masterContactList];
 	
-	for (int i = 0; i < nPeople; i++)
+	[self adjustView];
+		
+	_faceBookCont		= [[NSArray alloc] initWithArray:[[DataManager sharedObj] sharedContacts]];
+	_recordIds			= [[DataManager sharedObj] recordPersonId];
+
+	_listContent        = [[NSArray arrayWithArray:_masterLists] retain];
+	
+    if(_viewPushed == YES && self.tabBarController.selectedIndex == 2)
 	{
-		ABRecordRef ref = CFArrayGetValueAtIndex(allPeople, i);
-		
-		
-		
-		CFStringRef firstName = ABRecordCopyValue(ref, kABPersonFirstNameProperty);
-		CFStringRef lastName  = ABRecordCopyValue(ref, kABPersonLastNameProperty);
-		
-		if (firstName == nil)
-		{
-			contactFirstLast = [NSString stringWithFormat: @"%@", lastName];
-		}
-		else if (lastName == nil)
-		{
-			contactFirstLast = [NSString stringWithFormat: @"%@", firstName];
-		}
-	    else  
-		{
-			contactFirstLast = [NSString stringWithFormat: @"%@ %@", firstName,lastName];
-		}
-		
-		[masterList addObject:contactFirstLast];
+		_viewPushed = NO; 
 	}
-	
-	
-	if (self.tabBarController.selectedIndex == 2)
+	else
 	{
-		UIBarButtonItem*	rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
-																					 target:self 
-																					 action:@selector(addNewContacts:)];
-		self.navigationItem.rightBarButtonItem = rightButton;
-	}
 		
-	if (self.tabBarController.selectedIndex == 0)
-	{
-		NSLog(@"hello tab");
-		
-		UIBarButtonItem*	leftButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel 
-																					 target:self 
-																					 action:@selector(dismissModalViews:)];
-		self.navigationItem.leftBarButtonItem = leftButton;
+		[_filteredRecordIds removeAllObjects];
+		_filteredRecordIds   = [[NSMutableArray alloc] initWithArray:_recordIds];
 	}
-	
-	_faceBookCont  = [[NSArray alloc] initWithArray:[[SharedObject sharedObj] sharedContacts]];
+
 	
 	[_table reloadData]; 
 }
 
--(IBAction)dismissModalViews:(id)Sender
+-(void) adjustView
 {
-	[self dismissModalViewControllerAnimated:YES];
+	if (self.tabBarController.selectedIndex == 2)
+	{
+		UIBarButtonItem*	rightButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
+																					  target:self 
+																					  action:@selector(addNewContacts:)]autorelease];
+		self.navigationItem.rightBarButtonItem = rightButton;
+	}
+	
+	if (self.tabBarController.selectedIndex == 0)
+	{
+		NSLog(@"hello tab");
+		
+		UIBarButtonItem*	leftButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel 
+																					 target:self 
+																					 action:@selector(dismissModalViews:)] autorelease];
+		self.navigationItem.leftBarButtonItem = leftButton;
+	}
+	
 }
 
+- (void)viewDidUnload
+{
+	_filteredListContent = nil;
+	_filteredRecordIds = nil;
+}
 
+-(IBAction)dismissModalViews:(id)Sender
+{
+	[DataManager sharedObj].canAddToContacts = NO;
+	[self dismissModalViewControllerAnimated:YES];
+}
 
 #pragma mark -
 #pragma mark action method
@@ -106,7 +125,6 @@
 	newPerson.newPersonViewDelegate = self;
 	
 	UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:newPerson];
-	
 		
 	[self presentModalViewController:navigation animated:YES];
 	
@@ -119,17 +137,21 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return masterList.count;
+    if (_table == self.searchDisplayController.searchResultsTableView)
+	{
+        return [_filteredListContent count];
+    }
+	else
+	{
+        return [_listContent count];
+    }
 }
-
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
@@ -148,32 +170,57 @@
 	cell.highlighted = NO; 
 	
     // Configure the cell...
-	
-	NSString* str  = [masterList objectAtIndex:indexPath.row];
-	 
-	//CGRect rect = CGRectMake(10, 10, 20, 20);
-	UIImage* img = [UIImage imageNamed:@"image20.ico"];
-	UIImageView* imageView = [[UIImageView alloc] initWithImage:img];
-	
-	[imageView setImage:img];
-	
-	//int i = indexPath.row;
-	
-	for (int i = 0; i < _faceBookCont.count; i++)
+	if (_table == self.searchDisplayController.searchResultsTableView)
 	{
-		NSString* str1 = [_faceBookCont objectAtIndex:i]; 
-			
-		if ([str isEqualToString:str1]) 
-		{
-			if (indexPath.row == 2)
-			{
-				NSLog(@"%d",indexPath.row);
-			}
-			cell.accessoryView = imageView;  
-		}
-	}
+        NSString* str  = [_filteredListContent objectAtIndex:indexPath.row];
 		
-	cell.textLabel.text = [masterList objectAtIndex:indexPath.row];
+		UIImage* img = [UIImage imageNamed:@"image20.ico"];
+		UIImageView* imageView = [[UIImageView alloc] initWithImage:img];
+		
+		[imageView setImage:img];
+		
+		for (int i = 0; i < _faceBookCont.count; i++)
+		{
+			NSString* str1 = [_faceBookCont objectAtIndex:i]; 
+			
+			if ([str isEqualToString:str1]) 
+			{
+				if (indexPath.row == 2)
+				{
+					NSLog(@"%d",indexPath.row);
+				}
+				cell.accessoryView = imageView;  
+			}
+		}
+		
+		cell.textLabel.text = [_filteredListContent objectAtIndex:indexPath.row];
+    }
+	else
+	{
+        NSString* str  = [_listContent objectAtIndex:indexPath.row];
+		
+		UIImage* img = [UIImage imageNamed:@"image20.ico"];
+		UIImageView* imageView = [[UIImageView alloc] initWithImage:img];
+		
+		[imageView setImage:img];
+		
+		for (int i = 0; i < _faceBookCont.count; i++)
+		{
+			NSString* str1 = [_faceBookCont objectAtIndex:i]; 
+			
+			if ([str isEqualToString:str1]) 
+			{
+				if (indexPath.row == 2)
+				{
+					NSLog(@"%d",indexPath.row);
+				}
+				cell.accessoryView = imageView;  
+			}
+		}
+		
+		cell.textLabel.text = [_listContent objectAtIndex:indexPath.row];
+    }
+	
     return cell;
 }
 
@@ -182,42 +229,99 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
+	_viewPushed = YES;
+	ABRecordRef personID = [_filteredRecordIds objectAtIndex:indexPath.row];
 	
+	//NSUInteger mvmfds = [_listContent indexOfObject:string];
 	
-    // Navigation logic may go here. Create and push another view controller.
-	InfoViewController *infoViewController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
-    
-	[infoViewController setRowNO:indexPath.row];
+	NSUInteger indes = [_recordIds indexOfObject:personID];
 	
-	[[SharedObject  sharedObj] setPersonNo:indexPath.row];
+	if (self.tabBarController.selectedIndex == 2)
+	{
+		[self showPersonViewController:personID];
 	
-	// Pass the selected object to the new view controller.
-	[self.navigationController pushViewController:infoViewController animated:YES];
-	[infoViewController release];
+	}
 	
-	
-	
-	[[SharedObject sharedObj] addMutableArrayElements:[masterList objectAtIndex:indexPath.row]];
+	if (_canAddToFavourites) 
+	{
+		CFIndex nPhones = [self getIndividualPhoneRecord:indes];
+		
+		if (nPhones) 
+		{
+			if ([[DataManager sharedObj].favouritesArray count] == 0) 
+			{
+				[[DataManager sharedObj].favouritesArray addObject:[_masterLists objectAtIndex:indes]];
+				[self dismissModalViewControllerAnimated:YES];
+			}
+			else 
+			{
+				NSString* mObject = [[NSString alloc] initWithString:[_masterLists objectAtIndex:indes]];
+				if ([[DataManager sharedObj].favouritesArray containsObject:mObject])
+				{	
+					[self dismissModalViewControllerAnimated:YES];
+				}
+				else 
+				{
+					[[DataManager sharedObj].favouritesArray addObject:[_masterLists objectAtIndex:indes]];
+					[self dismissModalViewControllerAnimated:YES];
+				}
+			}
+		}
+		else 
+		{
+			[self showPersonViewController:personID];
+		}
+	}
 }
 
+- (CFIndex) getIndividualPhoneRecord:(int)recordNumber
+{
+	ABAddressBookRef addressBookRef = ABAddressBookCreate(); 
+	CFArrayRef allPeopleRef         = ABAddressBookCopyArrayOfAllPeople(addressBookRef);
+	ABRecordRef recordRef           = CFArrayGetValueAtIndex(allPeopleRef, recordNumber);
+	CFStringRef allRecordPhonesRef  = ABRecordCopyValue(recordRef, kABPersonPhoneProperty);
+	CFIndex nPhones = ABMultiValueGetCount(allRecordPhonesRef);
+	
+	return nPhones;
+}
 
 #pragma mark -
-#pragma mark searchBar delegate
+#pragma mark Content Filtering
 
-- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
-	[_searchBrar setShowsCancelButton:YES animated:YES];
-	[self.navigationController setNavigationBarHidden:YES animated:YES];
+	[_filteredListContent removeAllObjects]; // First clear the filtered array.
+	[_filteredRecordIds   removeAllObjects];
 	
-	_view1.hidden = NO;
-    _searchBrar.translucent = YES;
-	return YES;
+	
+	//for (NSString* abc in _listContent)
+	for (int i = 0; i <_listContent.count; i++)
+	{
+		NSString* abc = [_listContent objectAtIndex:i];
+		NSComparisonResult result = [abc compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
+        if (result == NSOrderedSame)
+		{
+			[_filteredListContent addObject:abc];
+		    
+		   [_filteredRecordIds addObject:[_recordIds objectAtIndex:i]]; 
+		}
+    }
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+#pragma mark -
+#pragma mark UISearchDisplayController Delegate Methods
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
-	_view1.hidden = YES;
+    [self filterContentForSearchText:searchString scope:
+	[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
+	_table = self.searchDisplayController.searchResultsTableView;
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
 }
+
+
 
 - (void)newPersonViewController:(ABNewPersonViewController *)newPersonViewController didCompleteWithNewPerson:(ABRecordRef)person
 {
@@ -226,21 +330,36 @@
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
 {
-	[_searchBrar setShowsCancelButton:NO animated:YES];
+	[searchBar setShowsCancelButton:NO animated:YES];
+	_table = _afterSearching;
+
 	[self.navigationController setNavigationBarHidden:NO animated:YES];
-	_view1.hidden = YES;
-	[_searchBrar resignFirstResponder];
+
+	[searchBar resignFirstResponder];
 }
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+-(void)showPersonViewController:(ABRecordRef)str 
 {
-	[_searchBrar resignFirstResponder];
+	// Fetch the address book 
+	ABAddressBookRef addressBook = ABAddressBookCreate();
+	
+	ABPersonViewController *picker = [[[ABPersonViewController alloc] init] autorelease];
+	picker.personViewDelegate = self;
+	picker.displayedPerson = str;
+	
+	// Allow users to edit the person’s information
+	if (self.tabBarController.selectedIndex == 0)
+	{
+		picker.allowsEditing = NO;
+	}
+	else
+	{
+		picker.allowsEditing = YES;
+	}
+		
+	[self.navigationController pushViewController:picker animated:YES];
+	CFRelease(addressBook);
 }
-
-
-
-#pragma mark -
-#pragma mark UISearchDisplayController Delegate Methods
 
 
 #pragma mark -
@@ -249,6 +368,9 @@
 - (void)dealloc
 {
     [super dealloc];
+	_ReleaseObject(_masterLists);
+	[_listContent release];
+	[_filteredListContent release];
 }
 
 

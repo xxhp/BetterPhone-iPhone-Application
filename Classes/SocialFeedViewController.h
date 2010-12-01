@@ -11,13 +11,29 @@
 #import "FBRequest.h"
 #import "FBSession.h"
 
-@interface SocialFeedViewController : UIViewController  <UITableViewDataSource, UITableViewDelegate, FBSessionDelegate, FBRequestDelegate> 
+@interface SocialFeedViewController : UIViewController  <UITableViewDataSource, UITableViewDelegate, FBRequestDelegate> 
 {
 	IBOutlet UITableView* _table;
 	
-	FaceBookContacts* faceBooks1;
-
+	NSArray*			_status;
+	NSArray*			_contacts;
+	
+	//local array for comparison for all methods
+	NSArray*			_local;
+    
+	NSArray*			_faceBookContacts; 
+	NSMutableArray*		_friends;		
+	UIImageView*		_imageView;
+	
+	int _counts ;
+	
+	NSTimer*            _timeCounter;
+	
+	BOOL                _tableContent;
+	
+	IBOutlet UIActivityIndicatorView* _activity;
      
 }
+
 
 @end

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,14 @@
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		F888255F12757FE50084B2D0 /* xxx.png in Resources */ = {isa = PBXBuildFile; fileRef = F888255E12757FE50084B2D0 /* xxx.png */; };
-		F888F6B4127984CD003C0F91 /* SharedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F888F6B3127984CD003C0F91 /* SharedObject.m */; };
+		F888F6B4127984CD003C0F91 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F888F6B3127984CD003C0F91 /* DataManager.m */; };
+		F88B4ECB129F80AF00E2817A /* button_facebook_connect.png in Resources */ = {isa = PBXBuildFile; fileRef = F88B4EC4129F80AE00E2817A /* button_facebook_connect.png */; };
+		F88B4ECC129F80AF00E2817A /* button_facebook_logout.png in Resources */ = {isa = PBXBuildFile; fileRef = F88B4EC5129F80AF00E2817A /* button_facebook_logout.png */; };
+		F88B4ECD129F80AF00E2817A /* button_sync.png in Resources */ = {isa = PBXBuildFile; fileRef = F88B4EC6129F80AF00E2817A /* button_sync.png */; };
+		F88B4ECE129F80AF00E2817A /* feed_no_match.png in Resources */ = {isa = PBXBuildFile; fileRef = F88B4EC7129F80AF00E2817A /* feed_no_match.png */; };
+		F88B4ECF129F80AF00E2817A /* feed_not_connected.png in Resources */ = {isa = PBXBuildFile; fileRef = F88B4EC8129F80AF00E2817A /* feed_not_connected.png */; };
+		F88B4ED0129F80AF00E2817A /* icon_history.png in Resources */ = {isa = PBXBuildFile; fileRef = F88B4EC9129F80AF00E2817A /* icon_history.png */; };
+		F88B4ED1129F80AF00E2817A /* settings_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F88B4ECA129F80AF00E2817A /* settings_icon.png */; };
 		F89C996F127B245000E3EAD1 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F89C996D127B245000E3EAD1 /* InfoViewController.m */; };
 		F8AF0F3E128A6AB7007BE937 /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8AF0F2A128A6AB7007BE937 /* FBConnect.bundle */; };
 		F8AF0F3F128A6AB7007BE937 /* FBConnectGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AF0F2D128A6AB7007BE937 /* FBConnectGlobal.m */; };
@@ -27,10 +34,8 @@
 		F8AF0F46128A6AB7007BE937 /* FBSession.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AF0F3B128A6AB7007BE937 /* FBSession.m */; };
 		F8AF0F47128A6AB7007BE937 /* FBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AF0F3D128A6AB7007BE937 /* FBXMLHandler.m */; };
 		F8AF0F4F128A6AE1007BE937 /* calling image.png in Resources */ = {isa = PBXBuildFile; fileRef = F8AF0F4A128A6AE1007BE937 /* calling image.png */; };
-		F8AF0F50128A6AE1007BE937 /* cell.png in Resources */ = {isa = PBXBuildFile; fileRef = F8AF0F4B128A6AE1007BE937 /* cell.png */; };
 		F8AF0F51128A6AE1007BE937 /* dial.png in Resources */ = {isa = PBXBuildFile; fileRef = F8AF0F4C128A6AE1007BE937 /* dial.png */; };
 		F8AF0F52128A6AE1007BE937 /* image20.ico in Resources */ = {isa = PBXBuildFile; fileRef = F8AF0F4D128A6AE1007BE937 /* image20.ico */; };
-		F8AF0F53128A6AE1007BE937 /* image21.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F8AF0F4E128A6AE1007BE937 /* image21.tiff */; };
 		F8AF0F5C128A6B04007BE937 /* ContactEditingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8AF0F54128A6B04007BE937 /* ContactEditingViewController.xib */; };
 		F8AF0F5D128A6B04007BE937 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8AF0F55128A6B04007BE937 /* ContactsViewController.xib */; };
 		F8AF0F5E128A6B04007BE937 /* ContactviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8AF0F56128A6B04007BE937 /* ContactviewViewController.xib */; };
@@ -49,9 +54,24 @@
 		F8D819C712715BD4001BDA83 /* ContactEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D819C512715BD4001BDA83 /* ContactEditingViewController.m */; };
 		F8D81A0E12716314001BDA83 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D81A0D12716314001BDA83 /* AddressBook.framework */; };
 		F8D81A3512716F8D001BDA83 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D81A3412716F8D001BDA83 /* AddressBookUI.framework */; };
-		F8D81AFF12719E86001BDA83 /* ContactInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D81AFE12719E86001BDA83 /* ContactInfo.m */; };
 		F8D81B411271AB16001BDA83 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D81B401271AB16001BDA83 /* MobileCoreServices.framework */; };
-		F8D81B491271AD15001BDA83 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D81B481271AD15001BDA83 /* CoreTelephony.framework */; };
+		F8D81B491271AD15001BDA83 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D81B481271AD15001BDA83 /* CoreTelephony.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F8F566C0129D2D7400539ED0 /* Dial1.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F566B0129D2D7300539ED0 /* Dial1.png */; };
+		F8F566C1129D2D7400539ED0 /* Dial2.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F566B1129D2D7300539ED0 /* Dial2.png */; };
+		F8F566C2129D2D7400539ED0 /* Dial3.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F566B2129D2D7300539ED0 /* Dial3.png */; };
+		F8F566C3129D2D7400539ED0 /* Dial4.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F566B3129D2D7300539ED0 /* Dial4.png */; };
+		F8F566C4129D2D7400539ED0 /* Dial5.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F566B4129D2D7300539ED0 /* Dial5.png */; };
+		F8F566C5129D2D7400539ED0 /* Dial6.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F566B5129D2D7300539ED0 /* Dial6.png */; };
+		F8F566C6129D2D7400539ED0 /* Dial7.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F566B6129D2D7300539ED0 /* Dial7.png */; };
+		F8F566C7129D2D7400539ED0 /* Dial8.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F566B7129D2D7300539ED0 /* Dial8.png */; };
+		F8F566C8129D2D7400539ED0 /* Dial9.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F566B8129D2D7300539ED0 /* Dial9.png */; };
+		F8F566C9129D2D7400539ED0 /* Dial10.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F566B9129D2D7300539ED0 /* Dial10.png */; };
+		F8F566CA129D2D7400539ED0 /* Dial11.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F566BA129D2D7300539ED0 /* Dial11.png */; };
+		F8F566CB129D2D7400539ED0 /* Dial12.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F566BB129D2D7300539ED0 /* Dial12.png */; };
+		F8F566CC129D2D7400539ED0 /* Dial13.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F566BC129D2D7300539ED0 /* Dial13.png */; };
+		F8F566CD129D2D7400539ED0 /* Dial15.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F566BD129D2D7300539ED0 /* Dial15.png */; };
+		F8F566CE129D2D7400539ED0 /* highlighted_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F566BE129D2D7300539ED0 /* highlighted_cell.png */; };
+		F8F566CF129D2D7400539ED0 /* ring.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F566BF129D2D7300539ED0 /* ring.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,8 +87,15 @@
 		8D1107310486CEB800E47090 /* BetterPhone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BetterPhone-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		F888255E12757FE50084B2D0 /* xxx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = xxx.png; path = Classes/xxx.png; sourceTree = "<group>"; };
 		F8885119127EFBAF00D4B212 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
-		F888F6B2127984CD003C0F91 /* SharedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedObject.h; sourceTree = "<group>"; };
-		F888F6B3127984CD003C0F91 /* SharedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedObject.m; sourceTree = "<group>"; };
+		F888F6B2127984CD003C0F91 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		F888F6B3127984CD003C0F91 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		F88B4EC4129F80AE00E2817A /* button_facebook_connect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_facebook_connect.png; path = Resources/images/button_facebook_connect.png; sourceTree = "<group>"; };
+		F88B4EC5129F80AF00E2817A /* button_facebook_logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_facebook_logout.png; path = Resources/images/button_facebook_logout.png; sourceTree = "<group>"; };
+		F88B4EC6129F80AF00E2817A /* button_sync.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_sync.png; path = Resources/images/button_sync.png; sourceTree = "<group>"; };
+		F88B4EC7129F80AF00E2817A /* feed_no_match.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = feed_no_match.png; path = Resources/images/feed_no_match.png; sourceTree = "<group>"; };
+		F88B4EC8129F80AF00E2817A /* feed_not_connected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = feed_not_connected.png; path = Resources/images/feed_not_connected.png; sourceTree = "<group>"; };
+		F88B4EC9129F80AF00E2817A /* icon_history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_history.png; path = Resources/images/icon_history.png; sourceTree = "<group>"; };
+		F88B4ECA129F80AF00E2817A /* settings_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings_icon.png; path = Resources/images/settings_icon.png; sourceTree = "<group>"; };
 		F89C996C127B245000E3EAD1 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		F89C996D127B245000E3EAD1 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		F8AF0F2A128A6AB7007BE937 /* FBConnect.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBConnect.bundle; sourceTree = "<group>"; };
@@ -92,10 +119,8 @@
 		F8AF0F3C128A6AB7007BE937 /* FBXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXMLHandler.h; sourceTree = "<group>"; };
 		F8AF0F3D128A6AB7007BE937 /* FBXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBXMLHandler.m; sourceTree = "<group>"; };
 		F8AF0F4A128A6AE1007BE937 /* calling image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "calling image.png"; path = "Resources/images/calling image.png"; sourceTree = "<group>"; };
-		F8AF0F4B128A6AE1007BE937 /* cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cell.png; path = Resources/images/cell.png; sourceTree = "<group>"; };
 		F8AF0F4C128A6AE1007BE937 /* dial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dial.png; path = Resources/images/dial.png; sourceTree = "<group>"; };
 		F8AF0F4D128A6AE1007BE937 /* image20.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = image20.ico; path = Resources/images/image20.ico; sourceTree = "<group>"; };
-		F8AF0F4E128A6AE1007BE937 /* image21.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = image21.tiff; path = Resources/images/image21.tiff; sourceTree = "<group>"; };
 		F8AF0F54128A6B04007BE937 /* ContactEditingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ContactEditingViewController.xib; path = Resources/xib/ContactEditingViewController.xib; sourceTree = "<group>"; };
 		F8AF0F55128A6B04007BE937 /* ContactsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ContactsViewController.xib; path = Resources/xib/ContactsViewController.xib; sourceTree = "<group>"; };
 		F8AF0F56128A6B04007BE937 /* ContactviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ContactviewViewController.xib; path = Resources/xib/ContactviewViewController.xib; sourceTree = "<group>"; };
@@ -122,10 +147,24 @@
 		F8D819C512715BD4001BDA83 /* ContactEditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactEditingViewController.m; sourceTree = "<group>"; };
 		F8D81A0D12716314001BDA83 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		F8D81A3412716F8D001BDA83 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
-		F8D81AFD12719E86001BDA83 /* ContactInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactInfo.h; sourceTree = "<group>"; };
-		F8D81AFE12719E86001BDA83 /* ContactInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactInfo.m; sourceTree = "<group>"; };
 		F8D81B401271AB16001BDA83 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F8D81B481271AD15001BDA83 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F8F566B0129D2D7300539ED0 /* Dial1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dial1.png; path = Resources/images/Dial1.png; sourceTree = "<group>"; };
+		F8F566B1129D2D7300539ED0 /* Dial2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dial2.png; path = Resources/images/Dial2.png; sourceTree = "<group>"; };
+		F8F566B2129D2D7300539ED0 /* Dial3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dial3.png; path = Resources/images/Dial3.png; sourceTree = "<group>"; };
+		F8F566B3129D2D7300539ED0 /* Dial4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dial4.png; path = Resources/images/Dial4.png; sourceTree = "<group>"; };
+		F8F566B4129D2D7300539ED0 /* Dial5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dial5.png; path = Resources/images/Dial5.png; sourceTree = "<group>"; };
+		F8F566B5129D2D7300539ED0 /* Dial6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dial6.png; path = Resources/images/Dial6.png; sourceTree = "<group>"; };
+		F8F566B6129D2D7300539ED0 /* Dial7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dial7.png; path = Resources/images/Dial7.png; sourceTree = "<group>"; };
+		F8F566B7129D2D7300539ED0 /* Dial8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dial8.png; path = Resources/images/Dial8.png; sourceTree = "<group>"; };
+		F8F566B8129D2D7300539ED0 /* Dial9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dial9.png; path = Resources/images/Dial9.png; sourceTree = "<group>"; };
+		F8F566B9129D2D7300539ED0 /* Dial10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dial10.png; path = Resources/images/Dial10.png; sourceTree = "<group>"; };
+		F8F566BA129D2D7300539ED0 /* Dial11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dial11.png; path = Resources/images/Dial11.png; sourceTree = "<group>"; };
+		F8F566BB129D2D7300539ED0 /* Dial12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dial12.png; path = Resources/images/Dial12.png; sourceTree = "<group>"; };
+		F8F566BC129D2D7300539ED0 /* Dial13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dial13.png; path = Resources/images/Dial13.png; sourceTree = "<group>"; };
+		F8F566BD129D2D7300539ED0 /* Dial15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dial15.png; path = Resources/images/Dial15.png; sourceTree = "<group>"; };
+		F8F566BE129D2D7300539ED0 /* highlighted_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = highlighted_cell.png; path = Resources/images/highlighted_cell.png; sourceTree = "<group>"; };
+		F8F566BF129D2D7300539ED0 /* ring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring.png; path = Resources/images/ring.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,11 +256,32 @@
 		F842B02D12707EE600B450B7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F88B4EC4129F80AE00E2817A /* button_facebook_connect.png */,
+				F88B4EC5129F80AF00E2817A /* button_facebook_logout.png */,
+				F88B4EC6129F80AF00E2817A /* button_sync.png */,
+				F88B4EC7129F80AF00E2817A /* feed_no_match.png */,
+				F88B4EC8129F80AF00E2817A /* feed_not_connected.png */,
+				F88B4EC9129F80AF00E2817A /* icon_history.png */,
+				F88B4ECA129F80AF00E2817A /* settings_icon.png */,
+				F8F566B0129D2D7300539ED0 /* Dial1.png */,
+				F8F566B1129D2D7300539ED0 /* Dial2.png */,
+				F8F566B2129D2D7300539ED0 /* Dial3.png */,
+				F8F566B3129D2D7300539ED0 /* Dial4.png */,
+				F8F566B4129D2D7300539ED0 /* Dial5.png */,
+				F8F566B5129D2D7300539ED0 /* Dial6.png */,
+				F8F566B6129D2D7300539ED0 /* Dial7.png */,
+				F8F566B7129D2D7300539ED0 /* Dial8.png */,
+				F8F566B8129D2D7300539ED0 /* Dial9.png */,
+				F8F566B9129D2D7300539ED0 /* Dial10.png */,
+				F8F566BA129D2D7300539ED0 /* Dial11.png */,
+				F8F566BB129D2D7300539ED0 /* Dial12.png */,
+				F8F566BC129D2D7300539ED0 /* Dial13.png */,
+				F8F566BD129D2D7300539ED0 /* Dial15.png */,
+				F8F566BE129D2D7300539ED0 /* highlighted_cell.png */,
+				F8F566BF129D2D7300539ED0 /* ring.png */,
 				F8AF0F4A128A6AE1007BE937 /* calling image.png */,
-				F8AF0F4B128A6AE1007BE937 /* cell.png */,
 				F8AF0F4C128A6AE1007BE937 /* dial.png */,
 				F8AF0F4D128A6AE1007BE937 /* image20.ico */,
-				F8AF0F4E128A6AE1007BE937 /* image21.tiff */,
 				F888255E12757FE50084B2D0 /* xxx.png */,
 			);
 			name = Images;
@@ -230,6 +290,7 @@
 		F842B03012707EF000B450B7 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				F8AF0F54128A6B04007BE937 /* ContactEditingViewController.xib */,
 				F8AF0F55128A6B04007BE937 /* ContactsViewController.xib */,
 				F8AF0F56128A6B04007BE937 /* ContactviewViewController.xib */,
@@ -238,7 +299,6 @@
 				F8AF0F59128A6B04007BE937 /* InfoViewController.xib */,
 				F8AF0F5A128A6B04007BE937 /* SettingsViewController.xib */,
 				F8AF0F5B128A6B04007BE937 /* SocialFeedViewController.xib */,
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -246,16 +306,14 @@
 		F842B03112707EF900B450B7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F8D81AFD12719E86001BDA83 /* ContactInfo.h */,
-				F8D81AFE12719E86001BDA83 /* ContactInfo.m */,
 				F8D819A612715AED001BDA83 /* FavouritesViewController.h */,
 				F8D819A712715AED001BDA83 /* FavouritesViewController.m */,
 				F8D819AB12715B13001BDA83 /* SocialFeedViewController.h */,
 				F8D819AC12715B13001BDA83 /* SocialFeedViewController.m */,
 				F8D819B012715B35001BDA83 /* ContactsViewController.h */,
 				F8D819B112715B35001BDA83 /* ContactsViewController.m */,
-				F8D819B512715B5B001BDA83 /* DialPadViewController.h */,
 				F8D819B612715B5B001BDA83 /* DialPadViewController.m */,
+				F8D819B512715B5B001BDA83 /* DialPadViewController.h */,
 				F8D819BA12715B70001BDA83 /* SettingsViewController.h */,
 				F8D819BB12715B70001BDA83 /* SettingsViewController.m */,
 				F8D819BF12715BA9001BDA83 /* ContactviewViewController.h */,
@@ -271,8 +329,8 @@
 		F8884DDC127EAA4C00D4B212 /* Data Manager */ = {
 			isa = PBXGroup;
 			children = (
-				F888F6B2127984CD003C0F91 /* SharedObject.h */,
-				F888F6B3127984CD003C0F91 /* SharedObject.m */,
+				F888F6B2127984CD003C0F91 /* DataManager.h */,
+				F888F6B3127984CD003C0F91 /* DataManager.m */,
 			);
 			name = "Data Manager";
 			sourceTree = "<group>";
@@ -331,7 +389,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BetterPhone" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -358,10 +416,8 @@
 				F888255F12757FE50084B2D0 /* xxx.png in Resources */,
 				F8AF0F3E128A6AB7007BE937 /* FBConnect.bundle in Resources */,
 				F8AF0F4F128A6AE1007BE937 /* calling image.png in Resources */,
-				F8AF0F50128A6AE1007BE937 /* cell.png in Resources */,
 				F8AF0F51128A6AE1007BE937 /* dial.png in Resources */,
 				F8AF0F52128A6AE1007BE937 /* image20.ico in Resources */,
-				F8AF0F53128A6AE1007BE937 /* image21.tiff in Resources */,
 				F8AF0F5C128A6B04007BE937 /* ContactEditingViewController.xib in Resources */,
 				F8AF0F5D128A6B04007BE937 /* ContactsViewController.xib in Resources */,
 				F8AF0F5E128A6B04007BE937 /* ContactviewViewController.xib in Resources */,
@@ -370,6 +426,29 @@
 				F8AF0F61128A6B04007BE937 /* InfoViewController.xib in Resources */,
 				F8AF0F62128A6B04007BE937 /* SettingsViewController.xib in Resources */,
 				F8AF0F63128A6B04007BE937 /* SocialFeedViewController.xib in Resources */,
+				F8F566C0129D2D7400539ED0 /* Dial1.png in Resources */,
+				F8F566C1129D2D7400539ED0 /* Dial2.png in Resources */,
+				F8F566C2129D2D7400539ED0 /* Dial3.png in Resources */,
+				F8F566C3129D2D7400539ED0 /* Dial4.png in Resources */,
+				F8F566C4129D2D7400539ED0 /* Dial5.png in Resources */,
+				F8F566C5129D2D7400539ED0 /* Dial6.png in Resources */,
+				F8F566C6129D2D7400539ED0 /* Dial7.png in Resources */,
+				F8F566C7129D2D7400539ED0 /* Dial8.png in Resources */,
+				F8F566C8129D2D7400539ED0 /* Dial9.png in Resources */,
+				F8F566C9129D2D7400539ED0 /* Dial10.png in Resources */,
+				F8F566CA129D2D7400539ED0 /* Dial11.png in Resources */,
+				F8F566CB129D2D7400539ED0 /* Dial12.png in Resources */,
+				F8F566CC129D2D7400539ED0 /* Dial13.png in Resources */,
+				F8F566CD129D2D7400539ED0 /* Dial15.png in Resources */,
+				F8F566CE129D2D7400539ED0 /* highlighted_cell.png in Resources */,
+				F8F566CF129D2D7400539ED0 /* ring.png in Resources */,
+				F88B4ECB129F80AF00E2817A /* button_facebook_connect.png in Resources */,
+				F88B4ECC129F80AF00E2817A /* button_facebook_logout.png in Resources */,
+				F88B4ECD129F80AF00E2817A /* button_sync.png in Resources */,
+				F88B4ECE129F80AF00E2817A /* feed_no_match.png in Resources */,
+				F88B4ECF129F80AF00E2817A /* feed_not_connected.png in Resources */,
+				F88B4ED0129F80AF00E2817A /* icon_history.png in Resources */,
+				F88B4ED1129F80AF00E2817A /* settings_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,8 +468,7 @@
 				F8D819BD12715B70001BDA83 /* SettingsViewController.m in Sources */,
 				F8D819C212715BA9001BDA83 /* ContactviewViewController.m in Sources */,
 				F8D819C712715BD4001BDA83 /* ContactEditingViewController.m in Sources */,
-				F8D81AFF12719E86001BDA83 /* ContactInfo.m in Sources */,
-				F888F6B4127984CD003C0F91 /* SharedObject.m in Sources */,
+				F888F6B4127984CD003C0F91 /* DataManager.m in Sources */,
 				F89C996F127B245000E3EAD1 /* InfoViewController.m in Sources */,
 				F8CBAFC9127FE7E100027C17 /* FaceBookContacts.m in Sources */,
 				F8AF0F3F128A6AB7007BE937 /* FBConnectGlobal.m in Sources */,
@@ -438,28 +516,39 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/CoreTelephony.framework/Headers/**";
+				HEADER_SEARCH_PATHS = "/Users/manishjain/BetterPhone-iPhone-Application/Classes";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				LIBRARY_SEARCH_PATHS = "";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/CoreTelephony.framework/*/**";
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Users/manishjain/BetterPhone-iPhone-Application/Classes";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/CoreTelephony.framework/*/**";
 			};
 			name = Release;
 		};

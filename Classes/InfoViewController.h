@@ -11,17 +11,41 @@
 #import <AddressBookUI/AddressBookUI.h>
 
 
-@interface InfoViewController : UITableViewController 
+@interface InfoViewController : UITableViewController <UITextFieldDelegate>
 {
+    IBOutlet  UITableView*    _tableView; 
+		
+	UIBarButtonItem* _editButton;
+	UIBarButtonItem* _doneButton;
 
-	CFStringRef currentPhoneNumberRef;
-	CFStringRef currentHomeNumberRef;
-	CFStringRef currentWorkNumberRef;
+	//reference variable to refer address book components
+	CFStringRef _currentPhoneNumberRef;
+	CFStringRef _currentHomeNumberRef;
+	CFStringRef _currentWorkNumberRef;
+	
+	ABAddressBookRef _addressBookRef;
+	ABRecordRef      _recordRef;
 
+	
+	//strings will store the three fields
+	NSString* _mobile;
+	NSString* _home;
+	NSString* _work;
+	
 	NSInteger  _rowNO;
-	IBOutlet  UITableView* _table; 
+	
+	//textfield for edit screen
+	UITextField* _mobileTextField;
+	UITextField* _homeTextField;
+	UITextField* _workTextField;
+	
+	
+	BOOL  _compareElements ;
+	
+	
  }
 
 @property (nonatomic, readwrite) NSInteger rowNO;
+
 
 @end

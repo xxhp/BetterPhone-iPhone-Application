@@ -13,35 +13,26 @@
 @implementation SettingsViewController
 
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
+-(void)viewDidLoad
 {
-	
-	[textField resignFirstResponder];
-	return YES;
+	_scrollview.contentSize = self.view.frame.size;
+	_scrollview.scrollEnabled = YES;
 }
 
--(IBAction)faceBookButtonTapped:(id)Sender
+
+-(IBAction)faceBookLoginButtonTapped:(id)Sender
 {
-	FaceBookContacts* facebookInfo = [[FaceBookContacts alloc] init];
-	
-	//FaceBookContacts.posting = YES;
-	// If we're not logged in, log in first...
-	if (![facebookInfo.session isConnected]) 
-	{
-		facebookInfo.loginDialog = nil;
-		facebookInfo.loginDialog = [[[FBLoginDialog alloc] initWithSession:[facebookInfo session]] autorelease];	
-		[facebookInfo.loginDialog show];
-	}
-	// If we have a session and a name, post to the wall!
-	else if ([facebookInfo.session resume]) 
-	{
-		NSString* msg = @"You are already logged in";
-		UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message: msg
-													   delegate:self cancelButtonTitle: @"OK" otherButtonTitles: nil];
-		[alert show];
-	}
+	//sending notification to facebook
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"loginNotice" object:nil];
 }
 
+-(IBAction)faceBookLogoutButtonTapped:(id)Sender
+{
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"logoutNotice" object:nil];
+}
+
+#pragma mark -
+#pragma mark memory managment
 - (void)dealloc 
 {
     [super dealloc];

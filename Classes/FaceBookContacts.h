@@ -1,6 +1,9 @@
 //
-//  DCFaceBookContacts.h
-//  DC
+// FaceBookContacts.h
+// BetterPhone
+//
+// Created by Manish Jain  on 10/22/10.
+// Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
 #import "FBSession.h"
@@ -11,10 +14,10 @@
 {
 	FBSession*		_session;
 	FBLoginDialog*	_loginDialog;
-	FBRequest*       _req; 
+	FBRequest*      _req; 
 	
-	BOOL _posting;
 	BOOL _testing;  
+	BOOL _compareElement;
 }
 
 @property (nonatomic, retain) FBLoginDialog*	loginDialog;
@@ -22,6 +25,7 @@
 
 - (void) showLoginDialog;
 - (void) logout;
+- (void) requestForContacts;
 - (void) requestForMessages;
 
 @end

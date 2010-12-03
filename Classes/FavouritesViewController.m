@@ -12,7 +12,7 @@
 
 @interface FavouritesViewController (PrivateMethods)
 
-- (CFStringRef) getIndividualPhoneRecord:(int)recordNumber;
+- (NSString*) getIndividualPhoneRecord:(NSNumber*)recordNumber;
 
 @end
 
@@ -25,15 +25,21 @@
 																				 target:self 
 																				 action:@selector(addNewContacts:)];
 	self.navigationItem.rightBarButtonItem = rightButton;
-	
 	self.navigationItem.leftBarButtonItem = ((UIViewController*)self).editButtonItem;
-	
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
 	_favContacts = [[NSArray alloc] initWithArray:[[DataManager sharedObj] favouritesArray]];
+	_favIndex = [[NSArray alloc] initWithArray:[[DataManager sharedObj] indexarrayForFaviourites]]; 
+	[[DataManager sharedObj]  setIsfirstTabActivated:YES];
 	[_table reloadData];
+}
+
+-(void) viewDidDisappear:(BOOL)animated
+{
+	[super viewDidDisappear:YES];
+	[[DataManager sharedObj]  setIsfirstTabActivated:NO];
 }
 
 #pragma mark -
@@ -50,6 +56,7 @@
 	if (editingStyle == UITableViewCellEditingStyleDelete) 
 	{
 		[[DataManager sharedObj].favouritesArray removeObjectAtIndex:indexPath.row];
+		[[DataManager sharedObj].indexarrayForFaviourites removeObjectAtIndex:indexPath.row];
 		[self viewWillAppear:YES];
 	}
 }
@@ -102,8 +109,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
 	
-	CFStringRef currentPhoneNumberRef = [self getIndividualPhoneRecord:indexPath.row];
-	NSString* call = (NSString *)currentPhoneNumberRef;
+	NSString* call = [self getIndividualPhoneRecord:[_favIndex objectAtIndex:indexPath.row]];
+	
 	
 	NSString *phoneNumberScheme = [NSString stringWithFormat:@"tel:%@",call];
 	phoneNumberScheme = [phoneNumberScheme stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -111,47 +118,35 @@
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumberScheme]];
 }
 
-- (CFStringRef) getIndividualPhoneRecord:(int)recordNumber
+- (NSString*) getIndividualPhoneRecord:(NSNumber*)recordNumber
 {
-	ABAddressBookRef addressBook = ABAddressBookCreate();
-	CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeople(addressBook);
-	CFIndex nPeople = ABAddressBookGetPersonCount(addressBook);
+	NSArray* recordIds = [[DataManager sharedObj] recordPersonId];
 	
-	NSString *contactFirstLast = [[NSString alloc] init];
+	ABRecordRef ref = [recordIds objectAtIndex:[recordNumber intValue]];
 	
-	for (int i = 0; i < nPeople; i++)
+	ABMultiValueRef allRecordPhonesRef = ABRecordCopyValue(ref, kABPersonPhoneProperty);
+	
+	NSString* mobileLabel;
+	NSString* mobile;
+	         
+	for(CFIndex i = 0; i<ABMultiValueGetCount(allRecordPhonesRef); i++)
 	{
-		ABRecordRef ref = CFArrayGetValueAtIndex(allPeople, i);
-		
-		CFStringRef firstName = ABRecordCopyValue(ref, kABPersonFirstNameProperty);
-		CFStringRef lastName = ABRecordCopyValue(ref, kABPersonLastNameProperty);
-		
-		if (firstName == nil)
-			contactFirstLast = [NSString stringWithFormat: @"%@", lastName];
-		else if (lastName == nil)
-			contactFirstLast = [NSString stringWithFormat: @"%@", firstName];
-		else 
-			contactFirstLast = [NSString stringWithFormat: @"%@ %@", firstName,lastName];
-		
-		if ([contactFirstLast isEqualToString:[_favContacts objectAtIndex:recordNumber]]) 
+		mobileLabel=(NSString*)ABMultiValueCopyLabelAtIndex(allRecordPhonesRef, i);
+		if([mobileLabel isEqualToString:@"_$!<Mobile>!$_"] )
 		{
-			CFStringRef allRecordPhonesRef = ABRecordCopyValue(ref, kABPersonPhoneProperty);
-			return allRecordPhonesRef;
+			mobile=(NSString*)ABMultiValueCopyValueAtIndex(allRecordPhonesRef,i);
 		}
 	}
-	
-	
-	return nil;
+	return mobile;
 }
-
 
 #pragma mark -
 #pragma mark memory managment
 
 - (void)dealloc 
 {
-	[super dealloc];
 	_ReleaseObject(_favContacts);
+	[super dealloc];
 }
 
 

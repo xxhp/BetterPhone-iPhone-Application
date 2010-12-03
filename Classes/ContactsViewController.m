@@ -11,6 +11,7 @@
 #import "DataManager.h"
 #import "BetterPhoneAppDelegate.h"
 
+
 @interface ContactsViewController (privateMethod)
 
 -(CFIndex) getIndividualPhoneRecord:(int)recordNumber;
@@ -31,26 +32,14 @@
 	_masterLists         = [[NSArray alloc] init];
 	_listContent         = [[NSArray alloc] init];
 	_filteredListContent = [[NSMutableArray alloc] init];
-	_filteredRecordIds = [[NSMutableArray alloc] init];
+	_filteredRecordIds   = [[NSMutableArray alloc] init];
 
 	_afterSearching      = _table;
-	
-	//UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Backttfyy" style:UIBarButtonItemStylePlain
-//																  target:self action:@selector(changingValue:)];
-//	
-//	self.navigationItem.backBarButtonItem = backButton;
-	
-}
-
--(IBAction)changingValue:(id)sender
-{
-	NSLog(@"hello");
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
 	[_recordIds removeAllObjects];
-	
 	
 	[[DataManager sharedObj].masterContactList removeAllObjects];
 	[[DataManager sharedObj].recordPersonId    removeAllObjects];
@@ -73,11 +62,22 @@
 	}
 	else
 	{
-		
 		[_filteredRecordIds removeAllObjects];
 		_filteredRecordIds   = [[NSMutableArray alloc] initWithArray:_recordIds];
 	}
-
+	
+	if (_viewinDialPadPush == YES)
+	{
+		[self dismissModalViewControllerAnimated:YES];
+		_viewinDialPadPush = NO; 
+	}
+	
+	BOOL checkingValue =  [[DataManager sharedObj] isfirstTabActivated];
+	
+	if (checkingValue == YES)
+	{
+		[[DataManager sharedObj] setIsShowAddScreen:NO];
+	}
 	
 	[_table reloadData]; 
 }
@@ -101,13 +101,12 @@
 																					 action:@selector(dismissModalViews:)] autorelease];
 		self.navigationItem.leftBarButtonItem = leftButton;
 	}
-	
 }
 
 - (void)viewDidUnload
 {
 	_filteredListContent = nil;
-	_filteredRecordIds = nil;
+	_filteredRecordIds   = nil;
 }
 
 -(IBAction)dismissModalViews:(id)Sender
@@ -135,22 +134,12 @@
 #pragma mark -
 #pragma mark tableView datasource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (_table == self.searchDisplayController.searchResultsTableView)
-	{
-        return [_filteredListContent count];
-    }
-	else
-	{
-        return [_listContent count];
-    }
+	        return [_filteredListContent count];
+    else
+	        return [_listContent count];
 }
 
 // Customize the appearance of table view cells.
@@ -192,7 +181,6 @@
 				cell.accessoryView = imageView;  
 			}
 		}
-		
 		cell.textLabel.text = [_filteredListContent objectAtIndex:indexPath.row];
     }
 	else
@@ -229,60 +217,74 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-	_viewPushed = YES;
-	ABRecordRef personID = [_filteredRecordIds objectAtIndex:indexPath.row];
+	ABRecordRef personID      = [_filteredRecordIds objectAtIndex:indexPath.row];
 	
-	//NSUInteger mvmfds = [_listContent indexOfObject:string];
+	ABAddressBookRef addressref = [[DataManager sharedObj] ref]; 
 	
-	NSUInteger indes = [_recordIds indexOfObject:personID];
-	
-	if (self.tabBarController.selectedIndex == 2)
+	if ([DataManager sharedObj].isShowAddScreen == YES ) 
 	{
-		[self showPersonViewController:personID];
-	
-	}
-	
-	if (_canAddToFavourites) 
-	{
-		CFIndex nPhones = [self getIndividualPhoneRecord:indes];
+		_viewinDialPadPush = YES;
 		
-		if (nPhones) 
+		CFErrorRef anError = NULL;
+		
+		//code to save data in address book	
+		
+		ABMutableMultiValueRef multiPhone = ABMultiValueCreateMutable(kABMultiStringPropertyType);
+		ABMultiValueAddValueAndLabel(multiPhone, [DataManager sharedObj].mobileNumber, kABPersonPhoneMainLabel, NULL);  
+		ABRecordSetValue(personID, kABPersonPhoneProperty, multiPhone, &anError);
+		CFRelease(multiPhone);
+		
+		ABAddressBookSave(addressref, &anError);
+		
+		[DataManager sharedObj].mobileNumber = nil;
+		[self showPersonViewController:personID];
+	}
+	else
+	{
+		_viewPushed = YES;
+		
+		NSUInteger indes = [_recordIds indexOfObject:personID];
+
+		if (self.tabBarController.selectedIndex == 2)
 		{
-			if ([[DataManager sharedObj].favouritesArray count] == 0) 
+			[self showPersonViewController:personID];
+
+		}
+		
+		if (_canAddToFavourites) 
+		{
+			CFStringRef allRecordPhonesRef  = ABRecordCopyValue(personID, kABPersonPhoneProperty);
+			CFIndex nPhones = ABMultiValueGetCount(allRecordPhonesRef);
+			
+			if (nPhones) 
 			{
-				[[DataManager sharedObj].favouritesArray addObject:[_masterLists objectAtIndex:indes]];
-				[self dismissModalViewControllerAnimated:YES];
-			}
-			else 
-			{
-				NSString* mObject = [[NSString alloc] initWithString:[_masterLists objectAtIndex:indes]];
-				if ([[DataManager sharedObj].favouritesArray containsObject:mObject])
-				{	
+				if ([[DataManager sharedObj].favouritesArray count] == 0) 
+				{
+					[[DataManager sharedObj].favouritesArray addObject:[_masterLists objectAtIndex:indes]];
+					[[DataManager sharedObj].indexarrayForFaviourites addObject:[NSNumber numberWithInt:indes]];
 					[self dismissModalViewControllerAnimated:YES];
 				}
 				else 
 				{
-					[[DataManager sharedObj].favouritesArray addObject:[_masterLists objectAtIndex:indes]];
-					[self dismissModalViewControllerAnimated:YES];
+					NSString* mObject = [[NSString alloc] initWithString:[_masterLists objectAtIndex:indes]];
+					if ([[DataManager sharedObj].favouritesArray containsObject:mObject])
+					{	
+						[self dismissModalViewControllerAnimated:YES];
+					}
+					else 
+					{
+						[[DataManager sharedObj].favouritesArray addObject:[_masterLists objectAtIndex:indes]];
+						[[DataManager sharedObj].indexarrayForFaviourites addObject:indes];
+						[self dismissModalViewControllerAnimated:YES];
+					}
 				}
 			}
-		}
-		else 
-		{
-			[self showPersonViewController:personID];
+			else 
+			{
+				[self showPersonViewController:personID];
+			}
 		}
 	}
-}
-
-- (CFIndex) getIndividualPhoneRecord:(int)recordNumber
-{
-	ABAddressBookRef addressBookRef = ABAddressBookCreate(); 
-	CFArrayRef allPeopleRef         = ABAddressBookCopyArrayOfAllPeople(addressBookRef);
-	ABRecordRef recordRef           = CFArrayGetValueAtIndex(allPeopleRef, recordNumber);
-	CFStringRef allRecordPhonesRef  = ABRecordCopyValue(recordRef, kABPersonPhoneProperty);
-	CFIndex nPhones = ABMultiValueGetCount(allRecordPhonesRef);
-	
-	return nPhones;
 }
 
 #pragma mark -
@@ -293,8 +295,6 @@
 	[_filteredListContent removeAllObjects]; // First clear the filtered array.
 	[_filteredRecordIds   removeAllObjects];
 	
-	
-	//for (NSString* abc in _listContent)
 	for (int i = 0; i <_listContent.count; i++)
 	{
 		NSString* abc = [_listContent objectAtIndex:i];
@@ -302,8 +302,7 @@
         if (result == NSOrderedSame)
 		{
 			[_filteredListContent addObject:abc];
-		    
-		   [_filteredRecordIds addObject:[_recordIds objectAtIndex:i]]; 
+		    [_filteredRecordIds   addObject:[_recordIds objectAtIndex:i]]; 
 		}
     }
 }
@@ -320,8 +319,6 @@
     // Return YES to cause the search result table view to be reloaded.
     return YES;
 }
-
-
 
 - (void)newPersonViewController:(ABNewPersonViewController *)newPersonViewController didCompleteWithNewPerson:(ABRecordRef)person
 {
@@ -341,11 +338,12 @@
 -(void)showPersonViewController:(ABRecordRef)str 
 {
 	// Fetch the address book 
-	ABAddressBookRef addressBook = ABAddressBookCreate();
+	//ABAddressBookRef addressBook = ABAddressBookCreate();
 	
 	ABPersonViewController *picker = [[[ABPersonViewController alloc] init] autorelease];
 	picker.personViewDelegate = self;
 	picker.displayedPerson = str;
+	
 	
 	// Allow users to edit the person’s information
 	if (self.tabBarController.selectedIndex == 0)
@@ -356,9 +354,14 @@
 	{
 		picker.allowsEditing = YES;
 	}
+	
+	if ([DataManager sharedObj].isShowAddScreen == YES) 
+	{
+		picker.allowsEditing = YES;
+	}
 		
 	[self.navigationController pushViewController:picker animated:YES];
-	CFRelease(addressBook);
+	//CFRelease(addressBook);
 }
 
 

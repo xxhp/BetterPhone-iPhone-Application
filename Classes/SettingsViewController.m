@@ -19,13 +19,13 @@
 	_scrollview.scrollEnabled = YES;
 }
 
-
+//sending notification to facebook for login
 -(IBAction)faceBookLoginButtonTapped:(id)Sender
 {
-	//sending notification to facebook
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"loginNotice" object:nil];
 }
 
+//sending notification to facebook for logout 
 -(IBAction)faceBookLogoutButtonTapped:(id)Sender
 {
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"logoutNotice" object:nil];
@@ -37,6 +37,5 @@
 {
     [super dealloc];
 }
-
 
 @end

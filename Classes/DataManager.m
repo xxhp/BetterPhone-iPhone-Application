@@ -12,18 +12,23 @@ static DataManager*	sDataManager = nil;
 
 @implementation DataManager
 
-@synthesize repetion            = _repetion;
-@synthesize canAddToContacts    = _canAddToContacts;
-@synthesize personNo            = _personNo;
-@synthesize sharedList          = _sharedList;
-@synthesize sharedContacts      = _sharedContacts;
-@synthesize sharedStatus        = _sharedStatus;
-@synthesize masterList          = _masterList;
-@synthesize masterContactList   = _masterContactList;
-@synthesize favouritesArray		= _favouritesArray;
-@synthesize mobileNumber		= _mobileNumber;
-@synthesize messageData         = _messageData;
-@synthesize recordPersonId      = _recordPersonId;
+@synthesize repetion				= _repetion;
+@synthesize canAddToContacts		= _canAddToContacts;
+@synthesize personNo				= _personNo;
+@synthesize sharedList				= _sharedList;
+@synthesize sharedContacts			= _sharedContacts;
+@synthesize sharedStatus			= _sharedStatus;
+@synthesize masterList				= _masterList;
+@synthesize masterContactList		= _masterContactList;
+@synthesize favouritesArray			= _favouritesArray;
+@synthesize mobileNumber			= _mobileNumber;
+@synthesize messageData				= _messageData;
+@synthesize recordPersonId			= _recordPersonId;
+@synthesize isShowAddScreen			= _isShowAddScreen;
+@synthesize ref						= _ref;
+@synthesize indexarrayForFaviourites	= _indexarrayForFaviourites;
+@synthesize isfirstTabActivated =   _isfirstTabActivated;
+
 
 + (DataManager*) sharedObj
 {
@@ -49,6 +54,7 @@ static DataManager*	sDataManager = nil;
 		_favouritesArray   = [[NSMutableArray alloc] init];
 		_messageData       = [[NSArray alloc] init];
 		_recordPersonId    = [[NSMutableArray alloc] init];
+		_indexarrayForFaviourites = [[NSMutableArray alloc] init];
 	}
 	
 	return self;
@@ -64,8 +70,8 @@ static DataManager*	sDataManager = nil;
 	_ReleaseObject(_masterContactList);
 	_ReleaseObject(_favouritesArray);
 	_ReleaseObject(_messageData);
-				   
+	_ReleaseObject(_recordPersonId);
+	_ReleaseObject(_indexarrayForFaviourites); 
 }
-
 
 @end

@@ -26,6 +26,7 @@ static NSString*	kGetSessionProxy = kFacebookSessionProxy; // @"<YOUR SESSION CA
 @synthesize     loginDialog  = _loginDialog;
 @synthesize     session      = _session;
 
+//custom init method
 - (id) init
 {
 	if (self = [super init])
@@ -36,15 +37,15 @@ static NSString*	kGetSessionProxy = kFacebookSessionProxy; // @"<YOUR SESSION CA
 			_session = [[FBSession sessionForApplication:kApiKey secret:kApiSecret delegate:self] retain];
 	}
 	
+	//element use to create difference betwwen different request from facebook to get data
 	_compareElement = YES;
 	
 	[_session resume];
-	
+		
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(callingViewMethod:) name:@"loginNotice" object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logout) name:@"logoutNotice" object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(callingRequestMethod:) name:@"noticeFromSocialFeed" object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkingConnection:) name:@"connectionNotice" object:nil];
-	
 	
 	return self;
 }
@@ -65,12 +66,13 @@ static NSString*	kGetSessionProxy = kFacebookSessionProxy; // @"<YOUR SESSION CA
 
 }
 
-
+//shhow login dialog on notification
 -(IBAction)callingViewMethod:(id)Sender
 {
 	[self showLoginDialog];
 }
 
+//action to request for getting message data
 -(IBAction)callingRequestMethod:(id)Sender
 {
 	if ([_session isConnected])
@@ -99,6 +101,7 @@ static NSString*	kGetSessionProxy = kFacebookSessionProxy; // @"<YOUR SESSION CA
 	}
 }
 
+//logout from facebook
 - (void) logout
 {
 	[_session logout];
@@ -106,78 +109,61 @@ static NSString*	kGetSessionProxy = kFacebookSessionProxy; // @"<YOUR SESSION CA
 
 #pragma mark -
 #pragma mark seesion login method
-
 - (void) session:(FBSession*)session didLogin:(FBUID)uid
 {
 	_compareElement = YES;
-	
-	NSString* fql = [NSString stringWithFormat:
-					 @"select name from user where uid in (select uid2 from friend where uid1 = %lld)", _session.uid];
+	NSString* fql = [NSString stringWithFormat:@"select name from user where uid in (select uid2 from friend where uid1 = %lld)", _session.uid];
 	
 	NSDictionary* params = [NSDictionary dictionaryWithObject:fql forKey:@"query"];
-	
     [[FBRequest requestWithDelegate:self] call:@"facebook.fql.query" params:params];
-	
 }
 
 #pragma mark -
-
+//handling request response here
 - (void) request:(FBRequest*)request didLoad:(id)result
 {
     if(_compareElement == YES)
 	{
-	    NSArray* friends = result;
-		NSDictionary* friend = nil;
+	   NSArray* friends = result;
+	   NSDictionary* friend = nil;
 		
-		for (friend in friends)
-		{
-			NSString* name = [[friend objectForKey:@"name"] retain];
-			NSArray* data = [[NSArray alloc] initWithArray:[[DataManager sharedObj] sharedContacts]];
+	   for (friend in friends)
+	   {
+		  NSString* name = [[friend objectForKey:@"name"] retain];
+		  NSArray* data = [[NSArray alloc] initWithArray:[[DataManager sharedObj] sharedContacts]];
 			
-			if(data.count == 0)
-			{
-				[[DataManager sharedObj].sharedContacts addObject:name]; 
-			}
-			else
-			{
-				for (int i = 0; i < data.count ; i++)
-				{
-					NSString* str = [data objectAtIndex:i];
-					
-					if (![str isEqualToString:name])
-					{
-						NSLog(@"%d",i);
-						_testing = YES;
-					}
-					else
-					{
-						_testing = NO;
-						break;
-					}
-				}
-			}
-			
-			if (_testing == YES)
-			{
-				[[DataManager sharedObj].sharedContacts addObject:name]; 
-			}
-		}
+		  if(data.count == 0)
+		  {
+		 	[[DataManager sharedObj].sharedContacts addObject:name]; 
+		  }
+		  else
+		  {
+			  _testing = [data containsObject:name];
+			  if (_testing == YES)
+			  {
+				  _testing = NO;
+				  break;
+			  }
+			  else
+			  {
+				  _testing = YES;
+			  }
+		  }  
+
+		  if (_testing == YES)
+			  [[DataManager sharedObj].sharedContacts addObject:name]; 
+	   }
 	}
 	else
 	{		
 		[[DataManager sharedObj] setMessageData:result];
-		
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"notify" object:nil];
-		
 		_compareElement = YES;
 	}
 }
 
-- (void)request:(FBRequest*)request didReceiveResponse:(NSURLResponse*)response
-{
-	
-}
-
+#pragma mark -
+#pragma mark error method
 
 - (void) request:(FBRequest*)request didFailWithError:(NSError*)error
 {
@@ -187,22 +173,16 @@ static NSString*	kGetSessionProxy = kFacebookSessionProxy; // @"<YOUR SESSION CA
 #pragma mark -
 #pragma mark request method
 
-
 - (void) requestForMessages
 {
 	_compareElement = NO;
 	
-	NSString* fql = [NSString stringWithFormat:
-					 @"SELECT name, status FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = %lld) ", _session.uid];
+	NSString* fql = [NSString stringWithFormat:@"SELECT name, status FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = %lld) ", _session.uid];
 	
 	NSDictionary* params = [NSDictionary dictionaryWithObject:fql forKey:@"query"];
 	FBRequest* last20FriendsStatusRequest = [FBRequest requestWithDelegate:self];
 	[last20FriendsStatusRequest call:@"facebook.fql.query" params:params];
-	
 }
-
-
-
 
 #pragma mark -
 #pragma mark memory managment

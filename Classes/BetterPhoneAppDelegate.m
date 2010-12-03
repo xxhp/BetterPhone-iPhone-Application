@@ -28,7 +28,7 @@
 		
 	[self getContactsList];
 	
-	FaceBookContacts* facebookInfo = [[FaceBookContacts alloc] init] ;
+	FaceBookContacts* facebookInfo = [[FaceBookContacts alloc] init];
 	
 	return YES;
 }
@@ -88,6 +88,7 @@
 		{
 			[[DataManager sharedObj].masterContactList addObject:contactFirstLast];
 			[[DataManager sharedObj].recordPersonId    addObject:ref];
+			[[DataManager sharedObj] setRef:addressBook ];
 		}
 	}
 	

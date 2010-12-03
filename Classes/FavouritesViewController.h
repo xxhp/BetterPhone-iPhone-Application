@@ -13,10 +13,11 @@
 
 @interface FavouritesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate >
 {
-	IBOutlet UITableView* _table;
+	IBOutlet UITableView*	_table;
 	
-	NSArray* _favContacts ;
-	
+	NSArray*				_favContacts;
+	NSArray*                _favIndex;
+	NSArray*                _recordIds;
 }
 
 @end

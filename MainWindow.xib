@@ -12,7 +12,6 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="32"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -72,11 +71,9 @@
 							<string key="NSResourceName">icon_history.png</string>
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUITabBar"/>
 					</object>
 					<reference key="IBUIToolbarItems" ref="0"/>
 					<reference key="IBUIParentViewController" ref="256811316"/>
-					<string key="IBUINibName">SocialFeedViewController</string>
 					<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 						<int key="interfaceOrientation">1</int>
 					</object>
@@ -96,8 +93,7 @@
 						<object class="IBUIViewController" id="313784526">
 							<reference key="IBUIToolbarItems" ref="0"/>
 							<object class="IBUINavigationItem" key="IBUINavigationItem" id="558392531">
-								<reference key="IBUINavigationBar"/>
-								<string key="IBUITitle">Status update</string>
+								<string key="IBUITitle">Status Update</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 							<reference key="IBUIParentViewController" ref="292538922"/>
@@ -114,7 +110,6 @@
 					<object class="IBUINavigationController" id="389562557">
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="190694251">
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							<reference key="IBUITabBar"/>
 							<int key="IBUISystemItemIdentifier">1</int>
 						</object>
 						<reference key="IBUIToolbarItems" ref="0"/>
@@ -155,7 +150,6 @@
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="1071448709">
 							<int key="IBUITag">2</int>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							<reference key="IBUITabBar"/>
 							<int key="IBUISystemItemIdentifier">5</int>
 						</object>
 						<reference key="IBUIToolbarItems" ref="0"/>
@@ -201,7 +195,6 @@
 								<string key="NSResourceName">dial.png</string>
 							</object>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							<reference key="IBUITabBar"/>
 						</object>
 						<reference key="IBUIToolbarItems" ref="0"/>
 						<reference key="IBUIParentViewController" ref="256811316"/>
@@ -221,7 +214,6 @@
 								<string key="NSResourceName">settings_icon.png</string>
 							</object>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							<reference key="IBUITabBar"/>
 						</object>
 						<reference key="IBUIToolbarItems" ref="0"/>
 						<reference key="IBUIParentViewController" ref="256811316"/>

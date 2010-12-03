@@ -21,7 +21,7 @@
 	IBOutlet UITableView*      _table;
 	IBOutlet UINavigationBar*  _navBar;
 	
-	NSMutableArray	*filteredListContent;
+	NSMutableArray			   *filteredListContent;
 	
 	// The saved state of the search UI if a memory warning removed the view.
     NSString*					_savedSearchTerm;
@@ -29,11 +29,13 @@
     
 	
 	NSArray*					_faceBookCont;
-	NSMutableArray*                    _recordIds;
-	NSMutableArray*                    _filteredRecordIds;
+	NSMutableArray*             _recordIds;
+	NSMutableArray*             _filteredRecordIds;
 	   
 	BOOL						_canAddToFavourites;
 	BOOL						_searchWasActive;
+	
+	BOOL                        _viewinDialPadPush;
 	
 	BOOL                         _viewPushed;
 	

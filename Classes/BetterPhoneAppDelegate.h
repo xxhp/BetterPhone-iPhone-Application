@@ -14,7 +14,6 @@
 {
     UIWindow *window;
 	IBOutlet UITabBarController* _tabBarController;
-	
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

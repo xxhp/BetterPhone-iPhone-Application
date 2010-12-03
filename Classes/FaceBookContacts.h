@@ -16,8 +16,8 @@
 	FBLoginDialog*	_loginDialog;
 	FBRequest*      _req; 
 	
-	BOOL _testing;  
-	BOOL _compareElement;
+	BOOL			_testing;  
+	BOOL			_compareElement;
 }
 
 @property (nonatomic, retain) FBLoginDialog*	loginDialog;
@@ -25,7 +25,6 @@
 
 - (void) showLoginDialog;
 - (void) logout;
-- (void) requestForContacts;
 - (void) requestForMessages;
 
 @end

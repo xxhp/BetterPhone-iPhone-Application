@@ -21,9 +21,9 @@
 
 -(void)viewDidLoad
 {
-	UIBarButtonItem*	rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
+	UIBarButtonItem*	rightButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
 																				 target:self 
-																				 action:@selector(addNewContacts:)];
+																				 action:@selector(addNewContacts:)] autorelease];
 	self.navigationItem.rightBarButtonItem = rightButton;
 	self.navigationItem.leftBarButtonItem = ((UIViewController*)self).editButtonItem;
 }
@@ -31,7 +31,8 @@
 -(void)viewWillAppear:(BOOL)animated
 {
 	_favContacts = [[NSArray alloc] initWithArray:[[DataManager sharedObj] favouritesArray]];
-	_favIndex = [[NSArray alloc] initWithArray:[[DataManager sharedObj] indexarrayForFaviourites]]; 
+	_favIndex    = [[NSArray alloc] initWithArray:[[DataManager sharedObj] indexarrayForFaviourites]]; 
+	
 	[[DataManager sharedObj]  setIsfirstTabActivated:YES];
 	[_table reloadData];
 }
@@ -47,7 +48,7 @@
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated 
 {	
-	[super setEditing:editing animated:animated];	
+	[super  setEditing:editing animated:animated];	
 	[_table setEditing:editing animated:YES];
 }
 
@@ -70,6 +71,7 @@
 	UINavigationController *navigation1 = [[UINavigationController alloc] initWithRootViewController:contacts];
 	
 	[self.navigationController presentModalViewController:navigation1 animated:YES];
+	[navigation1 release];
 }
 
 -(IBAction)dismissModalViews:(id)Sender
@@ -87,7 +89,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	
 	static NSString *CellIdentifier = @"Cell";
 	
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -111,7 +112,6 @@
 	
 	NSString* call = [self getIndividualPhoneRecord:[_favIndex objectAtIndex:indexPath.row]];
 	
-	
 	NSString *phoneNumberScheme = [NSString stringWithFormat:@"tel:%@",call];
 	phoneNumberScheme = [phoneNumberScheme stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 	
@@ -121,9 +121,7 @@
 - (NSString*) getIndividualPhoneRecord:(NSNumber*)recordNumber
 {
 	NSArray* recordIds = [[DataManager sharedObj] recordPersonId];
-	
 	ABRecordRef ref = [recordIds objectAtIndex:[recordNumber intValue]];
-	
 	ABMultiValueRef allRecordPhonesRef = ABRecordCopyValue(ref, kABPersonPhoneProperty);
 	
 	NSString* mobileLabel;
@@ -132,10 +130,7 @@
 	for(CFIndex i = 0; i<ABMultiValueGetCount(allRecordPhonesRef); i++)
 	{
 		mobileLabel=(NSString*)ABMultiValueCopyLabelAtIndex(allRecordPhonesRef, i);
-		if([mobileLabel isEqualToString:@"_$!<Mobile>!$_"] )
-		{
-			mobile=(NSString*)ABMultiValueCopyValueAtIndex(allRecordPhonesRef,i);
-		}
+		mobile=(NSString*)ABMultiValueCopyValueAtIndex(allRecordPhonesRef,i);
 	}
 	return mobile;
 }
@@ -146,6 +141,7 @@
 - (void)dealloc 
 {
 	_ReleaseObject(_favContacts);
+	_ReleaseObject(_favIndex);
 	[super dealloc];
 }
 

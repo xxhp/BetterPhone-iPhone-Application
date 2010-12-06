@@ -188,9 +188,9 @@
 
 - (void)dealloc
 {
-    [super dealloc];
-	_ReleaseObject(_faceBookContacts);
+    _ReleaseObject(_faceBookContacts);
 	_ReleaseObject(_contacts);
+	[super dealloc];
 }
 
 

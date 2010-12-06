@@ -12,22 +12,22 @@ static DataManager*	sDataManager = nil;
 
 @implementation DataManager
 
-@synthesize repetion				= _repetion;
-@synthesize canAddToContacts		= _canAddToContacts;
-@synthesize personNo				= _personNo;
-@synthesize sharedList				= _sharedList;
-@synthesize sharedContacts			= _sharedContacts;
-@synthesize sharedStatus			= _sharedStatus;
-@synthesize masterList				= _masterList;
-@synthesize masterContactList		= _masterContactList;
-@synthesize favouritesArray			= _favouritesArray;
-@synthesize mobileNumber			= _mobileNumber;
-@synthesize messageData				= _messageData;
-@synthesize recordPersonId			= _recordPersonId;
-@synthesize isShowAddScreen			= _isShowAddScreen;
-@synthesize ref						= _ref;
+@synthesize repetion					= _repetion;
+@synthesize canAddToContacts			= _canAddToContacts;
+@synthesize personNo					= _personNo;
+@synthesize sharedList					= _sharedList;
+@synthesize sharedContacts				= _sharedContacts;
+@synthesize sharedStatus				= _sharedStatus;
+@synthesize masterList					= _masterList;
+@synthesize masterContactList			= _masterContactList;
+@synthesize favouritesArray				= _favouritesArray;
+@synthesize mobileNumber				= _mobileNumber;
+@synthesize messageData					= _messageData;
+@synthesize recordPersonId				= _recordPersonId;
+@synthesize isShowAddScreen				= _isShowAddScreen;
+@synthesize ref							= _ref;
 @synthesize indexarrayForFaviourites	= _indexarrayForFaviourites;
-@synthesize isfirstTabActivated =   _isfirstTabActivated;
+@synthesize isfirstTabActivated         = _isfirstTabActivated;
 
 
 + (DataManager*) sharedObj
@@ -62,8 +62,7 @@ static DataManager*	sDataManager = nil;
 
 - (void)dealloc 
 {
-    [super dealloc];
-	_ReleaseObject(_sharedList);
+    _ReleaseObject(_sharedList);
 	_ReleaseObject(_sharedContacts);
 	_ReleaseObject(_sharedStatus);
 	_ReleaseObject(_masterList);
@@ -72,6 +71,7 @@ static DataManager*	sDataManager = nil;
 	_ReleaseObject(_messageData);
 	_ReleaseObject(_recordPersonId);
 	_ReleaseObject(_indexarrayForFaviourites); 
+	[super dealloc];
 }
 
 @end

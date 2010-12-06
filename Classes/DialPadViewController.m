@@ -51,7 +51,6 @@ NSString * const notifying = @"DataComplete";
 	for (int i = 0; i < _phoneNOString.count ; i++)
 		[display appendString:[_phoneNOString objectAtIndex:i]]; 
 	
-	
 	_text.text = @"";
 	_text.text = display;
 	

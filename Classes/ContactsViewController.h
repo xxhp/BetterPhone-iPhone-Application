@@ -12,8 +12,8 @@
  
 
 
-@interface ContactsViewController : UIViewController  < ABNewPersonViewControllerDelegate ,UITableViewDataSource, UITableViewDelegate, 
-														UISearchDisplayDelegate, UISearchBarDelegate ,ABPersonViewControllerDelegate>
+@interface ContactsViewController : UIViewController  < UITableViewDataSource, UITableViewDelegate, 
+														UISearchDisplayDelegate, UISearchBarDelegate ,ABPersonViewControllerDelegate, ABNewPersonViewControllerDelegate>
 {
 	NSArray*                   _masterLists;
 	UITableView*			   _afterSearching;

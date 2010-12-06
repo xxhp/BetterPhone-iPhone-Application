@@ -7,14 +7,12 @@
 //
 
 #import "ContactsViewController.h"
-#import "InfoViewController.h"
 #import "DataManager.h"
 #import "BetterPhoneAppDelegate.h"
 
 
 @interface ContactsViewController (privateMethod)
 
--(CFIndex) getIndividualPhoneRecord:(int)recordNumber;
 -(void) showPersonViewController:(ABRecordRef)str;
 -(void) adjustView;
 
@@ -66,6 +64,11 @@
 		_filteredRecordIds   = [[NSMutableArray alloc] initWithArray:_recordIds];
 	}
 	
+	if(self.tabBarController.selectedIndex == 2)
+	{
+		[[DataManager sharedObj] setIsShowAddScreen:NO];
+	}
+	
 	if (_viewinDialPadPush == YES)
 	{
 		[self dismissModalViewControllerAnimated:YES];
@@ -94,8 +97,6 @@
 	
 	if (self.tabBarController.selectedIndex == 0)
 	{
-		NSLog(@"hello tab");
-		
 		UIBarButtonItem*	leftButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel 
 																					 target:self 
 																					 action:@selector(dismissModalViews:)] autorelease];
@@ -145,7 +146,6 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-    
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -154,19 +154,19 @@
     }
     
 	cell.accessoryView = nil;
-	
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	cell.highlighted = NO; 
+	
+	UIImage* img = [UIImage imageNamed:@"image20.ico"];
+	UIImageView* imageView = [[UIImageView alloc] initWithImage:img];
+	
+	[imageView setImage:img];
+	
 	
     // Configure the cell...
 	if (_table == self.searchDisplayController.searchResultsTableView)
 	{
         NSString* str  = [_filteredListContent objectAtIndex:indexPath.row];
-		
-		UIImage* img = [UIImage imageNamed:@"image20.ico"];
-		UIImageView* imageView = [[UIImageView alloc] initWithImage:img];
-		
-		[imageView setImage:img];
 		
 		for (int i = 0; i < _faceBookCont.count; i++)
 		{
@@ -174,10 +174,6 @@
 			
 			if ([str isEqualToString:str1]) 
 			{
-				if (indexPath.row == 2)
-				{
-					NSLog(@"%d",indexPath.row);
-				}
 				cell.accessoryView = imageView;  
 			}
 		}
@@ -187,28 +183,18 @@
 	{
         NSString* str  = [_listContent objectAtIndex:indexPath.row];
 		
-		UIImage* img = [UIImage imageNamed:@"image20.ico"];
-		UIImageView* imageView = [[UIImageView alloc] initWithImage:img];
-		
-		[imageView setImage:img];
-		
 		for (int i = 0; i < _faceBookCont.count; i++)
 		{
 			NSString* str1 = [_faceBookCont objectAtIndex:i]; 
 			
 			if ([str isEqualToString:str1]) 
 			{
-				if (indexPath.row == 2)
-				{
-					NSLog(@"%d",indexPath.row);
-				}
 				cell.accessoryView = imageView;  
 			}
 		}
 		
 		cell.textLabel.text = [_listContent objectAtIndex:indexPath.row];
     }
-	
     return cell;
 }
 
@@ -220,6 +206,14 @@
 	ABRecordRef personID      = [_filteredRecordIds objectAtIndex:indexPath.row];
 	
 	ABAddressBookRef addressref = [[DataManager sharedObj] ref]; 
+	
+	
+	if(self.tabBarController.selectedIndex == 2)
+	{
+		[[DataManager sharedObj] setIsShowAddScreen:NO];
+		[self showPersonViewController:personID];
+	}
+	
 	
 	if ([DataManager sharedObj].isShowAddScreen == YES ) 
 	{
@@ -245,12 +239,6 @@
 		
 		NSUInteger indes = [_recordIds indexOfObject:personID];
 
-		if (self.tabBarController.selectedIndex == 2)
-		{
-			[self showPersonViewController:personID];
-
-		}
-		
 		if (_canAddToFavourites) 
 		{
 			CFStringRef allRecordPhonesRef  = ABRecordCopyValue(personID, kABPersonPhoneProperty);
@@ -274,7 +262,7 @@
 					else 
 					{
 						[[DataManager sharedObj].favouritesArray addObject:[_masterLists objectAtIndex:indes]];
-						[[DataManager sharedObj].indexarrayForFaviourites addObject:indes];
+						[[DataManager sharedObj].indexarrayForFaviourites addObject:[NSNumber numberWithInt:indes]];
 						[self dismissModalViewControllerAnimated:YES];
 					}
 				}
@@ -314,9 +302,9 @@
 {
     [self filterContentForSearchText:searchString scope:
 	[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
-    
 	_table = self.searchDisplayController.searchResultsTableView;
-    // Return YES to cause the search result table view to be reloaded.
+    
+	// Return YES to cause the search result table view to be reloaded.
     return YES;
 }
 
@@ -331,19 +319,16 @@
 	_table = _afterSearching;
 
 	[self.navigationController setNavigationBarHidden:NO animated:YES];
-
 	[searchBar resignFirstResponder];
 }
 
 -(void)showPersonViewController:(ABRecordRef)str 
 {
 	// Fetch the address book 
-	//ABAddressBookRef addressBook = ABAddressBookCreate();
-	
+
 	ABPersonViewController *picker = [[[ABPersonViewController alloc] init] autorelease];
 	picker.personViewDelegate = self;
 	picker.displayedPerson = str;
-	
 	
 	// Allow users to edit the person’s information
 	if (self.tabBarController.selectedIndex == 0)
@@ -361,7 +346,6 @@
 	}
 		
 	[self.navigationController pushViewController:picker animated:YES];
-	//CFRelease(addressBook);
 }
 
 
@@ -370,11 +354,10 @@
 
 - (void)dealloc
 {
-    [super dealloc];
-	_ReleaseObject(_masterLists);
+    _ReleaseObject(_masterLists);
 	[_listContent release];
 	[_filteredListContent release];
+	[super dealloc];
 }
-
 
 @end

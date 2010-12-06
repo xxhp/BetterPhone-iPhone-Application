@@ -13,26 +13,24 @@
 
 @interface SocialFeedViewController : UIViewController  <UITableViewDataSource, UITableViewDelegate, FBRequestDelegate> 
 {
-	IBOutlet UITableView* _table;
-	
-	NSArray*			_status;
-	NSArray*			_contacts;
-	
+	IBOutlet UITableView*				_table;
+	IBOutlet UIActivityIndicatorView*	_activity;
+		
+	NSArray*				_status;
+	NSArray*				_contacts;
+		
 	//local array for comparison for all methods
-	NSArray*			_local;
+	NSArray*				_local;
     
-	NSArray*			_faceBookContacts; 
-	NSMutableArray*		_friends;		
-	UIImageView*		_imageView;
+	NSArray*				_faceBookContacts; 
+	NSMutableArray*			_friends;		
+	UIImageView*			_imageView;
 	
-	int _counts ;
+	int						_counts;
 	
-	NSTimer*            _timeCounter;
+	NSTimer*				_timeCounter;
 	
-	BOOL                _tableContent;
-	
-	IBOutlet UIActivityIndicatorView* _activity;
-     
+	BOOL					_tableContent;
 }
 
 

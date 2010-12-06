@@ -40,7 +40,7 @@
 	CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeople(addressBook);
 	CFIndex      nPeople = ABAddressBookGetPersonCount(addressBook);
 
-	NSString *contactFirstLast = [[NSString alloc]init];
+	NSString *contactFirstLast = [[NSString alloc] init];
 	
 	for (int i = 0; i < nPeople; i++)
 	{
@@ -97,7 +97,7 @@
 - (void)dealloc
 {
     [window release];
-    [super dealloc];
+	    [super dealloc];
 }
 
 

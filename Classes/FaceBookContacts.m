@@ -42,10 +42,10 @@ static NSString*	kGetSessionProxy = kFacebookSessionProxy; // @"<YOUR SESSION CA
 	
 	[_session resume];
 		
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(callingViewMethod:) name:@"loginNotice" object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logout) name:@"logoutNotice" object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(callingRequestMethod:) name:@"noticeFromSocialFeed" object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkingConnection:) name:@"connectionNotice" object:nil];
+	[[NSNotificationCenter defaultCenter]	addObserver:self	selector:@selector(callingViewMethod:)		name:@"loginNotice"				object:nil];
+	[[NSNotificationCenter defaultCenter]	addObserver:self	selector:@selector(logout)					name:@"logoutNotice"			object:nil];
+	[[NSNotificationCenter defaultCenter]	addObserver:self	selector:@selector(callingRequestMethod:)	name:@"noticeFromSocialFeed"	object:nil];
+	[[NSNotificationCenter defaultCenter]	addObserver:self	selector:@selector(checkingConnection:)		name:@"connectionNotice"		object:nil];
 	
 	return self;
 }
@@ -111,6 +111,7 @@ static NSString*	kGetSessionProxy = kFacebookSessionProxy; // @"<YOUR SESSION CA
 #pragma mark seesion login method
 - (void) session:(FBSession*)session didLogin:(FBUID)uid
 {
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"connectionResponsepositive" object:nil];
 	_compareElement = YES;
 	NSString* fql = [NSString stringWithFormat:@"select name from user where uid in (select uid2 from friend where uid1 = %lld)", _session.uid];
 	

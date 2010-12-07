@@ -12,9 +12,9 @@
 
 @interface SettingsViewController : UIViewController
 {
-	IBOutlet UIScrollView*  _scrollview;
-	IBOutlet UISwitch*      _switchBtn;
-}
+	IBOutlet UIButton*		_connectBtn;
+	IBOutlet UIButton*		_logoutBtn;
+}	
 
 -(IBAction)faceBookLoginButtonTapped:(id)Sender;
 -(IBAction)faceBookLogoutButtonTapped:(id)Sender;

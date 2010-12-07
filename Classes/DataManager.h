@@ -29,11 +29,9 @@
 	NSMutableArray*     _indexarrayForFaviourites;
 	NSString*			_mobileNumber;
 	NSArray*			_messageData;
-	
 	NSMutableArray*		_recordPersonId;
 	ABAddressBookRef	_ref;
-	
-	
+
 }
 
 
@@ -49,7 +47,7 @@
 @property (nonatomic, retain) NSMutableArray* recordPersonId;
 @property (nonatomic) BOOL    isShowAddScreen;
 @property (nonatomic) BOOL    canAddToContacts;
-@property (nonatomic) BOOL        isfirstTabActivated;
+@property (nonatomic) BOOL    isfirstTabActivated;
 @property (nonatomic) BOOL    repetion; 
 @property (nonatomic) int     personNo; 
 @property (nonatomic)         ABAddressBookRef ref;

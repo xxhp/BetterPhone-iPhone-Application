@@ -348,6 +348,12 @@
 	[self.navigationController pushViewController:picker animated:YES];
 }
 
+- (BOOL)personViewController:(ABPersonViewController *)personViewController shouldPerformDefaultActionForPerson:(ABRecordRef)person
+					property:(ABPropertyID)property 
+				  identifier:(ABMultiValueIdentifier)identifier
+{
+	return YES;
+}
 
 #pragma mark -
 #pragma mark memory managment

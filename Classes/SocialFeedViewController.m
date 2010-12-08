@@ -49,11 +49,11 @@
 	_faceBookContacts  = [[NSArray alloc] initWithArray:[[DataManager sharedObj] sharedContacts]];
 	_local             = [[DataManager sharedObj] messageData];
 	
-	
 	if (_tableContent == NO)
 	{
 		[self checkingContacts];
 	}
+	
 	[_table reloadData]; 
 }
 
@@ -107,10 +107,8 @@
 	_local = [[DataManager sharedObj] messageData];
 	
 	NSString* str = [_contacts objectAtIndex:indexPath.row];
-	
 	UIImage* img = [UIImage imageNamed:@"image20.ico"];
 	UIImageView* imageView = [[UIImageView alloc] initWithImage:img];
-	
 	[imageView setImage:img];
 	
 	for (int i = 0; i < _faceBookContacts.count; i++)
@@ -125,7 +123,6 @@
 				{
 					cell.detailTextLabel.text = [self getRecentUpdateFriendWithName:str];
 				}
-
 				cell.accessoryView = imageView; 
 			}
 	}

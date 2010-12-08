@@ -16,7 +16,7 @@
 	IBOutlet UIButton*		_logoutBtn;
 }	
 
--(IBAction)faceBookLoginButtonTapped:(id)Sender;
--(IBAction)faceBookLogoutButtonTapped:(id)Sender;
+-(IBAction) faceBookLoginButtonTapped:(id)Sender;
+-(IBAction) faceBookLogoutButtonTapped:(id)Sender;
 
 @end

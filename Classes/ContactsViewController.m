@@ -31,7 +31,6 @@
 	_listContent         = [[NSArray alloc] init];
 	_filteredListContent = [[NSMutableArray alloc] init];
 	_filteredRecordIds   = [[NSMutableArray alloc] init];
-
 	_afterSearching      = _table;
 }
 
@@ -110,7 +109,7 @@
 	_filteredRecordIds   = nil;
 }
 
--(IBAction)dismissModalViews:(id)Sender
+-(IBAction) dismissModalViews:(id)Sender
 {
 	[DataManager sharedObj].canAddToContacts = NO;
 	[self dismissModalViewControllerAnimated:YES];
@@ -119,7 +118,7 @@
 #pragma mark -
 #pragma mark action method
 
--(IBAction)addNewContacts:(id)Sender
+-(IBAction) addNewContacts:(id)Sender
 {
 	ABNewPersonViewController *newPerson = [[ABNewPersonViewController alloc] init];
 	newPerson.newPersonViewDelegate = self;
@@ -162,7 +161,6 @@
 	
 	[imageView setImage:img];
 	
-	
     // Configure the cell...
 	if (_table == self.searchDisplayController.searchResultsTableView)
 	{
@@ -203,26 +201,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-	ABRecordRef personID      = [_filteredRecordIds objectAtIndex:indexPath.row];
-	
+	ABRecordRef personID        = [_filteredRecordIds objectAtIndex:indexPath.row];
 	ABAddressBookRef addressref = [[DataManager sharedObj] ref]; 
-	
 	
 	if(self.tabBarController.selectedIndex == 2)
 	{
 		[[DataManager sharedObj] setIsShowAddScreen:NO];
 		[self showPersonViewController:personID];
 	}
-	
-	
+
 	if ([DataManager sharedObj].isShowAddScreen == YES ) 
 	{
 		_viewinDialPadPush = YES;
-		
 		CFErrorRef anError = NULL;
 		
 		//code to save data in address book	
-		
 		ABMutableMultiValueRef multiPhone = ABMultiValueCreateMutable(kABMultiStringPropertyType);
 		ABMultiValueAddValueAndLabel(multiPhone, [DataManager sharedObj].mobileNumber, kABPersonPhoneMainLabel, NULL);  
 		ABRecordSetValue(personID, kABPersonPhoneProperty, multiPhone, &anError);
@@ -278,7 +271,7 @@
 #pragma mark -
 #pragma mark Content Filtering
 
-- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+- (void) filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
 	[_filteredListContent removeAllObjects]; // First clear the filtered array.
 	[_filteredRecordIds   removeAllObjects];
@@ -325,7 +318,6 @@
 -(void)showPersonViewController:(ABRecordRef)str 
 {
 	// Fetch the address book 
-
 	ABPersonViewController *picker = [[[ABPersonViewController alloc] init] autorelease];
 	picker.personViewDelegate = self;
 	picker.displayedPerson = str;

@@ -11,14 +11,15 @@
 
 
 @implementation SettingsViewController
--(void)viewDidLoad
+
+
+-(void) viewDidLoad
 {
-	//[super viewDidLoad];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hiddingConnectButton)   name:@"connectionResponsepositive"	object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hiddingLogoutButton)    name:@"connectionResponse"			object:nil]; 
 }
 
--(void)viewWillAppear:(BOOL)animated
+-(void) viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:YES];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"connectionNotice" object:nil];
@@ -36,16 +37,15 @@
 	_connectBtn.hidden = NO;
 }
 
-
 //sending notification to facebook for login
--(IBAction)faceBookLoginButtonTapped:(id)Sender
+-(IBAction) faceBookLoginButtonTapped:(id)Sender
 {
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"loginNotice" object:nil];
 	[self viewWillAppear:YES];
 }
 
 //sending notification to facebook for logout 
--(IBAction)faceBookLogoutButtonTapped:(id)Sender
+-(IBAction) faceBookLogoutButtonTapped:(id)Sender
 {
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"logoutNotice" object:nil];
 	[self viewWillAppear:YES];

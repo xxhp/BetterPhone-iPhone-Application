@@ -16,20 +16,19 @@
 	IBOutlet UITableView*				_table;
 	IBOutlet UIActivityIndicatorView*	_activity;
 		
-	NSArray*				_status;
-	NSArray*				_contacts;
-		
 	//local array for comparison for all methods
 	NSArray*				_local;
-    
+    NSArray*				_status;
+	NSArray*				_contacts;
 	NSArray*				_faceBookContacts; 
-	NSMutableArray*			_friends;		
-	UIImageView*			_imageView;
+
+	NSMutableArray*			_friends;	
 	
-	int						_counts;
+	UIImageView*			_imageView;
 	
 	NSTimer*				_timeCounter;
 	
+	int						_counts;
 	BOOL					_tableContent;
 }
 

@@ -11,7 +11,7 @@
 #import <AddressBookUI/AddressBookUI.h>
 
 
-@interface FavouritesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate >
+@interface FavouritesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
 	IBOutlet UITableView*	_table;
 	

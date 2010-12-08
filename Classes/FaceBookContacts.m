@@ -56,13 +56,9 @@ static NSString*	kGetSessionProxy = kFacebookSessionProxy; // @"<YOUR SESSION CA
 -(IBAction)checkingConnection:(id)Sender
 {
 	if (![_session isConnected])
-	{
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"connectionResponse" object:nil];
-	}
+			[[NSNotificationCenter defaultCenter] postNotificationName:@"connectionResponse"			object:nil];
 	else
-	{
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"connectionResponsepositive" object:nil];
-	}
+			[[NSNotificationCenter defaultCenter] postNotificationName:@"connectionResponsepositive"	object:nil];
 
 }
 
@@ -76,9 +72,7 @@ static NSString*	kGetSessionProxy = kFacebookSessionProxy; // @"<YOUR SESSION CA
 -(IBAction)callingRequestMethod:(id)Sender
 {
 	if ([_session isConnected])
-	{
 		[self requestForMessages];
-	}
 }
 
 #pragma mark -

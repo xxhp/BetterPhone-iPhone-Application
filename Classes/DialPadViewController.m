@@ -16,7 +16,7 @@ NSString * const notifying = @"DataComplete";
 
 @interface DialPadViewController (private)
 
--(void)fifteenBttonTapped:(NSNotification *)notif;
+-(void) fifteenBttonTapped:(NSNotification *)notif;
 -(void) createNewContactScreen;
 
 @end
@@ -41,7 +41,7 @@ NSString * const notifying = @"DataComplete";
 	[[DataManager sharedObj] setIsShowAddScreen:YES];
 }
 
--(IBAction)firstBttonTapped:(id)Sender
+-(IBAction) firstBttonTapped:(id)Sender
 {
 	NSString* first = @"1";
 	[_phoneNOString addObject:first];
@@ -57,7 +57,7 @@ NSString * const notifying = @"DataComplete";
 	[display release];
 }
 
--(IBAction)secondBttonTapped:(id)Sender
+-(IBAction) secondBttonTapped:(id)Sender
 {
 	NSString* first = @"2";
 	[_phoneNOString addObject:first];
@@ -72,7 +72,7 @@ NSString * const notifying = @"DataComplete";
 	[display1 release];
 }
 
--(IBAction)thirdBttonTapped:(id)Sender
+-(IBAction) thirdBttonTapped:(id)Sender
 {
 	NSString* first = @"3";
 	[_phoneNOString addObject:first];
@@ -87,7 +87,7 @@ NSString * const notifying = @"DataComplete";
 	[display3 release];
 }
 
--(IBAction)fourthBttonTapped:(id)Sender
+-(IBAction) fourthBttonTapped:(id)Sender
 {
 	NSString* first = @"4";
 	[_phoneNOString addObject:first];
@@ -100,10 +100,9 @@ NSString * const notifying = @"DataComplete";
 	_text.text = @"";
 	_text.text = display4;
 	[display4 release];
-
 }	
 	
--(IBAction)fifthBttonTapped:(id)Sender
+-(IBAction) fifthBttonTapped:(id)Sender
 {
 	NSString* first = @"5";
 	[_phoneNOString addObject:first];
@@ -116,10 +115,9 @@ NSString * const notifying = @"DataComplete";
 	_text.text = @"";
 	_text.text = display5;
 	[display5 release];
-
 }
 
--(IBAction)sixthBttonTapped:(id)Sender
+-(IBAction) sixthBttonTapped:(id)Sender
 {
 	NSString* first = @"6";
 	[_phoneNOString addObject:first];
@@ -132,10 +130,9 @@ NSString * const notifying = @"DataComplete";
 	_text.text = @"";
 	_text.text = display6;
 	[display6 release];
-
 }
 
--(IBAction)sevenBttonTapped:(id)Sender
+-(IBAction) sevenBttonTapped:(id)Sender
 {
 	NSString* first = @"7";
 	[_phoneNOString addObject:first];
@@ -148,10 +145,9 @@ NSString * const notifying = @"DataComplete";
 	_text.text = @"";
 	_text.text = display7;
 	[display7 release];
-
 }
 
--(IBAction)eitghtBttonTapped:(id)Sender
+-(IBAction) eitghtBttonTapped:(id)Sender
 {
 	NSString* first = @"8";
 	[_phoneNOString addObject:first];
@@ -166,7 +162,7 @@ NSString * const notifying = @"DataComplete";
 	[display8 release];
 }
 
--(IBAction)ninthBttonTapped:(id)Sender
+-(IBAction) ninthBttonTapped:(id)Sender
 {
 	NSString* first = @"9";
 	[_phoneNOString addObject:first];
@@ -181,7 +177,7 @@ NSString * const notifying = @"DataComplete";
 	[display9 release];
 }
 
--(IBAction)tenthBttonTapped:(id)Sender
+-(IBAction) tenthBttonTapped:(id)Sender
 {
 	NSString* first = @"*";
 	[_phoneNOString addObject:first];
@@ -194,10 +190,9 @@ NSString * const notifying = @"DataComplete";
 	_text.text = @"";
 	_text.text = display10;
 	[display10 release];
-
 }
 
--(IBAction)elevenBttonTapped:(id)Sender
+-(IBAction) elevenBttonTapped:(id)Sender
 {
 	NSString* first = @"0";
 	[_phoneNOString addObject:first];
@@ -212,7 +207,7 @@ NSString * const notifying = @"DataComplete";
 	[display11 release];
 }
 
--(IBAction)tweleveBttonTapped:(id)Sender
+-(IBAction) tweleveBttonTapped:(id)Sender
 {
 	NSString* first = @"#";
 	[_phoneNOString addObject:first];
@@ -227,14 +222,23 @@ NSString * const notifying = @"DataComplete";
 	[display12 release];
 }
 
--(IBAction)therteenBttonTapped:(id)Sender
+-(IBAction) therteenBttonTapped:(id)Sender
 {
-	UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:nil 
-															 delegate:self 
-													cancelButtonTitle:@"Cancel"
-											   destructiveButtonTitle:nil 
-													otherButtonTitles:@"Create New Contact", @"Add to Existing contact" ,nil];
-	[actionSheet showInView:self.view.superview];
+	if (_phoneNOString.count == 0)
+	{
+		NSLog(@"hello");
+	}
+	else
+	{
+		
+		UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:nil 
+																 delegate:self 
+														cancelButtonTitle:@"Cancel"
+												   destructiveButtonTitle:nil 
+														otherButtonTitles:@"Create New Contact", @"Add to Existing contact" ,nil];
+		
+		[actionSheet showInView:self.view.superview];
+	}
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -304,7 +308,7 @@ NSString * const notifying = @"DataComplete";
 	[self dismissModalViewControllerAnimated:YES];
 }
 
--(IBAction)fourteenBttonTapped:(id)Sender
+-(IBAction) fourteenBttonTapped:(id)Sender
 {
     NSMutableString* call = [[NSMutableString alloc] init];
 	
@@ -313,8 +317,6 @@ NSString * const notifying = @"DataComplete";
 		[call appendString:[_phoneNOString objectAtIndex:i]]; 
 	}
 	
-	NSLog(@"hello");
-	
 	NSString *phoneNumberScheme = [NSString stringWithFormat:@"tel:%@",call];
    	phoneNumberScheme = [phoneNumberScheme stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 		
@@ -322,7 +324,7 @@ NSString * const notifying = @"DataComplete";
 	[call release];
 }
 
--(void)fifteenBttonTapped:(NSNotification *)notif
+-(void) fifteenBttonTapped:(NSNotification *)notif
 {
 	if (_phoneNOString.count == 0)
 	{
@@ -332,7 +334,6 @@ NSString * const notifying = @"DataComplete";
 	else 
 	{
 		[_phoneNOString removeLastObject];
-		
 		NSMutableString* display15 = [[NSMutableString alloc] init];	
 		
 		for (int i = 0; i < _phoneNOString.count ; i++)
@@ -382,13 +383,13 @@ NSString * const notifying = @"DataComplete";
 		[_holdAnother invalidate];
 }
 
-- (void)doSomething:(NSTimer *)theTimer
+- (void) doSomething:(NSTimer *)theTimer
 {
 	_holdAnother = [NSTimer scheduledTimerWithTimeInterval:.05 target:self selector:@selector(dontice:) userInfo:nil repeats:YES];
 	[_holdAnother retain];
 }
 
-- (void)dontice:(NSTimer *)theTimer
+- (void) dontice:(NSTimer *)theTimer
 {
 	BOOL testing = [[DataManager sharedObj] repetion];	
 	

@@ -18,7 +18,6 @@
 
 @implementation FavouritesViewController
 
-
 -(void)viewDidLoad
 {
 	UIBarButtonItem*	rightButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
@@ -64,7 +63,7 @@
 
 #pragma mark -
 
--(IBAction)addNewContacts:(id)Sender
+-(IBAction) addNewContacts:(id)Sender
 {
 	ContactsViewController* contacts = [[ContactsViewController alloc] init];	
 	contacts.canAddToFavourites = YES;
@@ -74,7 +73,7 @@
 	[navigation1 release];
 }
 
--(IBAction)dismissModalViews:(id)Sender
+-(IBAction) dismissModalViews:(id)Sender
 {
 	[self dismissModalViewControllerAnimated:YES];
 }
